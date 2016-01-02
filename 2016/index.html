@@ -22,8 +22,18 @@
 </head>
 <body>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5&appId=196651660681019";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="wrapper">
   <svg version="1.1" id="svg--card" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-       viewBox="0 0 283.5 419.5" style="enable-background:new 0 0 283.5 419.5;" xml:space="preserve">
+       viewBox="0 0 283.5 283.5" style="enable-background:new 0 0 283.5 419.5;" xml:space="preserve" class="card">
   <style type="text/css">
     #svg--card__text{
       display:none;
@@ -172,6 +182,25 @@
             c0-1.5-1.2-2.5-3.2-2.5C46.6,220.4,45.1,221.5,45.1,223.2z" data-character="す"/>
     </g>
   </svg>
+
+  <div class="message">
+      <p>明けましておめでとうございます。本年もよろしくお願いします。<br>
+      （※特にギミックはありません。）</p>
+      <p><a href="http://butchi.jp/" target="_blank">岩淵勇樹</a> (IWABUCHI Yu(u)ki)</p>
+  </div>
+
+  <div class="share">
+    <ul>
+      <li class="twitter">
+        <a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
+      <li class="facebook">
+        <div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <script src="js/lib/jquery.min.js"></script>
 <script src="js/main.js"></script>

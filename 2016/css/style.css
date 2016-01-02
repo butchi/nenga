@@ -1,3 +1,30 @@
-#svg--card {
-  width: 640px;
+html {
+  font-size: 10px;
+}
+
+.card {
+  width: 32rem;
+}
+
+.message {
+  padding: 1rem;
+  line-height: 1.4;
+
+  font-size: 14px;
+}
+
+.message p + p{
+  margin-top: 1rem;
+}
+
+.share {
+  margin: 1rem;
+}
+
+.share li {
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+  margin-bottom: 0.5rem;
 }
