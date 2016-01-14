@@ -1,23 +1,3 @@
-(function resize() {
-  'use strict';
-
-  var $html;
-  var WIDTH = 320;
-  var FONT_SIZE = 10;
-
-  function resizeHandler() {
-    var w = Math.max($(this).width() / WIDTH * FONT_SIZE, 10);
-    $html.css({
-      "font-size": w + 'px'
-    });
-  }
-
-  $(function () {
-    $html = $('html');
-    $(window).on('resize', resizeHandler).trigger('resize');
-  });
-})();
-
 $(function main() {
   'use strict';
 

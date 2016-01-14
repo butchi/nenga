@@ -1,9 +1,11 @@
 html {
-  font-size: 10px;
+  font-size: 20px;
+  font-size: calc(100vw / 320 * 10);
 }
 
-.card {
+.wrapper {
   width: 32rem;
+  max-width: 640px;
 }
 
 .message {
