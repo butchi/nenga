@@ -47,6 +47,17 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+.btc-list-share {
+  position: static; }
+  .btc-list-share .list {
+    font-size: 0;
+    vertical-align: top; }
+  .btc-list-share .item {
+    display: inline-block; }
+    .btc-list-share .item + .item {
+      margin-left: 5px;
+      margin-left: 0.05rem; }
+
 .display-none {
   display: none; }
 

@@ -1,0 +1,16 @@
+.btc-list-share {
+  position: static;
+
+  .list {
+    font-size: 0;
+    vertical-align: top;
+  }
+
+  .item {
+    display: inline-block;
+
+    + .item {
+      margin-left: px(5);
+    }
+  }
+}

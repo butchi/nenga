@@ -69,7 +69,7 @@ html(lang="ja")
 
   body(class= 'page-' + pageId)
     //- appId指定を忘れないように
-    //- include ../_partial/fb-sdk.html
+    include ../_partial/fb-sdk.html
 
     .wrapper
       block ContentBlock
@@ -81,7 +81,7 @@ html(lang="ja")
       //- script(src= rootPath + 'js/lib/material.min.js')
       script(src="js/script.js?v="+versions["script.js"])
 
-    //- include ../_partial/gplus-platform.html
+    include ../_partial/gplus-platform.html
 
     //- トラッキングID指定を忘れないように
-    //- include ../_partial/ga.html
+    include ../_partial/ga.html

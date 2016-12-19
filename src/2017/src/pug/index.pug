@@ -8,10 +8,20 @@ append ConfigBlock
 //- append JavascriptBlock
 
 block ContentBlock
-  header
-    h1
-      | Index Page
-
   main
-    p
-      | content
+    h1
+      | 謹賀新年 2017
+
+  .btc-list-share
+    ul.list
+      li.item(data-type="twitter")
+        a.twitter-share-button(href="https://twitter.com/share", data-show-count="false")
+          | Tweet
+        script(async, src="//platform.twitter.com/widgets.js", charset="utf-8")
+      li.item(data-type="facebook")
+        .fb-like(data-layout="button_count", data-action="like", data-size="small", data-show-faces="false", data-share="true")
+      li.item(data-type="gplus")
+        .g-plusone(data-size="medium")
+      li.item(data-type="line")
+        .line-it-button(style="display: none;", data-type="share-a", data-lang="ja")
+        script(src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js", async="async", defer="defer")
