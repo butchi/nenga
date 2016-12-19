@@ -1,6 +1,13 @@
-site_name: web starter
-description: web-starter web page.
-keywords: []
-# url: http://example.com/
-# facebook_app_id": 
+site_name: 謹賀新年2016
+description: 謹んで新年のお慶びを申し上げます
+
+keywords:
+  - 岩淵勇樹
+  - butchi
+  - butchi_y
+  - 年賀状
+
+url: http://butchi.github.io/nenga/2017/
+facebook_app_id": 196651660681019
+twitter_card_owner: "@butchi_y"
 # ogp_image_url: http://example.com/ogp.png
