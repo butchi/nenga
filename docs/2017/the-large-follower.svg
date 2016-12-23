@@ -90,17 +90,17 @@
     c0-159.4,129.6-288.8,288.8-288.8c82.6,0,157.4,35,210.4,91.2c65.8-13,127.6-36.6,183.4-69.8c-22,67.6-67.6,124.4-127.2,159.8
     c58.6-7.4,114.2-22.6,166-45.6C1685.2,746.2,1636.2,797.4,1580,838z" filter="url(#drop-shadow)" />
 
-  <image id="cloud--1" style="overflow:visible;enable-background:new    ;" width="523" height="396" xlink:href="cloud/cloud--1.png"  transform="matrix(0.6214 0 0 0.6214 1500 1199.6019)">
+  <image id="cloud--1" style="overflow:visible;enable-background:new    ;" width="523" height="396" xlink:href="img/cloud/cloud--1.png"  transform="matrix(0.6214 0 0 0.6214 1500 1199.6019)">
   </image>
-  <image id="cloud--2" style="overflow:visible;enable-background:new    ;" width="517" height="334" xlink:href="cloud/cloud--2.png"  transform="matrix(0.6214 0 0 0.6214 900 963.6975)">
+  <image id="cloud--2" style="overflow:visible;enable-background:new    ;" width="517" height="334" xlink:href="img/cloud/cloud--2.png"  transform="matrix(0.6214 0 0 0.6214 900 963.6975)">
   </image>
-  <image id="cloud--3" style="overflow:visible;enable-background:new    ;" width="1040" height="522" xlink:href="cloud/cloud--3.png"  transform="matrix(0.6214 0 0 0.6214 0 1115.3353)">
+  <image id="cloud--3" style="overflow:visible;enable-background:new    ;" width="1040" height="522" xlink:href="img/cloud/cloud--3.png"  transform="matrix(0.6214 0 0 0.6214 0 1115.3353)">
   </image>
-  <image id="cloud--4" style="overflow:visible;enable-background:new    ;" width="1544" height="676" xlink:href="cloud/cloud--4.png"  transform="matrix(0.6214 0 0 0.6214 1200 857.4265)">
+  <image id="cloud--4" style="overflow:visible;enable-background:new    ;" width="1544" height="676" xlink:href="img/cloud/cloud--4.png"  transform="matrix(0.6214 0 0 0.6214 1200 857.4265)">
   </image>
-  <image id="cloud--5" style="overflow:visible;enable-background:new    ;" width="2289" height="1204" xlink:href="cloud/cloud--5.png"  transform="matrix(0.6214 0 0 0.6214 300 1374.7742)">
+  <image id="cloud--5" style="overflow:visible;enable-background:new    ;" width="2289" height="1204" xlink:href="img/cloud/cloud--5.png"  transform="matrix(0.6214 0 0 0.6214 300 1374.7742)">
   </image>
-  <image id="cloud--6" style="overflow:visible;enable-background:new    ;" width="2023" height="747" xlink:href="cloud/cloud--6.png"  transform="matrix(0.6214 0 0 0.6214 600 603.2467)">
+  <image id="cloud--6" style="overflow:visible;enable-background:new    ;" width="2023" height="747" xlink:href="img/cloud/cloud--6.png"  transform="matrix(0.6214 0 0 0.6214 600 603.2467)">
   </image>
 </defs>
 
@@ -141,5 +141,5 @@
 
 <use id="glow" class="glow" xlink:href="#outside"></use>
 
-<image xlink:href="bg.jpg" clip-path="url(#clip-path)" width="2048px" height="2048px"></image>
+<image xlink:href="img/bg.jpg" clip-path="url(#clip-path)" width="2048px" height="2048px"></image>
 </svg>
