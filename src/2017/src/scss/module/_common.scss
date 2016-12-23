@@ -66,3 +66,23 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
+.hide-display {
+  display: inline-block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+}
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+i {
+  font-style: italic;
+}
