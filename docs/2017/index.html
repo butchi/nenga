@@ -26,7 +26,7 @@
     <link rel="canonical" href="http://butchi.github.io/nenga/2017/">
     <script src="./js/ua-switch.js"></script>
     <!-- stylesheet-->
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/style.css?v=5">
   </head>
   <body class="page-index">
 <div id="fb-root"></div>
@@ -202,25 +202,44 @@
             </figcaption>
           </figure>
         </div>
-        <div class="message">
+        <section class="sec-message">
           <p>明けましておめでとうございます。本年もよろしくお願いします。</p>
           <p>Twitter「<a href="https://twitter.com/search?q=%23%E3%83%95%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%AB%E9%9F%B3%E6%A5%BD">#フラクタル音楽</a>」毎日更新中です。</p>
+        </section>
+        <section class="sec-special-message">
+          <h2 class="heading">スペシャルメッセージ</h2>
+          <p>年賀状を受け取った方限定で、個別にメッセージをお送りします。<br>名字と郵便番号の下4桁を入力して、メッセージを受信してください。</p>
+          <div class="btc-message">
+            <form class="form" action="#">
+              <label>姓
+                <input type="text" name="lastname" placeholder="例: 真栗">
+              </label>
+              <label>郵便番号下4桁（半角）
+                <input type="text" name="code" placeholder="例: 0123">
+              </label>
+              <button type="submit">送信</button>
+            </form>
+            <div class="block-message">
+              <div class="to"></div>
+              <div class="body"></div>
+            </div>
+          </div>
+        </section>
+        <section class="sec-info">
+          <h2 class="heading">お知らせ</h2>
           <section>
-            <h2>お知らせ</h2>
-            <section>
-              <h2>連絡手段について</h2>
-              <p>基本、携帯電話のメールは利用しません。</p>
-              <p>k38647<span class="hide-display">(deleteme: スパム対策)</span>@gmail.com<br>がメインアドレスとなります。<br>（テキストコピー時注意）</p>
-              <p>ご連絡頂く際はメールでもいいですが、<br>気軽にハングアウトしてください。</p>
-              <p>その他、<a href="https://www.facebook.com/yuuki.iwabuchi.9" target="_blank">Facebook</a>、<a href="https://twitter.com/butchi_y" target="_blank">Twitter</a>、LINEなどもやっているので、<br>代替手段としてお使いいただけます。</p>
-            </section>
-            <section>
-              <h2>年賀状について</h2>
-              <p>年賀状を送って頂ける方へのお知らせです。<br>石川県、東京都の住所にお送りいただいている方は<br>福井県の住所に変更お願いします。<br>（現在石川県、東京都には住んでおらず、正月は福井県の実家で過ごすため）</p>
-            </section>
+            <h2>連絡手段について</h2>
+            <p>基本、携帯電話のメールは利用しません。</p>
+            <p>k38647<span class="hide-display">(deleteme: スパム対策)</span>@gmail.com<br>がメインアドレスとなります。<br>（テキストコピー時注意）</p>
+            <p>ご連絡頂く際はメールでもいいですが、<br>気軽にハングアウトしてください。</p>
+            <p>その他、<a href="https://www.facebook.com/yuuki.iwabuchi.9" target="_blank">Facebook</a>、<a href="https://twitter.com/butchi_y" target="_blank">Twitter</a>、LINEなどもやっているので、<br>代替手段としてお使いいただけます。</p>
           </section>
-          <p><a href="http://butchi.jp/" target="_blank">岩淵勇樹</a> (IWABUCHI Yu(u)ki)</p>
-        </div>
+          <section class="sec-about">
+            <h2>年賀状について</h2>
+            <p>年賀状を送って頂ける方へのお知らせです。<br>石川県、東京都の住所にお送りいただいている方は<br>福井県の住所に変更お願いします。<br>（現在石川県、東京都には住んでおらず、正月は福井県の実家で過ごすため）</p>
+          </section>
+        </section>
+        <p class="author"><a href="http://butchi.jp/" target="_blank">岩淵勇樹</a> (IWABUCHI Yu(u)ki)</p>
       </main>
       <div class="btc-list-share">
         <ul class="list">
@@ -243,7 +262,7 @@
     <!-- javascript-->
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/lodash.min.js"></script>
-    <script src="js/script.js?v=1"></script>
+    <script src="js/script.js?v=2"></script>
 <script src="https://apis.google.com/js/platform.js" async defer>
   {lang: 'ja'}
 </script>

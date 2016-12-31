@@ -7,6 +7,76 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var BtcMessage = function () {
+  function BtcMessage() {
+    var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    _classCallCheck(this, BtcMessage);
+
+    this.$elm = opts.$elm || $('.btc-message');
+
+    $('.card').hide();
+
+    this.initialize();
+  }
+
+  _createClass(BtcMessage, [{
+    key: 'initialize',
+    value: function initialize() {
+      var _this = this;
+
+      this.$to = this.$elm.find('.to');
+      this.$body = this.$elm.find('.body');
+
+      this.$form = this.$elm.find('.form');
+
+      this.$form.on('submit', function (evt) {
+        evt.preventDefault();
+
+        var lastname = _this.$form.find('[name="lastname"]').val();
+        var code = _this.$form.find('[name="code"]').val();
+
+        $.ajax({
+          url: 'https://script.google.com/macros/s/AKfycbws1vKfZR6in5KG4OfA1KiPFlcaRwsLtGY5oMtMDWmvdlC_gjbF/exec',
+          type: 'GET',
+          cache: false,
+          data: {
+            lastname: lastname,
+            code: code
+          },
+          dataType: 'jsonp'
+        }).then(function (data) {
+          //成功
+
+          if (data && data.to && data.body) {
+            _this.$to.text(data.to);
+            _this.$body.text(data.body);
+          } else {
+            console.log('error');
+          }
+        }).fail(function (err) {
+          console.log(err);
+        });
+      });
+    }
+  }]);
+
+  return BtcMessage;
+}();
+
+exports.default = BtcMessage;
+
+},{}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _Router = require('./Router');
 
 var _Router2 = _interopRequireDefault(_Router);
@@ -44,7 +114,7 @@ var Main = function () {
 
 exports.default = Main;
 
-},{"./Router":2}],2:[function(require,module,exports){
+},{"./Router":3}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -94,7 +164,7 @@ var Router = function () {
 
 exports.default = Router;
 
-},{"../page/Common":4,"../page/Index":5,"./ns":3}],3:[function(require,module,exports){
+},{"../page/Common":5,"../page/Index":6,"./ns":4}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -109,7 +179,7 @@ window.App = window.App || {};
 var ns = window.App;
 exports.default = ns;
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -168,7 +238,7 @@ var Common = function () {
 
 exports.default = Common;
 
-},{"../module/ns":3}],5:[function(require,module,exports){
+},{"../module/ns":4}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -180,6 +250,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _ns = require('../module/ns');
 
 var _ns2 = _interopRequireDefault(_ns);
+
+var _BtcMessage = require('../module/BtcMessage');
+
+var _BtcMessage2 = _interopRequireDefault(_BtcMessage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -198,6 +272,8 @@ var Index = function () {
     key: 'initialize',
     value: function initialize() {
       console.log('index page');
+
+      this.BtcMessage = new _BtcMessage2.default();
     }
   }]);
 
@@ -206,7 +282,7 @@ var Index = function () {
 
 exports.default = Index;
 
-},{"../module/ns":3}],6:[function(require,module,exports){
+},{"../module/BtcMessage":1,"../module/ns":4}],7:[function(require,module,exports){
 'use strict';
 
 var _ns = require('./module/ns');
@@ -223,4 +299,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _ns2.default.main = new _Main2.default();
 
-},{"./module/Main":1,"./module/ns":3}]},{},[6]);
+},{"./module/Main":2,"./module/ns":4}]},{},[7]);

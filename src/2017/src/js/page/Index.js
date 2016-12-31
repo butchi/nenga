@@ -1,4 +1,5 @@
 import ns from '../module/ns';
+import BtcMessage from '../module/BtcMessage';
 
 export default class Index {
   constructor(opts = {}) {
@@ -7,5 +8,7 @@ export default class Index {
 
   initialize() {
     console.log('index page');
+
+    this.BtcMessage = new BtcMessage();
   }
 }

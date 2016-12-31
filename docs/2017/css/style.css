@@ -58,6 +58,26 @@ table {
       margin-left: 5px;
       margin-left: 0.05rem; }
 
+.btc-message {
+  margin-top: 20px;
+  margin-top: 0.2rem; }
+  .btc-message .block-message {
+    box-sizing: border-box;
+    width: 610px;
+    width: 6.1rem;
+    height: 377px;
+    height: 3.77rem;
+    margin-top: 10px;
+    margin-top: 0.1rem;
+    background-color: #eee;
+    border-radius: 0.1rem; }
+    .btc-message .block-message .to {
+      padding: 10px;
+      padding: 0.1rem; }
+    .btc-message .block-message .body {
+      padding: 10px;
+      padding: 0.1rem; }
+
 .display-none {
   display: none; }
 
@@ -127,6 +147,10 @@ sup {
 i {
   font-style: italic; }
 
+.heading {
+  font-size: 20px;
+  font-size: 0.2rem; }
+
 html.is-sp .wrapper {
   overflow: hidden; }
 
@@ -146,7 +170,27 @@ html.is-pc .wrapper {
     width: 100%;
     height: 100%; }
 
+.page-index .sec-message {
+  margin-top: 20px;
+  margin-top: 0.2rem; }
+
+.page-index .sec-special-message {
+  margin-top: 20px;
+  margin-top: 0.2rem; }
+
+.page-index .sec-info {
+  margin-top: 20px;
+  margin-top: 0.2rem; }
+
 .page-index .message {
   position: relative;
   margin-top: 100px;
   margin-top: 1rem; }
+
+.page-index .author {
+  margin-top: 20px;
+  margin-top: 0.2rem; }
+
+.page-index .btc-list-share {
+  margin-top: 20px;
+  margin-top: 0.2rem; }

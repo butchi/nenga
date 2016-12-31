@@ -1,0 +1,23 @@
+.btc-message {
+  margin-top: px(20);
+
+  .block-message {
+    box-sizing: border-box;
+
+    width: px(610);
+    height: px(377);
+
+    margin-top: px(10);
+
+    background-color: #eee;
+    border-radius: px(10);
+
+    .to {
+      padding: px(10);
+    }
+
+    .body {
+      padding: px(10);
+    }    
+  }
+}
