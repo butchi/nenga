@@ -36,6 +36,8 @@ var BtcMessage = function () {
         var lastname = _this.$form.find('[name="lastname"]').val();
         var code = _this.$form.find('[name="code"]').val();
 
+        ga('send', 'event', 'nenga-2017', 'submit', lastname + '-' + code);
+
         $.ajax({
           url: 'https://script.google.com/macros/s/AKfycbws1vKfZR6in5KG4OfA1KiPFlcaRwsLtGY5oMtMDWmvdlC_gjbF/exec',
           type: 'GET',
