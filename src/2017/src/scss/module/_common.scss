@@ -64,7 +64,15 @@ main {
 
 a {
   color: inherit;
-  text-decoration: inherit;
+  text-decoration: underline;
+
+  &.hover {
+    text-decoration: none;
+  }
+
+  &:hover {
+    @extend .hover;
+  }
 }
 
 .hide-display {

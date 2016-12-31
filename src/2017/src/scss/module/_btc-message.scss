@@ -2,22 +2,60 @@
   margin-top: px(20);
 
   .block-message {
+    position: relative;
+
     box-sizing: border-box;
 
-    width: px(610);
-    height: px(377);
+    width: px(565 / 2);
+    height: px(800 / 2);
 
     margin-top: px(10);
 
-    background-color: #eee;
-    border-radius: px(10);
+    background-image: url(../img/message-template.png);
+    background-size: px(565 / 2);
 
     .to {
-      padding: px(10);
+      vertical-align: bottom;
+
+      position: absolute;
+
+      left: px(35);
+      top: px(35);
+
+      width: px(160);
+      height: px(20);
     }
 
     .body {
-      padding: px(10);
+      box-sizing: border-box;
+
+      vertical-align: bottom;
+
+      position: absolute;
+
+      left: px(35);
+      top: px(80);
+
+      width: px(225);
+      height: px(255);
+
+      padding: 0 px(10);
+
+      line-height: px(42);
+    }    
+
+    .from {
+      vertical-align: bottom;
+
+      position: absolute;
+
+      left: px(35);
+      top: px(350);
+
+      width: px(225);
+      height: px(30);
+
+      line-height: px(30);
     }    
   }
 }

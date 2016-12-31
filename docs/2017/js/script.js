@@ -52,7 +52,7 @@ var BtcMessage = function () {
 
           if (data && data.to && data.body) {
             _this.$to.text(data.to);
-            _this.$body.text(data.body);
+            _this.$body.html(data.body);
           } else {
             console.log('error');
           }

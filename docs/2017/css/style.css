@@ -62,21 +62,56 @@ table {
   margin-top: 20px;
   margin-top: 0.2rem; }
   .btc-message .block-message {
+    position: relative;
     box-sizing: border-box;
-    width: 610px;
-    width: 6.1rem;
-    height: 377px;
-    height: 3.77rem;
+    width: 282.5px;
+    width: 2.825rem;
+    height: 400px;
+    height: 4rem;
     margin-top: 10px;
     margin-top: 0.1rem;
-    background-color: #eee;
-    border-radius: 0.1rem; }
+    background-image: url(../img/message-template.png);
+    background-size: 2.825rem; }
     .btc-message .block-message .to {
-      padding: 10px;
-      padding: 0.1rem; }
+      vertical-align: bottom;
+      position: absolute;
+      left: 35px;
+      left: 0.35rem;
+      top: 35px;
+      top: 0.35rem;
+      width: 160px;
+      width: 1.6rem;
+      height: 20px;
+      height: 0.2rem; }
     .btc-message .block-message .body {
-      padding: 10px;
-      padding: 0.1rem; }
+      box-sizing: border-box;
+      vertical-align: bottom;
+      position: absolute;
+      left: 35px;
+      left: 0.35rem;
+      top: 80px;
+      top: 0.8rem;
+      width: 225px;
+      width: 2.25rem;
+      height: 254.999px;
+      height: 2.55rem;
+      padding: 0 10px;
+      padding: 0 0.1rem;
+      line-height: 42px;
+      line-height: 0.42rem; }
+    .btc-message .block-message .from {
+      vertical-align: bottom;
+      position: absolute;
+      left: 35px;
+      left: 0.35rem;
+      top: 350px;
+      top: 3.5rem;
+      width: 225px;
+      width: 2.25rem;
+      height: 30px;
+      height: 0.3rem;
+      line-height: 30px;
+      line-height: 0.3rem; }
 
 .display-none {
   display: none; }
@@ -128,7 +163,9 @@ main {
 
 a {
   color: inherit;
-  text-decoration: inherit; }
+  text-decoration: underline; }
+  a.hover, a:hover {
+    text-decoration: none; }
 
 .hide-display {
   display: inline-block;

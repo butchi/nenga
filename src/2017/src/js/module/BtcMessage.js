@@ -33,7 +33,7 @@ export default class BtcMessage {
 
         if(data && data.to && data.body) {
           this.$to.text(data.to);
-          this.$body.text(data.body);
+          this.$body.html(data.body);
         } else {
           console.log('error');
         }
