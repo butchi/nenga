@@ -185,17 +185,27 @@ i {
   font-style: italic; }
 
 .heading {
-  font-size: 20px;
-  font-size: 0.2rem; }
+  font-size: 30px;
+  font-size: 0.3rem;
+  font-weight: bold; }
 
-html.is-sp .wrapper {
-  overflow: hidden; }
+.wrapper {
+  margin-bottom: 30px;
+  margin-bottom: 0.3rem; }
+  html.is-sp .wrapper {
+    overflow: hidden; }
+  html.is-pc .wrapper {
+    overflow: hidden; }
 
-html.is-pc .wrapper {
-  width: 100%;
-  min-width: 1200px;
-  min-width: 12rem;
-  overflow: hidden; }
+.page-index .inner-block {
+  width: 512px;
+  width: 5.12rem;
+  margin: 0 auto; }
+
+.page-index .page-title {
+  font-size: 50px;
+  font-size: 0.5rem;
+  text-align: center; }
 
 .page-index .card {
   position: relative;
@@ -208,26 +218,38 @@ html.is-pc .wrapper {
     height: 100%; }
 
 .page-index .sec-message {
-  margin-top: 120px;
-  margin-top: 1.2rem; }
+  margin-top: 130px;
+  margin-top: 1.3rem;
+  padding: 0 20px;
+  padding: 0 0.2rem; }
 
 .page-index .sec-special-message {
   margin-top: 20px;
-  margin-top: 0.2rem; }
+  margin-top: 0.2rem;
+  padding: 0 20px;
+  padding: 0 0.2rem; }
 
 .page-index .sec-info {
-  margin-top: 20px;
-  margin-top: 0.2rem; }
+  margin-top: 30px;
+  margin-top: 0.3rem;
+  padding: 0 20px;
+  padding: 0 0.2rem; }
 
 .page-index .message {
   position: relative;
   margin-top: 100px;
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  padding: 0 20px;
+  padding: 0 0.2rem; }
 
 .page-index .author {
-  margin-top: 20px;
-  margin-top: 0.2rem; }
+  margin-top: 30px;
+  margin-top: 0.3rem;
+  padding: 0 20px;
+  padding: 0 0.2rem; }
 
 .page-index .btc-list-share {
-  margin-top: 20px;
-  margin-top: 0.2rem; }
+  margin-top: 30px;
+  margin-top: 0.3rem;
+  padding: 0 20px;
+  padding: 0 0.2rem; }

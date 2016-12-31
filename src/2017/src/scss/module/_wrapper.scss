@@ -1,11 +1,13 @@
 .wrapper {
+  margin-bottom: px(30);
+
   @include mq-sp {
     overflow: hidden;
   }
 
   @include mq-pc {
-    width: 100%;
-    min-width: $wrapper-width--pc;
+    // width: 100%;
+    // min-width: $wrapper-width--pc;
 
     overflow: hidden;
   }

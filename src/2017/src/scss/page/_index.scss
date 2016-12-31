@@ -1,4 +1,16 @@
 .page-index {
+  .inner-block {
+    width: px(512);
+
+    margin: 0 auto;
+  }
+
+  .page-title {
+    font-size: px(50);
+
+    text-align: center;
+  }
+
   .card {
     position: relative;
 
@@ -14,28 +26,40 @@
   }
 
   .sec-message {
-    margin-top: px(120);
+    margin-top: px(130);
+
+    padding: 0 px(20);
   }
 
   .sec-special-message {
     margin-top: px(20);
+
+    padding: 0 px(20);
   }
 
   .sec-info {
-    margin-top: px(20);
+    margin-top: px(30);
+
+    padding: 0 px(20);
   }
 
   .message {
     position: relative;
 
     margin-top: px(100);
+
+    padding: 0 px(20);
   }
 
   .author {
-    margin-top: px(20);
+    margin-top: px(30);
+
+    padding: 0 px(20);
   }
 
   .btc-list-share {
-    margin-top: px(20);
+    margin-top: px(30);
+
+    padding: 0 px(20);
   }
 }

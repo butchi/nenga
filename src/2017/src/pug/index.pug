@@ -9,93 +9,94 @@ append ConfigBlock
 
 block ContentBlock
   main
-    h1
-      | 謹賀新年 2017
+    .inner-block
+      h1.page-title
+        | 謹賀新年 2017
 
-    .card
-      figure
-        .image
-          include ../../../../docs/2017/the-large-follower.svg
-        figcaption
-          .title
-            | 『The Large Follower』
-            |  / 
-            | 『大友人』
-            sup
-              | [1]
-              | [2]
-          .ref
-            | [1] “The Large Family” by <i>Rene Magritte</i> (1963)
+      .card
+        figure
+          .image
+            include ../../../../docs/2017/the-large-follower.svg
+          figcaption
+            .title
+              | 『The Large Follower』
+              |  / 
+              | 『大友人』
+              sup
+                | [1]
+                | [2]
+            .ref
+              | [1] “The Large Family” by <i>Rene Magritte</i> (1963)
+              br
+              | [2] 
+              a(href="https://twitter.com")
+                | Twitter
+
+      section.sec-message
+        p
+          | 明けましておめでとうございます。本年もよろしくお願いします。
+        p
+          | Twitter「
+          a(href=`https://twitter.com/search?q=${encodeURIComponent('#フラクタル音楽')}`)
+            | #フラクタル音楽
+          | 」毎日更新中です。
+
+      section.sec-special-message
+        h2.heading
+          | スペシャルメッセージ
+
+        p
+          | 年賀状を受け取った方限定で、個別にメッセージをお送りします。
+          br
+          | 名字と郵便番号の下4桁を入力して、メッセージを受信してください。
+
+        .btc-message
+          form.form(action="#")
+            label
+              | 姓
+              input(type="text", name="lastname" placeholder="例: 真栗")
+            label
+              | 郵便番号下4桁（半角）
+              input(type="text", name="code" placeholder="例: 0123")
+            button(type="submit")
+              | 送信
+
+          .block-message
+            .to
+            .body
+            .from
+              | ぶっち
+
+      section.sec-info
+        h2.heading
+          | お知らせ
+        section
+          h2 連絡手段について
+          p 基本、携帯電話のメールは利用しません。
+          p
+            | k38647
+            span.hide-display (deleteme: スパム対策)
+            | @gmail.com
             br
-            | [2] 
-            a(href="https://twitter.com")
-              | Twitter
+            | がメインアドレスとなります。
+            br
+            | （テキストコピー時注意）
+          p
+            | ご連絡頂く際はメールでもいいですが、
+            br
+            | 気軽にハングアウトしてください。
+          p
+            | その他、
+            a(href='https://www.facebook.com/yuuki.iwabuchi.9', target='_blank') Facebook
+            | 、
+            a(href='https://twitter.com/butchi_y', target='_blank') Twitter
+            | 、LINEなどもやっているので、
+            br
+            | 代替手段としてお使いいただけます。
 
-    section.sec-message
-      p
-        | 明けましておめでとうございます。本年もよろしくお願いします。
-      p
-        | Twitter「
-        a(href=`https://twitter.com/search?q=${encodeURIComponent('#フラクタル音楽')}`)
-          | #フラクタル音楽
-        | 」毎日更新中です。
-
-    section.sec-special-message
-      h2.heading
-        | スペシャルメッセージ
-
-      p
-        | 年賀状を受け取った方限定で、個別にメッセージをお送りします。
-        br
-        | 名字と郵便番号の下4桁を入力して、メッセージを受信してください。
-
-      .btc-message
-        form.form(action="#")
-          label
-            | 姓
-            input(type="text", name="lastname" placeholder="例: 真栗")
-          label
-            | 郵便番号下4桁（半角）
-            input(type="text", name="code" placeholder="例: 0123")
-          button(type="submit")
-            | 送信
-
-        .block-message
-          .to
-          .body
-          .from
-            | ぶっち
-
-    section.sec-info
-      h2.heading
-        | お知らせ
-      section
-        h2 連絡手段について
-        p 基本、携帯電話のメールは利用しません。
-        p
-          | k38647
-          span.hide-display (deleteme: スパム対策)
-          | @gmail.com
-          br
-          | がメインアドレスとなります。
-          br
-          | （テキストコピー時注意）
-        p
-          | ご連絡頂く際はメールでもいいですが、
-          br
-          | 気軽にハングアウトしてください。
-        p
-          | その他、
-          a(href='https://www.facebook.com/yuuki.iwabuchi.9', target='_blank') Facebook
-          | 、
-          a(href='https://twitter.com/butchi_y', target='_blank') Twitter
-          | 、LINEなどもやっているので、
-          br
-          | 代替手段としてお使いいただけます。
-
-    p.author
-      a(href='http://butchi.jp/', target='_blank') 岩淵勇樹
-      |  (IWABUCHI Yu(u)ki)
+      p.author
+        a(href='http://butchi.jp/', target='_blank') 岩淵勇樹
+        |  (IWABUCHI Yu(u)ki)
 
   .btc-list-share
     ul.list
