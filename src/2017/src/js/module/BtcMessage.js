@@ -2,8 +2,6 @@ export default class BtcMessage {
   constructor(opts = {}) {
     this.$elm = opts.$elm || $('.btc-message');
 
-    $('.card').hide();
-
     this.initialize();
   }
 

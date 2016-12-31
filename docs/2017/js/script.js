@@ -17,8 +17,6 @@ var BtcMessage = function () {
 
     this.$elm = opts.$elm || $('.btc-message');
 
-    $('.card').hide();
-
     this.initialize();
   }
 
