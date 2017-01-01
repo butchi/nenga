@@ -6,8 +6,6 @@ export default class Common {
   }
 
   initialize() {
-    console.log('page common');
-
     this.setEnvClass();
   }
 

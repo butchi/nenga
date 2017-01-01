@@ -28,7 +28,7 @@ const DEST = `${HTDOCS}${BASE_PATH}`;
 
 const revLogger = new RevLogger({
     'style.css': `${DEST}/css/style.css`,
-    'script.js': `${DEST}/js/script.js`
+    'script.deco.js': `${DEST}/js/script.js`
 });
 
 
@@ -96,7 +96,7 @@ gulp.task('minify', () => {
 gulp.task('deco', () => {
   return gulp.src(`${DEST}/js/script.js`)
     .pipe(decodecode({
-      decoArr: ['b', 'u', 't', 'c', 'h', 'i'],
+      decoArr: ['酉', '戌', '亥', '子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申'],
     }))
     .pipe(rename('script.deco.js'))
     .pipe(gulp.dest(`${DEST}/js`))

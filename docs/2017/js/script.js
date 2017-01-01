@@ -219,8 +219,6 @@ var Common = function () {
   _createClass(Common, [{
     key: 'initialize',
     value: function initialize() {
-      console.log('page common');
-
       this.setEnvClass();
     }
   }, {
@@ -282,8 +280,6 @@ var Index = function () {
   _createClass(Index, [{
     key: 'initialize',
     value: function initialize() {
-      console.log('index page');
-
       this.BtcMessage = new _BtcMessage2.default();
     }
   }]);

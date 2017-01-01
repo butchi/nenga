@@ -7,8 +7,6 @@ export default class Index {
   }
 
   initialize() {
-    console.log('index page');
-
     this.BtcMessage = new BtcMessage();
   }
 }
