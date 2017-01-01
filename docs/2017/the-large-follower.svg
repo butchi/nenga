@@ -83,7 +83,7 @@
 
 
   .cloud--kujira {
-    animation: move 10s linear 30s infinite;
+    animation: move 30s linear 30s infinite;
   }
 </style>
 
