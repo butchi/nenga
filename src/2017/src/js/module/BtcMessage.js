@@ -11,8 +11,16 @@ export default class BtcMessage {
 
     this.$form = this.$elm.find('.form');
 
+    this.$mainMessage = this.$elm.find('.main-message');
+
+    this.$beforeLoad = this.$elm.find('.area-before-load');
+
+    this.$beforeLoadMessage = this.$beforeLoad.find('.text');
+
     this.$form.on('submit', (evt) => {
       evt.preventDefault();
+
+      this.$beforeLoadMessage.text('読み込み中です。');
 
       let lastname = this.$form.find('[name="lastname"]').val();
       let code = this.$form.find('[name="code"]').val();
@@ -32,14 +40,17 @@ export default class BtcMessage {
         //成功
 
         if(data && data.to && data.body) {
+          this.$beforeLoad.hide();
+          this.$mainMessage.fadeIn(500);
+
           this.$to.text(data.to);
           this.$body.html(data.body);
         } else {
-          console.log('error');
+          this.$beforeLoadMessage.text('読み込めませんでした。');
         }
 
       }).fail((err) => {
-        console.log(err);
+        this.$beforeLoadMessage.text('読み込めませんでした。');
       });
     });
   }

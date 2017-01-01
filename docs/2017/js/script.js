@@ -30,8 +30,16 @@ var BtcMessage = function () {
 
       this.$form = this.$elm.find('.form');
 
+      this.$mainMessage = this.$elm.find('.main-message');
+
+      this.$beforeLoad = this.$elm.find('.area-before-load');
+
+      this.$beforeLoadMessage = this.$beforeLoad.find('.text');
+
       this.$form.on('submit', function (evt) {
         evt.preventDefault();
+
+        _this.$beforeLoadMessage.text('読み込み中です。');
 
         var lastname = _this.$form.find('[name="lastname"]').val();
         var code = _this.$form.find('[name="code"]').val();
@@ -51,13 +59,16 @@ var BtcMessage = function () {
           //成功
 
           if (data && data.to && data.body) {
+            _this.$beforeLoad.hide();
+            _this.$mainMessage.fadeIn(500);
+
             _this.$to.text(data.to);
             _this.$body.html(data.body);
           } else {
-            console.log('error');
+            _this.$beforeLoadMessage.text('読み込めませんでした。');
           }
         }).fail(function (err) {
-          console.log(err);
+          _this.$beforeLoadMessage.text('読み込めませんでした。');
         });
       });
     }

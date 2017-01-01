@@ -59,14 +59,20 @@ block ContentBlock
             label
               | 郵便番号下4桁（半角）
               input(type="text", name="code" placeholder="例: 0123")
+            br
             button(type="submit")
               | 送信
 
           .block-message
-            .to
-            .body
-            .from
-              | ぶっち
+            .area-before-load
+              .text
+                | こちらにメッセージが表示されます。
+
+            .main-message
+              .to
+              .body
+              .from
+                | ぶっち
 
       section.sec-info
         h2.heading

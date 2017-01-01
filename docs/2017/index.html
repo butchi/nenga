@@ -26,7 +26,7 @@
     <link rel="canonical" href="http://butchi.github.io/nenga/2017/">
     <script src="./js/ua-switch.js"></script>
     <!-- stylesheet-->
-    <link rel="stylesheet" href="css/style.css?v=8">
+    <link rel="stylesheet" href="css/style.css?v=9">
   </head>
   <body class="page-index">
 <div id="fb-root"></div>
@@ -217,13 +217,18 @@
                 </label><br>
                 <label>郵便番号下4桁（半角）
                   <input type="text" name="code" placeholder="例: 0123">
-                </label>
+                </label><br>
                 <button type="submit">送信</button>
               </form>
               <div class="block-message">
-                <div class="to"></div>
-                <div class="body"></div>
-                <div class="from">ぶっち</div>
+                <div class="area-before-load">
+                  <div class="text">こちらにメッセージが表示されます。</div>
+                </div>
+                <div class="main-message">
+                  <div class="to"></div>
+                  <div class="body"></div>
+                  <div class="from">ぶっち</div>
+                </div>
               </div>
             </div>
           </section>
@@ -261,7 +266,7 @@
     <!-- javascript-->
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/lodash.min.js"></script>
-    <script src="js/script.js?v=5"></script>
+    <script src="js/script.js?v=6"></script>
 <script src="https://apis.google.com/js/platform.js" async defer>
   {lang: 'ja'}
 </script>

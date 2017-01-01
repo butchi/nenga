@@ -1,61 +1,97 @@
 .btc-message {
-  margin-top: px(20);
+  position: relative;
+
+  margin-top: px(30);
 
   .block-message {
     position: relative;
 
     box-sizing: border-box;
 
-    width: px(565 / 2);
+    width: px(560 / 2);
     height: px(800 / 2);
 
     margin-top: px(10);
 
-    background-image: url(../img/message-template.png);
-    background-size: px(565 / 2);
-
-    .to {
-      vertical-align: bottom;
-
+    .area-before-load {
       position: absolute;
 
-      left: px(35);
-      top: px(35);
+      width: 100%;
+      height: 100%;
 
-      width: px(160);
-      height: px(20);
+      left: 0;
+      top: 0;
+
+      background-color: #eee;
+
+      .text {
+        position: absolute;
+        left: 0;
+        top: 45%;
+
+        width: 100%;
+
+        text-align: center;
+      }
     }
 
-    .body {
-      box-sizing: border-box;
-
-      vertical-align: bottom;
+    .main-message {
+      display: none;
 
       position: absolute;
 
-      left: px(35);
-      top: px(80);
+      width: 100%;
+      height: 100%;
 
-      width: px(225);
-      height: px(255);
+      left: 0;
+      top: 0;
 
-      padding: 0 px(10);
+      background-image: url(../img/message-template.png);
+      background-size: px(560 / 2);
 
-      line-height: px(42);
-    }    
+      .to {
+        vertical-align: bottom;
 
-    .from {
-      vertical-align: bottom;
+        position: absolute;
 
-      position: absolute;
+        left: px(35);
+        top: px(35);
 
-      left: px(35);
-      top: px(350);
+        width: px(160);
+        height: px(20);
+      }
 
-      width: px(225);
-      height: px(30);
+      .body {
+        box-sizing: border-box;
 
-      line-height: px(30);
-    }    
+        vertical-align: bottom;
+
+        position: absolute;
+
+        left: px(35);
+        top: px(80);
+
+        width: px(225);
+        height: px(255);
+
+        padding: 0 px(10);
+
+        line-height: px(42);
+      }    
+
+      .from {
+        vertical-align: bottom;
+
+        position: absolute;
+
+        left: px(35);
+        top: px(350);
+
+        width: px(225);
+        height: px(30);
+
+        line-height: px(30);
+      }    
+    }
   }
 }
