@@ -11,4 +11,6 @@ url: https://butchi.github.io/nenga/2017/
 facebook_app_id: 1025731387449767
 twitter_card_owner: "@butchi_y"
 ogp_image_url: https://butchi.github.io/nenga/2017/ogp.jpg
+ogp_image_width: 1200
+ogp_image_height: 630
 favicon_url: favicon.ico
