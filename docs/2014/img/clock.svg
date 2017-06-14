@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="202.006px" height="202.009px" viewBox="0 0 202.006 202.009" enable-background="new 0 0 202.006 202.009"
+	 xml:space="preserve">
+<g id="base">
+	<circle cx="101.003" cy="101.004" r="101.004"/>
+</g>
+<g id="hands">
+	
+		<line fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-miterlimit="10" x1="101.003" y1="107.996" x2="101.003" y2="17.715"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="101.003" y1="107.996" x2="101.003" y2="31.315"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-miterlimit="10" x1="101.003" y1="107.996" x2="101.003" y2="63.92"/>
+</g>
+<g id="sec1">
+	<path fill="#FFFFFF" d="M110.33,12.257c-1.063-0.112-1.833-1.064-1.719-2.128c0.11-1.061,1.062-1.833,2.125-1.721
+		c1.065,0.112,1.834,1.063,1.721,2.127C112.347,11.598,111.393,12.37,110.33,12.257z"/>
+	<circle fill="#FFFFFF" cx="119.959" cy="11.824" r="1.935"/>
+	<circle fill="#FFFFFF" cx="129.178" cy="14.295" r="1.935"/>
+	<circle fill="#FFFFFF" cx="138.088" cy="17.716" r="1.935"/>
+	<circle fill="#FFFFFF" cx="154.592" cy="27.243" r="1.936"/>
+	<circle fill="#FFFFFF" cx="162.009" cy="33.249" r="1.935"/>
+	<circle fill="#FFFFFF" cx="168.757" cy="39.998" r="1.935"/>
+	<circle fill="#FFFFFF" cx="174.763" cy="47.415" r="1.936"/>
+	<circle fill="#FFFFFF" cx="184.292" cy="63.92" r="1.935"/>
+	<circle fill="#FFFFFF" cx="187.712" cy="72.83" r="1.935"/>
+	<path fill="#FFFFFF" d="M188.29,82.45c-0.222-1.045,0.444-2.072,1.491-2.294c1.045-0.224,2.072,0.445,2.293,1.489
+		c0.225,1.046-0.442,2.074-1.488,2.297C189.539,84.163,188.515,83.497,188.29,82.45z"/>
+	<circle fill="#FFFFFF" cx="191.675" cy="91.475" r="1.935"/>
+	<circle fill="#FFFFFF" cx="191.675" cy="110.533" r="1.935"/>
+	<circle fill="#FFFFFF" cx="190.183" cy="119.96" r="1.936"/>
+	<circle fill="#FFFFFF" cx="187.712" cy="129.178" r="1.935"/>
+	<circle fill="#FFFFFF" cx="184.293" cy="138.088" r="1.936"/>
+	<circle fill="#FFFFFF" cx="174.764" cy="154.593" r="1.935"/>
+	<circle fill="#FFFFFF" cx="168.758" cy="162.009" r="1.935"/>
+	<circle fill="#FFFFFF" cx="162.01" cy="168.758" r="1.936"/>
+	<circle fill="#FFFFFF" cx="154.594" cy="174.764" r="1.935"/>
+	<circle fill="#FFFFFF" cx="138.088" cy="184.292" r="1.935"/>
+	<circle fill="#FFFFFF" cx="129.178" cy="187.713" r="1.935"/>
+	<circle fill="#FFFFFF" cx="119.96" cy="190.183" r="1.935"/>
+	<path fill="#FFFFFF" d="M110.33,189.753c1.064-0.113,2.017,0.657,2.126,1.722c0.112,1.063-0.659,2.016-1.719,2.127
+		c-1.063,0.109-2.017-0.66-2.131-1.724C108.497,190.814,109.267,189.863,110.33,189.753z"/>
+	<path fill="#FFFFFF" d="M91.677,189.753c1.063,0.11,1.833,1.062,1.72,2.125c-0.111,1.063-1.062,1.835-2.125,1.724
+		c-1.065-0.113-1.834-1.064-1.724-2.127C89.662,190.411,90.614,189.64,91.677,189.753z"/>
+	<circle fill="#FFFFFF" cx="82.048" cy="190.184" r="1.936"/>
+	<circle fill="#FFFFFF" cx="72.83" cy="187.713" r="1.935"/>
+	<circle fill="#FFFFFF" cx="63.92" cy="184.293" r="1.935"/>
+	<circle fill="#FFFFFF" cx="47.416" cy="174.766" r="1.935"/>
+	<circle fill="#FFFFFF" cx="39.998" cy="168.759" r="1.935"/>
+	<circle fill="#FFFFFF" cx="33.25" cy="162.011" r="1.935"/>
+	<circle fill="#FFFFFF" cx="27.244" cy="154.595" r="1.935"/>
+	<circle fill="#FFFFFF" cx="17.715" cy="138.088" r="1.936"/>
+	<circle fill="#FFFFFF" cx="14.294" cy="129.179" r="1.935"/>
+	<circle fill="#FFFFFF" cx="11.826" cy="119.961" r="1.935"/>
+	<path fill="#FFFFFF" d="M12.256,110.33c0.111,1.066-0.659,2.017-1.723,2.128c-1.063,0.112-2.016-0.661-2.126-1.722
+		c-0.11-1.063,0.659-2.016,1.722-2.127C11.192,108.496,12.144,109.268,12.256,110.33z"/>
+	<circle fill="#FFFFFF" cx="10.332" cy="91.475" r="1.935"/>
+	<circle fill="#FFFFFF" cx="11.824" cy="82.048" r="1.935"/>
+	<circle fill="#FFFFFF" cx="14.294" cy="72.831" r="1.935"/>
+	<circle fill="#FFFFFF" cx="17.715" cy="63.92" r="1.936"/>
+	<circle fill="#FFFFFF" cx="27.243" cy="47.417" r="1.935"/>
+	<circle fill="#FFFFFF" cx="33.249" cy="39.999" r="1.935"/>
+	<circle fill="#FFFFFF" cx="39.997" cy="33.251" r="1.935"/>
+	<circle fill="#FFFFFF" cx="47.414" cy="27.245" r="1.935"/>
+	<circle fill="#FFFFFF" cx="63.92" cy="17.716" r="1.935"/>
+	<circle fill="#FFFFFF" cx="72.829" cy="14.295" r="1.936"/>
+	<circle fill="#FFFFFF" cx="82.047" cy="11.826" r="1.935"/>
+	<circle fill="#FFFFFF" cx="91.474" cy="10.332" r="1.935"/>
+</g>
+<g id="sec5">
+	<circle fill="#FFFFFF" cx="101.003" cy="9.833" r="2.903"/>
+	<circle fill="#FFFFFF" cx="146.588" cy="22.046" r="2.903"/>
+	<circle fill="#FFFFFF" cx="179.959" cy="55.417" r="2.903"/>
+	<circle fill="#FFFFFF" cx="192.175" cy="101.004" r="2.902"/>
+	<circle fill="#FFFFFF" cx="179.962" cy="146.589" r="2.902"/>
+	<circle fill="#FFFFFF" cx="146.591" cy="179.961" r="2.903"/>
+	<circle fill="#FFFFFF" cx="101.003" cy="192.177" r="2.903"/>
+	<circle fill="#FFFFFF" cx="55.419" cy="179.962" r="2.903"/>
+	<circle fill="#FFFFFF" cx="22.048" cy="146.591" r="2.902"/>
+	<circle fill="#FFFFFF" cx="9.832" cy="101.005" r="2.903"/>
+	<circle fill="#FFFFFF" cx="22.045" cy="55.419" r="2.903"/>
+	<circle fill="#FFFFFF" cx="55.416" cy="22.048" r="2.903"/>
+</g>
+</svg>
