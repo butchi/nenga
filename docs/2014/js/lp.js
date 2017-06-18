@@ -53,7 +53,7 @@
 	var $boxAchievement = $('.box-achievement');
 
 	$('.area-question .btn').click(answer);
-	$('.area-education .btn-retry').click(retryQuestion);
+	$('.area-education .btn-back').click(backQuestion);
 
 	function answer() {
 		var aId = $(this).attr('data-answer-id');
@@ -81,7 +81,7 @@
 		$areaEducation.show();
 	}
 
-	function retryQuestion() {
+	function backQuestion() {
 		$areaEducation.hide();
 		$areaQuestion.show();
 	}
@@ -98,11 +98,7 @@
 	}
 
 	function init() {
-		if(window.location.hash == '#skip_q1') {
-			qNo = 0;
-		} else {
-			qNo = -1;
-		}
+		qNo = -1;
 		nextQuestion();
 	}
 

@@ -272,3 +272,21 @@ html, body {
 		margin-left: -110px;
 	}
 }
+
+.box-text {
+	.area-lp-content {
+		@extend .area-education;
+		display: block;
+		.text {
+			font-size: 12px;
+			line-height: 16px;
+		}
+		.btn {
+			bottom: 70px;
+			a {
+				color: inherit;
+				text-decoration: inherit;
+			}
+		}
+	}
+}
