@@ -115,44 +115,48 @@ html, body {
   height: 300px;
 }
 
-.left-half .bg {
+.bg {
   position: absolute;
   width: 50%;
   height: 100%;
   min-height: 400px;
-  left: 50%;
   z-index: -1;
 }
-.left-half .logo, .left-half .clock, .left-half .box-text, .left-half .correct, .left-half .incorrect, .left-half .box-achievement {
-  clip: rect(0 150px 300px 0);
-}
-
-.right-half .bg {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  min-height: 400px;
+.bg.bg-left {
   left: 0%;
-  z-index: -1;
 }
-.right-half .logo, .right-half .clock, .right-half .box-text, .right-half .correct, .right-half .incorrect, .right-half .box-achievement {
-  clip: rect(0 300px 300px 150px);
+.bg.bg-right {
+  left: 50%;
 }
 
-.gozen .bg {
+.gozen.bg {
   background-color: #ff3300;
 }
 
-.gogo .bg {
+.gogo.bg {
   background-color: white;
 }
 
-.clock svg {
+.left-half {
   position: absolute;
   width: 300px;
-  height: 300px;
+  height: 400px;
   left: 50%;
+  top: 50%;
   margin-left: -150px;
+  margin-top: -200px;
+  clip: rect(0 150px 400px 0);
+}
+
+.right-half {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -200px;
+  clip: rect(0 300px 400px 150px);
 }
 
 .gozen .logo {

@@ -42,9 +42,13 @@
 	if((new Date()).getHours() < 12) {
 		$left.addClass('gozen');
 		$right.addClass('gogo');
+		$('.bg-left').addClass('gozen');
+		$('.bg-right').addClass('gogo');
 	} else {
 		$left.addClass('gogo');
 		$right.addClass('gozen');
+		$('.bg-left').addClass('gogo');
+		$('.bg-right').addClass('gozen');
 	}
 	var $rightObj = $left.children().clone();
 	$right.prepend($rightObj);
@@ -62,6 +66,7 @@
 
 	function answer() {
 		var aId = $(this).attr('data-answer-id');
+		ga('send', 'event', 'gozengogo', 'answer', 'question_' + (qNo + 1), aId);
 		if(aId == questions[qNo].a) {
 			// 正解時
 			$correct.show();
@@ -94,9 +99,11 @@
 	function nextQuestion() {
 		if(qNo + 1 < questions.length) {
 			qNo++;
+			ga('send', 'event', 'gozengogo', 'view', 'question_' + (qNo + 1));
 			$question.html('Q'+(qNo + 1)+'. '+questions[qNo].q);
 			$educationTxt.html(questions[qNo].d);
 		} else {
+			ga('send', 'event', 'gozengogo', 'view', 'achievement');
 			$areaQuestion.hide();
 			$boxAchievement.show();
 		}

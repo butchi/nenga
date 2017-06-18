@@ -67,52 +67,48 @@ html, body {
 	height: 300px;
 }
 
-.left-half {
-	.bg {
-		position: absolute;
-		width: 50%;
-		height: 100%;
-		min-height: 400px;
+.bg {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	min-height: 400px;
+	z-index: -1;
+	&.bg-left {
+		left: 0%;
+	}
+	&.bg-right {
 		left: 50%;
-		z-index: -1;
 	}
-	.logo, .clock, .box-text, .correct, .incorrect, .box-achievement {
-		clip: rect(0 150px 300px 0);
-	}
+}
+
+.gozen.bg {
+	background-color: $red;
+}
+
+.gogo.bg {
+	background-color: $white;
+}
+
+.left-half {
+	position: absolute;
+	width: 300px;
+	height: 400px;
+	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -200px;
+	clip: rect(0 150px 400px 0); // clipが%指定に対応していないので、サイズがわかっている内部のみに指定
 }
 
 .right-half {
-	.bg {
-		position: absolute;
-		width: 50%;
-		height: 100%;
-		min-height: 400px;
-		left: 0%;
-		z-index: -1;
-	}
-	.logo, .clock, .box-text, .correct, .incorrect, .box-achievement {
-		clip: rect(0 300px 300px 150px); // clipが%指定に対応していないので、サイズがわかっている内部のみに指定
-	}
-}
-
-.gozen {
-	.bg {
-		background-color: $red;
-	}
-}
-
-.gogo {
-	.bg {
-		background-color: $white;
-	}
-}
-
-.clock svg {
 	position: absolute;
 	width: 300px;
-	height: 300px;
+	height: 400px;
 	left: 50%;
+	top: 50%;
 	margin-left: -150px;
+	margin-top: -200px;
+	clip: rect(0 300px 400px 150px);
 }
 
 .gozen {
