@@ -11,9 +11,9 @@
 			a: 0,
 			d: '歌の冒頭で<br>「午前二時 フミキリに 望遠鏡を担いでった」<br>と歌われます。<br>君が来たのはその二分後で、<br>もう一度君に会おうとした後日の午前二時二分に<br>君が来なかった場合も「イマ」というほうき星を<br>君と二人追いかけています。<br><a href="http://www.utamap.com/showkasi.php?surl=66059" target="_blank">天体観測の歌詞を見る（うたまっぷ）</a>'
 		}, {
-			q: '37時は午前？午後？',
-			a: 1,
-			d: '時刻を24で割った時に余りが<br>12未満なら午前、12以上なら午後になります。<br>37は24で割ると余りが13なので、午後になります。'
+			q: '元旦は午前？午後？',
+			a: 0,
+			d: '元旦は元日の朝のことを指します。<br>「旦」は「日」が「太陽」、<br>その下の横棒が「地平線」で、<br>地平線から太陽が現れることを示し、<br>「日の出」や「朝」の意味をもちます。<br>つまり、一年の最初の朝なので、元日の朝を意味します。<br>ただし、辞書によっては元日の意味を含む場合があります。<br><a href="http://gogen-allguide.com/ka/gantan.html" target="_blank">元旦の語源（語源由来辞典）</a>'
 		}, {
 			q: '新幹線の終電は<br>午前？午後？',
 			a: 1,
@@ -33,14 +33,19 @@
 		}, {
 			q: '（最終問題）<br>このページの作者<br>岩淵勇樹の誕生時間は<br>午前？午後？',
 			a: 0,
-			d: '岩淵勇樹（物智）は<br>1984年9月13日午前6時18分に<br>福井県の勝山病院で生まれました。<br><a href="http://butchi.jp/profile.html" target="_blank">岩淵勇樹のプロフィールを見る（公式サイト）</a>'
+			d: '岩淵勇樹（物智）は<br>1984年9月13日午前6時18分に<br>福井県勝山市の病院で生まれました。<br><a href="http://butchi.jp/profile.html" target="_blank">岩淵勇樹のプロフィールを見る（公式サイト）</a>'
 		}
 	];
 
 	var $left = $('.left-half');
 	var $right = $('.right-half');
-	$left.addClass('gozen');
-	$right.addClass('gogo');
+	if((new Date()).getHours() < 12) {
+		$left.addClass('gozen');
+		$right.addClass('gogo');
+	} else {
+		$left.addClass('gogo');
+		$right.addClass('gozen');
+	}
 	var $rightObj = $left.children().clone();
 	$right.prepend($rightObj);
 

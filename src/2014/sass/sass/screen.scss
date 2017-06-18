@@ -2,8 +2,8 @@
 @import "compass/css3";
 $white: #fff;
 $red: #f30;
-$white2: #fc9;
-$red2: #f63;
+$white2: #f96; //#fc9;
+$red2: #f96; //#f63;
 
 .btn-base {
 	font-size: 25px;
@@ -28,6 +28,10 @@ $red2: #f63;
 		//	background-color: $red2;
 		//}
 	}
+	a {
+		color: inherit;
+		text-decoration: inherit;
+	}
 }
 
 
@@ -39,50 +43,67 @@ html, body {
 .wrapper {
 	width: 100%;
 	height: 100%;
+	min-height: 400px;
 }
 
-.clock svg {
+.logo {
 	position: absolute;
-	top: 50%;
-	margin-top: -150px;
-	//background-image: url(img/clock.svg);
-	//width: 90%;
-	//height: 90%;
-	//background-size: 100% 100%;
-	//background-repeat: no-repeat;
-}
-
-.left-half .bg {
-	position: absolute;
-	width: 50%;
-	height: 100%;
-	min-height: 300px;
+	width: 300px;
+	height: 400px;
 	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -200px;
+	text-indent: -9999px;
 }
 
-.right-half .bg {
+.clock {
 	position: absolute;
-	width: 50%;
-	height: 100%;
-	min-height: 300px;
-	left: 0%;
+	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -150px;
+	width: 300px;
+	height: 300px;
+}
+
+.left-half {
+	.bg {
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		min-height: 400px;
+		left: 50%;
+		z-index: -1;
+	}
+	.logo, .clock, .box-text, .correct, .incorrect, .box-achievement {
+		clip: rect(0 150px 300px 0);
+	}
+}
+
+.right-half {
+	.bg {
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		min-height: 400px;
+		left: 0%;
+		z-index: -1;
+	}
+	.logo, .clock, .box-text, .correct, .incorrect, .box-achievement {
+		clip: rect(0 300px 300px 150px); // clipが%指定に対応していないので、サイズがわかっている内部のみに指定
+	}
 }
 
 .gozen {
 	.bg {
 		background-color: $red;
 	}
-	.clock svg, .box-text, .correct, .incorrect, .box-achievement {
-		clip: rect(0 300px 300px 150px); // clipが%指定に対応していないので、サイズがわかっている内部のみに指定
-	}
 }
 
 .gogo {
 	.bg {
 		background-color: $white;
-	}
-	.clock svg, .box-text, .correct, .incorrect, .box-achievement {
-		clip: rect(0 150px 300px 0);
 	}
 }
 
@@ -95,6 +116,9 @@ html, body {
 }
 
 .gozen {
+	.logo {
+		background-image: url(../img/logo_white.svg);
+	}
 	.clock {
 		line {
 			stroke: $red;
@@ -102,10 +126,10 @@ html, body {
 		circle, path {
 			fill: $red;
 		}
-		#base circle {
+		.base circle {
 			fill: $white;
 		}
-		#hands line {
+		.hands line {
 			stroke: $red2;
 		}
 	}
@@ -115,6 +139,9 @@ html, body {
 }
 
 .gogo {
+	.logo {
+		background-image: url(../img/logo_red.svg);
+	}
 	.clock {
 		line {
 			stroke: $white;
@@ -122,10 +149,10 @@ html, body {
 		circle, path {
 			fill: $white;
 		}
-		#base circle {
+		.base circle {
 			fill: $red;
 		}
-		#hands line {
+		.hands line {
 			stroke: $white2;
 		}
 	}
@@ -252,7 +279,7 @@ html, body {
 	margin-left: -150px;
 	margin-top: -150px;
 
-	p {
+	.text {
 		position: absolute;
 		top: 80px;
 		left: 50%;
@@ -263,12 +290,26 @@ html, body {
 		font-size: 14px;
 		line-height: 20px;
 	}
+	.btn {
+		@extend .btn-base;
+		position: absolute;
+		bottom: 50px;
+		width: 100%;
+		left: 50%;
+		margin-left: -50%;
+		text-align: center;
+	}
+}
+.box-achievement.overlay {
+	height: 50px;
+	top: 50%;
+	margin-top: 10px;
 	audio {
 		position: absolute;
 		width: 220px;
 		height: 50px;
 		left: 50%;
-		bottom: 90px;
+		top: 0;
 		margin-left: -110px;
 	}
 }
@@ -278,15 +319,22 @@ html, body {
 		@extend .area-education;
 		display: block;
 		.text {
-			font-size: 12px;
+			font-size: 10px;
 			line-height: 16px;
 		}
 		.btn {
 			bottom: 70px;
-			a {
-				color: inherit;
-				text-decoration: inherit;
-			}
 		}
+	}
+}
+
+.social {
+	position: fixed;
+	bottom: 10px;
+
+	width: 100%;
+	text-align: center;
+	li {
+		display: inline-block;
 	}
 }

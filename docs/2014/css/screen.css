@@ -54,10 +54,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-.btn-base, .box-text .area-question .btn, .box-text .area-education .btn, .box-text .area-lp-content .btn {
+.btn-base, .box-text .area-question .btn, .box-text .area-education .btn, .box-text .area-lp-content .btn, .box-achievement .btn {
   font-size: 25px;
 }
-.btn-base .btn-inner, .box-text .area-question .btn .btn-inner, .box-text .area-education .btn .btn-inner, .box-text .area-lp-content .btn .btn-inner {
+.btn-base .btn-inner, .box-text .area-question .btn .btn-inner, .box-text .area-education .btn .btn-inner, .box-text .area-lp-content .btn .btn-inner, .box-achievement .btn .btn-inner {
   padding: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -66,17 +66,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   border-radius: 5px;
   cursor: pointer;
 }
-.gozen .btn-base .btn-inner, .gozen .box-text .area-question .btn .btn-inner, .box-text .area-question .gozen .btn .btn-inner, .gozen .box-text .area-education .btn .btn-inner, .box-text .area-education .gozen .btn .btn-inner, .gozen .box-text .area-lp-content .btn .btn-inner, .box-text .area-lp-content .gozen .btn .btn-inner {
+.gozen .btn-base .btn-inner, .gozen .box-text .area-question .btn .btn-inner, .box-text .area-question .gozen .btn .btn-inner, .gozen .box-text .area-education .btn .btn-inner, .box-text .area-education .gozen .btn .btn-inner, .gozen .box-text .area-lp-content .btn .btn-inner, .box-text .area-lp-content .gozen .btn .btn-inner, .gozen .box-achievement .btn .btn-inner, .box-achievement .gozen .btn .btn-inner {
   -webkit-box-shadow: 3px 3px 0 #ff3300;
   -moz-box-shadow: 3px 3px 0 #ff3300;
   box-shadow: 3px 3px 0 #ff3300;
   background-color: white;
 }
-.gogo .btn-base .btn-inner, .gogo .box-text .area-question .btn .btn-inner, .box-text .area-question .gogo .btn .btn-inner, .gogo .box-text .area-education .btn .btn-inner, .box-text .area-education .gogo .btn .btn-inner, .gogo .box-text .area-lp-content .btn .btn-inner, .box-text .area-lp-content .gogo .btn .btn-inner {
+.gogo .btn-base .btn-inner, .gogo .box-text .area-question .btn .btn-inner, .box-text .area-question .gogo .btn .btn-inner, .gogo .box-text .area-education .btn .btn-inner, .box-text .area-education .gogo .btn .btn-inner, .gogo .box-text .area-lp-content .btn .btn-inner, .box-text .area-lp-content .gogo .btn .btn-inner, .gogo .box-achievement .btn .btn-inner, .box-achievement .gogo .btn .btn-inner {
   -webkit-box-shadow: 3px 3px 0 white;
   -moz-box-shadow: 3px 3px 0 white;
   box-shadow: 3px 3px 0 white;
   background-color: #ff3300;
+}
+.btn-base a, .box-text .area-question .btn a, .box-text .area-education .btn a, .box-text .area-lp-content .btn a, .box-achievement .btn a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 html, body {
@@ -87,42 +91,60 @@ html, body {
 .wrapper {
   width: 100%;
   height: 100%;
+  min-height: 400px;
 }
 
-.clock svg {
+.logo {
   position: absolute;
+  width: 300px;
+  height: 400px;
+  left: 50%;
   top: 50%;
+  margin-left: -150px;
+  margin-top: -200px;
+  text-indent: -9999px;
+}
+
+.clock {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
   margin-top: -150px;
+  width: 300px;
+  height: 300px;
 }
 
 .left-half .bg {
   position: absolute;
   width: 50%;
   height: 100%;
-  min-height: 300px;
+  min-height: 400px;
   left: 50%;
+  z-index: -1;
+}
+.left-half .logo, .left-half .clock, .left-half .box-text, .left-half .correct, .left-half .incorrect, .left-half .box-achievement {
+  clip: rect(0 150px 300px 0);
 }
 
 .right-half .bg {
   position: absolute;
   width: 50%;
   height: 100%;
-  min-height: 300px;
+  min-height: 400px;
   left: 0%;
+  z-index: -1;
+}
+.right-half .logo, .right-half .clock, .right-half .box-text, .right-half .correct, .right-half .incorrect, .right-half .box-achievement {
+  clip: rect(0 300px 300px 150px);
 }
 
 .gozen .bg {
   background-color: #ff3300;
 }
-.gozen .clock svg, .gozen .box-text, .gozen .correct, .gozen .incorrect, .gozen .box-achievement {
-  clip: rect(0 300px 300px 150px);
-}
 
 .gogo .bg {
   background-color: white;
-}
-.gogo .clock svg, .gogo .box-text, .gogo .correct, .gogo .incorrect, .gogo .box-achievement {
-  clip: rect(0 150px 300px 0);
 }
 
 .clock svg {
@@ -133,33 +155,39 @@ html, body {
   margin-left: -150px;
 }
 
+.gozen .logo {
+  background-image: url(../img/logo_white.svg);
+}
 .gozen .clock line {
   stroke: #ff3300;
 }
 .gozen .clock circle, .gozen .clock path {
   fill: #ff3300;
 }
-.gozen .clock #base circle {
+.gozen .clock .base circle {
   fill: white;
 }
-.gozen .clock #hands line {
-  stroke: #ff6633;
+.gozen .clock .hands line {
+  stroke: #ff9966;
 }
 .gozen .box-text, .gozen .box-achievement {
   color: #ff3300;
 }
 
+.gogo .logo {
+  background-image: url(../img/logo_red.svg);
+}
 .gogo .clock line {
   stroke: white;
 }
 .gogo .clock circle, .gogo .clock path {
   fill: white;
 }
-.gogo .clock #base circle {
+.gogo .clock .base circle {
   fill: #ff3300;
 }
-.gogo .clock #hands line {
-  stroke: #ffcc99;
+.gogo .clock .hands line {
+  stroke: #ff9966;
 }
 .gogo .box-text, .gogo .box-achievement {
   color: white;
@@ -271,7 +299,7 @@ html, body {
   margin-left: -150px;
   margin-top: -150px;
 }
-.box-achievement p {
+.box-achievement .text {
   position: absolute;
   top: 80px;
   left: 50%;
@@ -282,12 +310,26 @@ html, body {
   font-size: 14px;
   line-height: 20px;
 }
-.box-achievement audio {
+.box-achievement .btn {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  left: 50%;
+  margin-left: -50%;
+  text-align: center;
+}
+
+.box-achievement.overlay {
+  height: 50px;
+  top: 50%;
+  margin-top: 10px;
+}
+.box-achievement.overlay audio {
   position: absolute;
   width: 220px;
   height: 50px;
   left: 50%;
-  bottom: 90px;
+  top: 0;
   margin-left: -110px;
 }
 
@@ -295,13 +337,19 @@ html, body {
   display: block;
 }
 .box-text .area-lp-content .text {
-  font-size: 12px;
+  font-size: 10px;
   line-height: 16px;
 }
 .box-text .area-lp-content .btn {
   bottom: 70px;
 }
-.box-text .area-lp-content .btn a {
-  color: inherit;
-  text-decoration: inherit;
+
+.social {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+.social li {
+  display: inline-block;
 }
