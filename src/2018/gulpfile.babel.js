@@ -27,7 +27,7 @@ const DEST = `${HTDOCS}${BASE_PATH}`;
 
 const revLogger = new RevLogger({
     'style.css': `${DEST}/css/style.css`,
-    'script.js': `${DEST}/js/script.js`
+    'script.deco.js': `${DEST}/js/script.deco.js`
 });
 
 
@@ -97,7 +97,7 @@ gulp.task('deco', () => {
   return gulp.src(`${DEST}/js/script.js`)
     .pipe(decodecode({
       preserveComments: 'license',
-      decoArr: ['b', 'u', 't', 'c', 'h', 'i'],
+      decoArr: ['恵', '大', '毘', '弁', '布', '福', '寿'],
     }))
     .pipe(rename('script.deco.js'))
     .pipe(gulp.dest(`${DEST}/js`))
