@@ -1,0 +1,13 @@
+.wrapper {
+  @include mq-sp {
+    overflow: hidden;
+  }
+
+  @include mq-pc {
+  	margin: 0 auto;
+
+    width: px(375);
+ 
+    overflow: hidden;
+  }
+}
