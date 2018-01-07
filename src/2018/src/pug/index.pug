@@ -1,0 +1,28 @@
+extends /_layout/_default-layout
+
+append config-block
+  - pageId = 'index'
+
+block content-block
+  main
+    .main
+      h1.heading
+        img(src=`img/heading.png`, alt="謹賀新年")
+
+      .oolong
+        p.image
+          img(src=`img/image-kintoun.png`, alt="きんとうん")
+        p.model
+          | モデル: 烏龍
+
+      .message
+        p
+          | あけましておめでとうございます。
+        p
+          | 今年も凝った年賀サイトを作ろうと思ってたのですが、年末の多忙と正月ボケで省エネモードに入ってしまいました笑
+        p
+          | 今年の抱負は「楽しく努力すること」です。
+        p
+          | 皆さんのお力をお貸しいただいてこそ、楽しい一年を過ごすことができます。 
+        p
+          | 本年も宜しくお願いします。

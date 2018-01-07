@@ -1,0 +1,34 @@
+.main {
+  margin-top: px(30);
+}
+
+.heading {
+  img {
+    width: px(375);
+  }
+}
+
+.oolong {
+  position: relative;
+
+  .image {
+    img {
+      width: px(375);
+    }
+  }
+
+  .model {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.message {
+  margin-top: px(70);
+
+  p {
+    margin-top: 0.3em;
+  }
+}
