@@ -124,7 +124,8 @@ html.is-pc .wrapper {
   .oolong .model {
     position: absolute;
     right: 0;
-    bottom: 0; }
+    bottom: 0;
+    color: #ff7f00; }
 
 .message {
   margin-top: 70px;
