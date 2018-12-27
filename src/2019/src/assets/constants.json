@@ -1,10 +1,10 @@
 {
-  "SITE_ORIGIN": "https://example.com/",
+  "SITE_ORIGIN": "https://butchi.github.io/nenga/2019/",
   "BASE_PATH": "/",
   "META": {
-    "TITLE": "kayac-vue-starter",
-    "DESCRIPTION": "kayac-vue-starter web page.",
-    "KEYWORDS": "vue-cli,vue.js",
+    "TITLE": "ioshishi-slot",
+    "DESCRIPTION": "Ioshishi slot.",
+    "KEYWORDS": "nenga,slot",
     "SHARE_IMAGE_PATH": "ogp.png"
   }
 }

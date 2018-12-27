@@ -1,4 +1,4 @@
-kayac-vue-starter
+ioshishi-slot
 ====
 **Vue CLIベースの開発環境になります。**
 
