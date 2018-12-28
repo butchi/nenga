@@ -6,7 +6,8 @@
       "rarity": 0,
       "rarity_str": "INSS",
       "name": "イノシシ",
-      "id": "inoshishi"
+      "friendly_id": "inoshishi",
+      "description": "明けましておめでとうございます！"
     },
     "2": {
       "index": 2,
@@ -14,7 +15,8 @@
       "rarity": 1,
       "rarity_str": "SSR",
       "name": "シシ座流星群",
-      "id": "leonids"
+      "friendly_id": "leonids",
+      "description": "☆彡"
     },
     "3": {
       "index": 3,
@@ -22,7 +24,8 @@
       "rarity": 1,
       "rarity_str": "SSR",
       "name": "　のし　",
-      "id": "noshi"
+      "friendly_id": "noshi",
+      "description": "めでたい。"
     },
     "4": {
       "index": 4,
@@ -30,7 +33,8 @@
       "rarity": 2,
       "rarity_str": "SR",
       "name": "眠れるシシ",
-      "id": "sleeping-shishi"
+      "friendly_id": "sleeping-shishi",
+      "description": "説明4"
     },
     "5": {
       "index": 5,
@@ -38,7 +42,8 @@
       "rarity": 2,
       "rarity_str": "SR",
       "name": "イノ紳士",
-      "id": "inoshinshi"
+      "friendly_id": "inoshinshi",
+      "description": "説明5"
     },
     "6": {
       "index": 6,
@@ -46,7 +51,8 @@
       "rarity": 2,
       "rarity_str": "SR",
       "name": "猪突猛進",
-      "id": "chototsumoushin"
+      "friendly_id": "chototsumoushin",
+      "description": "説明6"
     },
     "7": {
       "index": 7,
@@ -54,7 +60,8 @@
       "rarity": 2,
       "rarity_str": "SR",
       "name": "ウリボウ",
-      "id": "uribo"
+      "friendly_id": "uribo",
+      "description": "説明7"
     },
     "8": {
       "index": 8,
@@ -62,7 +69,8 @@
       "rarity": 3,
       "rarity_str": "R",
       "name": "イおシシ",
-      "id": "ioshishi"
+      "friendly_id": "ioshishi",
+      "description": "説明8"
     },
     "9": {
       "index": 9,
@@ -70,7 +78,8 @@
       "rarity": 3,
       "rarity_str": "R",
       "name": "イノシュシュ",
-      "id": "inochouchou"
+      "friendly_id": "inochouchou",
+      "description": "説明9"
     },
     "10": {
       "index": 10,
@@ -78,7 +87,8 @@
       "rarity": 3,
       "rarity_str": "R",
       "name": "井上雄彦",
-      "id": "inoue-takehiko"
+      "friendly_id": "inoue-takehiko",
+      "description": "説明10"
     },
     "11": {
       "index": 11,
@@ -86,7 +96,8 @@
       "rarity": 3,
       "rarity_str": "R",
       "name": "ミドシシ",
-      "id": "midoshishi"
+      "friendly_id": "midoshishi",
+      "description": "説明11"
     },
     "12": {
       "index": 12,
@@ -94,7 +105,8 @@
       "rarity": 3,
       "rarity_str": "R",
       "name": "シシがみ",
-      "id": "shishigami"
+      "friendly_id": "shishigami",
+      "description": "説明12"
     },
     "13": {
       "index": 13,
@@ -102,7 +114,8 @@
       "rarity": 3,
       "rarity_str": "R",
       "name": "いのち♥",
-      "id": "inochi"
+      "friendly_id": "inochi",
+      "description": "説明13"
     },
     "14": {
       "index": 14,
@@ -110,7 +123,8 @@
       "rarity": 3,
       "rarity_str": "R",
       "name": "Eの指示",
-      "id": "e-no-shiji"
+      "friendly_id": "e-no-shiji",
+      "description": "説明14"
     },
     "15": {
       "index": 15,
@@ -118,7 +132,8 @@
       "rarity": 3,
       "rarity_str": "R",
       "name": "フクシシ",
-      "id": "fukushishi"
+      "friendly_id": "fukushishi",
+      "description": "説明15"
     },
     "16": {
       "index": 16,
@@ -126,7 +141,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "イノSiri",
-      "id": "inosiri"
+      "friendly_id": "inosiri",
+      "description": "説明16"
     },
     "17": {
       "index": 17,
@@ -134,7 +150,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "逗子市",
-      "id": "zushishi"
+      "friendly_id": "zushishi",
+      "description": "説明17"
     },
     "18": {
       "index": 18,
@@ -142,7 +159,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "猪子寿之",
-      "id": "inoko-toshiyuki"
+      "friendly_id": "inoko-toshiyuki",
+      "description": "説明18"
     },
     "19": {
       "index": 19,
@@ -150,7 +168,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "ウシシシ",
-      "id": "ushishishi"
+      "friendly_id": "ushishishi",
+      "description": "説明19"
     },
     "20": {
       "index": 20,
@@ -158,7 +177,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "シシ16",
-      "id": "shishi-16"
+      "friendly_id": "shishi-16",
+      "description": "説明20"
     },
     "21": {
       "index": 21,
@@ -166,7 +186,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "四捨五入",
-      "id": "shishagonyu"
+      "friendly_id": "shishagonyu",
+      "description": "説明21"
     },
     "22": {
       "index": 22,
@@ -174,7 +195,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "猪苗代湖",
-      "id": "inawashiroko"
+      "friendly_id": "inawashiroko",
+      "description": "説明22"
     },
     "23": {
       "index": 23,
@@ -182,7 +204,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "シシシシ",
-      "id": "shishishishi"
+      "friendly_id": "shishishishi",
+      "description": "説明23"
     },
     "24": {
       "index": 24,
@@ -190,7 +213,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "イノシン",
-      "id": "inosine"
+      "friendly_id": "inosine",
+      "description": "説明24"
     },
     "25": {
       "index": 25,
@@ -198,7 +222,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "シシマイ",
-      "id": "shishimai"
+      "friendly_id": "shishimai",
+      "description": "説明25"
     },
     "26": {
       "index": 26,
@@ -206,7 +231,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "イノ頭線",
-      "id": "inokashira-line"
+      "friendly_id": "inokashira-line",
+      "description": "説明26"
     },
     "27": {
       "index": 27,
@@ -214,7 +240,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "ノシノシ",
-      "id": "noshinoshi"
+      "friendly_id": "noshinoshi",
+      "description": "説明27"
     },
     "28": {
       "index": 28,
@@ -222,7 +249,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "いのしま",
-      "id": "inoshima"
+      "friendly_id": "inoshima",
+      "description": "説明28"
     },
     "29": {
       "index": 29,
@@ -230,7 +258,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "イノシカ",
-      "id": "inoshika"
+      "friendly_id": "inoshika",
+      "description": "説明29"
     },
     "30": {
       "index": 30,
@@ -238,7 +267,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "あのシシ",
-      "id": "anoshishi"
+      "friendly_id": "anoshishi",
+      "description": "説明30"
     },
     "31": {
       "index": 31,
@@ -246,7 +276,8 @@
       "rarity": 4,
       "rarity_str": "N",
       "name": "ノノノノ",
-      "id": "nononono"
+      "friendly_id": "nononono",
+      "description": "説明31"
     }
   },
   "rarity": {
