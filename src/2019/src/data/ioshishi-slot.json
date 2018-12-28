@@ -1,0 +1,274 @@
+{
+  "sheet": {
+    "1": {
+      "index": 1,
+      "binary": "00001",
+      "rarity": 0,
+      "rarity_str": "INSS",
+      "name": "イノシシ",
+      "id": "inoshishi"
+    },
+    "2": {
+      "index": 2,
+      "binary": "00010",
+      "rarity": 1,
+      "rarity_str": "SSR",
+      "name": "シシ座流星群",
+      "id": "leonids"
+    },
+    "3": {
+      "index": 3,
+      "binary": "00011",
+      "rarity": 1,
+      "rarity_str": "SSR",
+      "name": "　のし　",
+      "id": "noshi"
+    },
+    "4": {
+      "index": 4,
+      "binary": "00100",
+      "rarity": 2,
+      "rarity_str": "SR",
+      "name": "眠れるシシ",
+      "id": "sleeping-shishi"
+    },
+    "5": {
+      "index": 5,
+      "binary": "00101",
+      "rarity": 2,
+      "rarity_str": "SR",
+      "name": "イノ紳士",
+      "id": "inoshinshi"
+    },
+    "6": {
+      "index": 6,
+      "binary": "00110",
+      "rarity": 2,
+      "rarity_str": "SR",
+      "name": "猪突猛進",
+      "id": "chototsumoushin"
+    },
+    "7": {
+      "index": 7,
+      "binary": "00111",
+      "rarity": 2,
+      "rarity_str": "SR",
+      "name": "ウリボウ",
+      "id": "uribo"
+    },
+    "8": {
+      "index": 8,
+      "binary": "01000",
+      "rarity": 3,
+      "rarity_str": "R",
+      "name": "イおシシ",
+      "id": "ioshishi"
+    },
+    "9": {
+      "index": 9,
+      "binary": "01001",
+      "rarity": 3,
+      "rarity_str": "R",
+      "name": "イノシュシュ",
+      "id": "inochouchou"
+    },
+    "10": {
+      "index": 10,
+      "binary": "01010",
+      "rarity": 3,
+      "rarity_str": "R",
+      "name": "井上雄彦",
+      "id": "inoue-takehiko"
+    },
+    "11": {
+      "index": 11,
+      "binary": "01011",
+      "rarity": 3,
+      "rarity_str": "R",
+      "name": "ミドシシ",
+      "id": "midoshishi"
+    },
+    "12": {
+      "index": 12,
+      "binary": "01100",
+      "rarity": 3,
+      "rarity_str": "R",
+      "name": "シシがみ",
+      "id": "shishigami"
+    },
+    "13": {
+      "index": 13,
+      "binary": "01101",
+      "rarity": 3,
+      "rarity_str": "R",
+      "name": "いのち♥",
+      "id": "inochi"
+    },
+    "14": {
+      "index": 14,
+      "binary": "01110",
+      "rarity": 3,
+      "rarity_str": "R",
+      "name": "Eの指示",
+      "id": "e-no-shiji"
+    },
+    "15": {
+      "index": 15,
+      "binary": "01111",
+      "rarity": 3,
+      "rarity_str": "R",
+      "name": "フクシシ",
+      "id": "fukushishi"
+    },
+    "16": {
+      "index": 16,
+      "binary": "10000",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "イノSiri",
+      "id": "inosiri"
+    },
+    "17": {
+      "index": 17,
+      "binary": "10001",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "逗子市",
+      "id": "zushishi"
+    },
+    "18": {
+      "index": 18,
+      "binary": "10010",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "猪子寿之",
+      "id": "inoko-toshiyuki"
+    },
+    "19": {
+      "index": 19,
+      "binary": "10011",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "ウシシシ",
+      "id": "ushishishi"
+    },
+    "20": {
+      "index": 20,
+      "binary": "10100",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "シシ16",
+      "id": "shishi-16"
+    },
+    "21": {
+      "index": 21,
+      "binary": "10101",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "四捨五入",
+      "id": "shishagonyu"
+    },
+    "22": {
+      "index": 22,
+      "binary": "10110",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "猪苗代湖",
+      "id": "inawashiroko"
+    },
+    "23": {
+      "index": 23,
+      "binary": "10111",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "シシシシ",
+      "id": "shishishishi"
+    },
+    "24": {
+      "index": 24,
+      "binary": "11000",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "イノシン",
+      "id": "inosine"
+    },
+    "25": {
+      "index": 25,
+      "binary": "11001",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "シシマイ",
+      "id": "shishimai"
+    },
+    "26": {
+      "index": 26,
+      "binary": "11010",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "イノ頭線",
+      "id": "inokashira-line"
+    },
+    "27": {
+      "index": 27,
+      "binary": "11011",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "ノシノシ",
+      "id": "noshinoshi"
+    },
+    "28": {
+      "index": 28,
+      "binary": "11100",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "いのしま",
+      "id": "inoshima"
+    },
+    "29": {
+      "index": 29,
+      "binary": "11101",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "イノシカ",
+      "id": "inoshika"
+    },
+    "30": {
+      "index": 30,
+      "binary": "11110",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "あのシシ",
+      "id": "anoshishi"
+    },
+    "31": {
+      "index": 31,
+      "binary": "11111",
+      "rarity": 4,
+      "rarity_str": "N",
+      "name": "ノノノノ",
+      "id": "nononono"
+    }
+  },
+  "rarity": {
+    "0": {
+      "rarity": 0,
+      "rarity_str": "INSS"
+    },
+    "1": {
+      "rarity": 1,
+      "rarity_str": "SSR"
+    },
+    "2": {
+      "rarity": 2,
+      "rarity_str": "SR"
+    },
+    "3": {
+      "rarity": 3,
+      "rarity_str": "R"
+    },
+    "4": {
+      "rarity": 4,
+      "rarity_str": "N"
+    }
+  }
+}

@@ -12,6 +12,11 @@ export default new Router({
       component: Home
     },
     {
+      path: "/achievement",
+      name: "achievement",
+      component: () => import("./views/achievement.vue")
+    },
+    {
       path: "/about",
       name: "about",
       // route level code-splitting
