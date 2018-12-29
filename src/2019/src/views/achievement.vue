@@ -2,14 +2,14 @@
 v-container(fluid, fill-height)
   v-layout(justify-center, align-center)
     v-flex(text-xs-center)
-      v-card(v-for="ioshishi, index in ioshishiArr", :key="ioshishi.index")
+      v-card.mb-2(v-for="ioshishi, index in ioshishiArr", :key="ioshishi.index", width="320")
         //- v-img(:src="imageSrc(index)")
         v-card-title(primary-title)
-          div
+          .card-content
             h3.title
               | {{ ioshishi.name }}
             .rarity
-              | {{ ioshishi.rarity_str }}
+              | {{ star(ioshishi.rarity) }}
             .description
               | {{ ioshishi.description }}
 </template>
@@ -26,6 +26,15 @@ export default {
   methods: {
     imageSrc(index) {
       return `img/${this.ioshishiArr[index].friendly_id}.png`;
+    },
+    star(rarity) {
+      return {
+        0: "★★★★★",
+        1: "★★★★",
+        2: "★★★",
+        3: "★★",
+        4: "★"
+      }[rarity];
     }
   }
 };
