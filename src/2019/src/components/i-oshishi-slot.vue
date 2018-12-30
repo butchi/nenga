@@ -27,7 +27,7 @@ div
         h3.title
           v-badge
             span(slot="badge")
-              | 2
+              | {{ countArr[iOshishi.index] }}
             span
               | {{ iOshishi.name }}
         p.grey--text.description(style="min-height: 3em;")
@@ -47,7 +47,8 @@ export default {
       iOshishiArr: Object.values(sheet),
       kuji: null,
       iOshishi: {},
-      isPlaying: false
+      isPlaying: false,
+      countArr: new Array(32).fill(0)
     };
   },
   computed: {
@@ -74,6 +75,8 @@ export default {
       this.isPlaying = false;
 
       this.iOshishi = this.iOshishiArr.filter(item => this.kuji < item.p_acc )[0];
+
+      this.countArr[this.iOshishi.index]++;
     },
     defaultIndex() {
       return _.random(30) + 1;
