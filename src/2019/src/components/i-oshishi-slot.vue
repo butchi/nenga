@@ -36,10 +36,13 @@ div
       v-btn(color="blue")
         | Share
 
-  .collection-index.text-xs-left
+  .collection-index.text-xs-left.mb-2
     v-card.collection-item.text-xs-center(v-for="iOshishi in iOshishiArr", :key="iOshishi.index", width="6.25%", :style="{ 'display': 'inline-block', 'background-color': countColor(countArr[iOshishi.index])}")
       span(style="font-size: 10px; padding-top: 100%;")
         | {{ iOshishi.no }}
+
+  .play-count
+    | 遊んだ回数: {{ playCount }}
 </template>
 
 <script>
@@ -53,7 +56,8 @@ export default {
       kuji: null,
       iOshishi: {},
       isPlaying: false,
-      countArr: new Array(32).fill(0)
+      countArr: new Array(32).fill(0),
+      playCount: 0
     };
   },
   computed: {
@@ -75,6 +79,8 @@ export default {
       this.isPlaying = true;
 
       this.kuji = _.random(this.pMax - 1);
+
+      this.playCount++;
     },
     stop() {
       this.isPlaying = false;
