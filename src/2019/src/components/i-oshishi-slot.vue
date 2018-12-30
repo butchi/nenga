@@ -12,7 +12,7 @@ div
     | 止める
 
 
-  v-card.sm12(v-if="iOshishi.index")
+  v-card.sm12
     v-img(src="//placehold.it/1200x630")
       v-container(fill-height, fluid)
         v-layout(fill-height, align-end, justify-space-between)
@@ -21,7 +21,7 @@ div
               | {{ star(iOshishi.rarity) }}
           v-flex(xs12, text-xs-right, flexbox)
             span.information
-              | No. {{ iOshishi.no }}
+              | No. {{ iOshishi.no || "?" }}
     v-card-title.text-xs-left(primary-title)
       .card-content
         h3.title
@@ -29,9 +29,9 @@ div
             span(v-if="countArr[iOshishi.index] > 1" slot="badge")
               | {{ countArr[iOshishi.index] }}
             span
-              | {{ iOshishi.name }}
+              | {{ iOshishi.name || "？？？？" }}
         p.grey--text.description(style="min-height: 3em;")
-          | {{ iOshishi.description }}
+          | {{ iOshishi.description || "スロットを回そう！" }}
     v-card-actions
       v-btn(color="blue")
         | Share
