@@ -454,7 +454,7 @@ document.querySelector('.btn-start').addEventListener('click', () => {
 
   console.log(kuji);
 
-  iOshishi = _.last(iOshishiArr.filter(item => item.p_acc < kuji ));
+  iOshishi = iOshishiArr.filter(item => kuji < item.p_acc )[0];
 });
 
 document.querySelector('.btn-stop').addEventListener('click', () => {
