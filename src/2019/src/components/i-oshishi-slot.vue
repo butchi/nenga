@@ -94,7 +94,7 @@ export default {
     },
     countColor(n) {
       const val = 60 * (1 - Math.pow(0.5, n - 1));
-      return n === 0 ? 'white' : `hsl(${val}, 100%, 50%)`;
+      return n === 0 ? "white" : `hsl(${val}, 100%, 50%)`;
     }
   }
 };
