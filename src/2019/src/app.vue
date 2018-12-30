@@ -19,7 +19,7 @@ v-app
   v-toolbar(color='primary', dark, fixed, app)
     v-toolbar-side-icon(@click.stop="drawer = !drawer")
     v-toolbar-title
-      | イ○シシスロット
+      | イOシシスロット
   v-content
     router-view
   v-footer(color='primary', app='')
