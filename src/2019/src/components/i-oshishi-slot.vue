@@ -38,7 +38,9 @@ div
 
   .collection-index.text-xs-left.mb-2
     v-card.collection-item.text-xs-center(v-for="iOshishi in iOshishiArr", :key="iOshishi.index", width="6.25%", :style="{ 'display': 'inline-block', 'background-color': countColor(countArr[iOshishi.index])}")
-      span(style="font-size: 10px; padding-top: 100%;")
+      .box(style="padding-top: 100%;")
+      .center-box(style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 20px; height: 20px; font-size: 10px; line-height: 20px;")
+        .number(style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;")
         | {{ iOshishi.no }}
 
   .play-count
