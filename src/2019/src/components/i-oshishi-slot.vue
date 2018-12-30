@@ -26,7 +26,7 @@ div
       .card-content
         h3.title
           v-badge
-            span(slot="badge")
+            span(v-if="countArr[iOshishi.index] > 1" slot="badge")
               | {{ countArr[iOshishi.index] }}
             span
               | {{ iOshishi.name }}
