@@ -12,7 +12,7 @@ div
     | 止める
 
 
-  v-card.sm12
+  v-card.sm12.mb-3
     v-img(src="//placehold.it/1200x630")
       v-container(fill-height, fluid)
         v-layout(fill-height, align-end, justify-space-between)
@@ -35,6 +35,11 @@ div
     v-card-actions
       v-btn(color="blue")
         | Share
+
+  .collection-index.text-xs-left
+    v-card.collection-item.text-xs-center(v-for="iOshishi in iOshishiArr", :key="iOshishi.index", width="6.25%", :style="{ 'display': 'inline-block', 'background-color': countColor(countArr[iOshishi.index])}")
+      span(style="font-size: 10px; padding-top: 100%;")
+        | {{ iOshishi.no }}
 </template>
 
 <script>
@@ -80,6 +85,10 @@ export default {
     },
     defaultIndex() {
       return _.random(30) + 1;
+    },
+    countColor(n) {
+      const val = 60 * (1 - Math.pow(0.5, n - 1));
+      return n === 0 ? 'white' : `hsl(${val}, 100%, 50%)`;
     }
   }
 };
