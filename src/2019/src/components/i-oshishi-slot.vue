@@ -1,0 +1,117 @@
+<template lang="pug">
+div
+  v-card.slot(width="259", height="64", :data-is-playing="isPlaying", style="margin: 0 auto;")
+    span.reel(:style="{ 'background-position': isPlaying ? '' : `0px ${-64 * (iOshishi.index || defaultIndex(0))}px` }")
+    span.reel(:style="{ 'background-position': isPlaying ? '' : `-64px ${-64 * (iOshishi.index || defaultIndex(1))}px` }")
+    span.reel(:style="{ 'background-position': isPlaying ? '' : `-128px ${-64 * (iOshishi.index || defaultIndex(2))}px` }")
+    span.reel(:style="{ 'background-position': isPlaying ? '' : `-192px ${-64 * (iOshishi.index || defaultIndex(3))}px` }")
+
+  v-btn(v-if="!isPlaying", color="primary", @click="start")
+    | 回す
+  v-btn(v-if="isPlaying", color="primary", @click="stop")
+    | 止める
+
+
+  v-card.sm12(v-if="iOshishi.index")
+    v-img(src="//placehold.it/1200x630")
+      v-container(fill-height, fluid)
+        v-layout(fill-height, align-end, justify-space-between)
+          v-flex(xs12, text-xs-left, flexbox)
+            span.rarity
+              | {{ star(iOshishi.rarity) }}
+          v-flex(xs12, text-xs-right, flexbox)
+            span.information
+              | No. {{ iOshishi.no }}
+    v-card-title.text-xs-left(primary-title)
+      .card-content
+        h3.title
+          v-badge
+            span(slot="badge")
+              | 2
+            span
+              | {{ iOshishi.name }}
+        p.grey--text.description(style="min-height: 3em;")
+          | {{ iOshishi.description }}
+    v-card-actions
+      v-btn(color="blue")
+        | Share
+</template>
+
+<script>
+import _ from "lodash";
+import { sheet } from "../data/ioshishi-slot.json";
+
+export default {
+  data() {
+    return {
+      iOshishiArr: Object.values(sheet),
+      kuji: null,
+      iOshishi: {},
+      isPlaying: false
+    };
+  },
+  computed: {
+    pMax() {
+      return _.last(this.iOshishiArr).p_acc;
+    }
+  },
+  methods: {
+    star(rarity) {
+      return {
+        0: "★★★★★",
+        1: "★★★★",
+        2: "★★★",
+        3: "★★",
+        4: "★"
+      }[rarity];
+    },
+    start() {
+      this.isPlaying = true;
+
+      this.kuji = _.random(this.pMax - 1);
+    },
+    stop() {
+      this.isPlaying = false;
+
+      this.iOshishi = this.iOshishiArr.filter(item => this.kuji < item.p_acc )[0];
+    },
+    defaultIndex() {
+      return _.random(30) + 1;
+    }
+  }
+};
+</script>
+
+<style lang="sass">
+@for $i from 1 through 4
+  @keyframes rotate-reel-#{$i}
+    0%
+      background-position: ($i * 64px) 0px
+
+    100%
+      background-position: ($i * 64px) 2048px
+
+.reel
+  display: inline-block
+
+  position: relative
+
+  width: 64px
+  height: 64px
+
+  background-image: url("../assets/reel.png")
+  background-repeat: repeat
+
+  border-left: 1px solid #ccc
+
+  &:first-child
+    border: none
+
+.slot[data-is-playing="true"] .reel
+  background-image: url("../assets/reel-blur.png")
+
+@for $i from 1 through 4
+  .slot[data-is-playing="true"] .reel:nth-of-type(#{$i})
+    animation: rotate-reel-#{$i} 1s linear 0s infinite
+    animation-delay: -0.1s * $i
+</style>

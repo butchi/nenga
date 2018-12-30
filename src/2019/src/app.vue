@@ -38,3 +38,11 @@ export default {
   }
 };
 </script>
+
+<style lang="sass">
+html
+  font-size: 100px
+
+body
+  font-size: 0.1rem
+</style>
