@@ -12,7 +12,7 @@ div
     | 止める
 
 
-  v-card.sm12.mb-3
+  v-card.sm12.mb-3(max-width="375", style="margin: 0 auto;")
     v-img(src="//placehold.it/1200x630")
       v-container(fill-height, fluid)
         v-layout(fill-height, align-end, justify-space-between)
