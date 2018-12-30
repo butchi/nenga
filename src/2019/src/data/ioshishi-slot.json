@@ -10,9 +10,9 @@
       "name": "イノシシ",
       "friendly_id": "inoshishi",
       "description": "明けましておめでとうございます！",
-      "probability": 0.012345679012345678,
-      "p_int": 8,
-      "p_acc": 8
+      "probability": 0.00390625,
+      "p_int": 2,
+      "p_acc": 2
     },
     "2": {
       "index": 2,
@@ -24,9 +24,9 @@
       "name": "シシ座流星群",
       "friendly_id": "leonids",
       "description": "☆彡",
-      "probability": 0.012345679012345678,
-      "p_int": 8,
-      "p_acc": 16
+      "probability": 0.005859375,
+      "p_int": 3,
+      "p_acc": 5
     },
     "3": {
       "index": 3,
@@ -38,9 +38,9 @@
       "name": "のし",
       "friendly_id": "noshi",
       "description": "めでたい。",
-      "probability": 0.012345679012345678,
-      "p_int": 8,
-      "p_acc": 24
+      "probability": 0.005859375,
+      "p_int": 3,
+      "p_acc": 8
     },
     "4": {
       "index": 4,
@@ -52,9 +52,9 @@
       "name": "眠れるシシ",
       "friendly_id": "sleeping-shishi",
       "description": "説明4",
-      "probability": 0.018518518518518517,
-      "p_int": 12,
-      "p_acc": 36
+      "probability": 0.01171875,
+      "p_int": 6,
+      "p_acc": 14
     },
     "5": {
       "index": 5,
@@ -66,9 +66,9 @@
       "name": "イノ紳士",
       "friendly_id": "inoshinshi",
       "description": "説明5",
-      "probability": 0.018518518518518517,
-      "p_int": 12,
-      "p_acc": 48
+      "probability": 0.01171875,
+      "p_int": 6,
+      "p_acc": 20
     },
     "6": {
       "index": 6,
@@ -80,9 +80,9 @@
       "name": "猪突猛進",
       "friendly_id": "chototsumoushin",
       "description": "説明6",
-      "probability": 0.018518518518518517,
-      "p_int": 12,
-      "p_acc": 60
+      "probability": 0.01171875,
+      "p_int": 6,
+      "p_acc": 26
     },
     "7": {
       "index": 7,
@@ -94,9 +94,9 @@
       "name": "ウリボウ",
       "friendly_id": "uribo",
       "description": "説明7",
-      "probability": 0.018518518518518517,
-      "p_int": 12,
-      "p_acc": 72
+      "probability": 0.01171875,
+      "p_int": 6,
+      "p_acc": 32
     },
     "8": {
       "index": 8,
@@ -108,9 +108,9 @@
       "name": "イおシシ",
       "friendly_id": "ioshishi",
       "description": "説明8",
-      "probability": 0.027777777777777776,
-      "p_int": 18,
-      "p_acc": 90
+      "probability": 0.0234375,
+      "p_int": 12,
+      "p_acc": 44
     },
     "9": {
       "index": 9,
@@ -122,9 +122,9 @@
       "name": "イノシュシュ",
       "friendly_id": "inochouchou",
       "description": "説明9",
-      "probability": 0.027777777777777776,
-      "p_int": 18,
-      "p_acc": 108
+      "probability": 0.0234375,
+      "p_int": 12,
+      "p_acc": 56
     },
     "10": {
       "index": 10,
@@ -136,9 +136,9 @@
       "name": "井上雄彦",
       "friendly_id": "inoue-takehiko",
       "description": "説明10",
-      "probability": 0.027777777777777776,
-      "p_int": 18,
-      "p_acc": 126
+      "probability": 0.0234375,
+      "p_int": 12,
+      "p_acc": 68
     },
     "11": {
       "index": 11,
@@ -150,9 +150,9 @@
       "name": "ミドシシ",
       "friendly_id": "midoshishi",
       "description": "説明11",
-      "probability": 0.027777777777777776,
-      "p_int": 18,
-      "p_acc": 144
+      "probability": 0.0234375,
+      "p_int": 12,
+      "p_acc": 80
     },
     "12": {
       "index": 12,
@@ -164,9 +164,9 @@
       "name": "シシがみ",
       "friendly_id": "shishigami",
       "description": "説明12",
-      "probability": 0.027777777777777776,
-      "p_int": 18,
-      "p_acc": 162
+      "probability": 0.0234375,
+      "p_int": 12,
+      "p_acc": 92
     },
     "13": {
       "index": 13,
@@ -178,9 +178,9 @@
       "name": "いのち♥",
       "friendly_id": "inochi",
       "description": "説明13",
-      "probability": 0.027777777777777776,
-      "p_int": 18,
-      "p_acc": 180
+      "probability": 0.0234375,
+      "p_int": 12,
+      "p_acc": 104
     },
     "14": {
       "index": 14,
@@ -192,9 +192,9 @@
       "name": "Eの指示",
       "friendly_id": "e-no-shiji",
       "description": "説明14",
-      "probability": 0.027777777777777776,
-      "p_int": 18,
-      "p_acc": 198
+      "probability": 0.0234375,
+      "p_int": 12,
+      "p_acc": 116
     },
     "15": {
       "index": 15,
@@ -206,9 +206,9 @@
       "name": "フクシシ",
       "friendly_id": "fukushishi",
       "description": "説明15",
-      "probability": 0.027777777777777776,
-      "p_int": 18,
-      "p_acc": 216
+      "probability": 0.0234375,
+      "p_int": 12,
+      "p_acc": 128
     },
     "16": {
       "index": 16,
@@ -220,9 +220,9 @@
       "name": "イノSiri",
       "friendly_id": "inosiri",
       "description": "説明16",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 243
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 152
     },
     "17": {
       "index": 17,
@@ -234,9 +234,9 @@
       "name": "逗子市",
       "friendly_id": "zushishi",
       "description": "説明17",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 270
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 176
     },
     "18": {
       "index": 18,
@@ -248,9 +248,9 @@
       "name": "猪子寿之",
       "friendly_id": "inoko-toshiyuki",
       "description": "説明18",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 297
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 200
     },
     "19": {
       "index": 19,
@@ -262,9 +262,9 @@
       "name": "ウシシシ",
       "friendly_id": "ushishishi",
       "description": "説明19",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 324
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 224
     },
     "20": {
       "index": 20,
@@ -276,9 +276,9 @@
       "name": "シシ16",
       "friendly_id": "shishi-16",
       "description": "説明20",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 351
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 248
     },
     "21": {
       "index": 21,
@@ -290,9 +290,9 @@
       "name": "四捨五入",
       "friendly_id": "shishagonyu",
       "description": "説明21",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 378
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 272
     },
     "22": {
       "index": 22,
@@ -304,9 +304,9 @@
       "name": "猪苗代湖",
       "friendly_id": "inawashiroko",
       "description": "説明22",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 405
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 296
     },
     "23": {
       "index": 23,
@@ -318,9 +318,9 @@
       "name": "シシシシ",
       "friendly_id": "shishishishi",
       "description": "説明23",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 432
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 320
     },
     "24": {
       "index": 24,
@@ -332,9 +332,9 @@
       "name": "イノシン",
       "friendly_id": "inosine",
       "description": "説明24",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 459
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 344
     },
     "25": {
       "index": 25,
@@ -346,9 +346,9 @@
       "name": "シシマイ",
       "friendly_id": "shishimai",
       "description": "説明25",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 486
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 368
     },
     "26": {
       "index": 26,
@@ -360,9 +360,9 @@
       "name": "イノ頭線",
       "friendly_id": "inokashira-line",
       "description": "説明26",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 513
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 392
     },
     "27": {
       "index": 27,
@@ -374,9 +374,9 @@
       "name": "ノシノシ",
       "friendly_id": "noshinoshi",
       "description": "説明27",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 540
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 416
     },
     "28": {
       "index": 28,
@@ -388,9 +388,9 @@
       "name": "いのしま",
       "friendly_id": "inoshima",
       "description": "説明28",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 567
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 440
     },
     "29": {
       "index": 29,
@@ -402,9 +402,9 @@
       "name": "イノシカ",
       "friendly_id": "inoshika",
       "description": "説明29",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 594
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 464
     },
     "30": {
       "index": 30,
@@ -416,9 +416,9 @@
       "name": "あのシシ",
       "friendly_id": "anoshishi",
       "description": "説明30",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 621
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 488
     },
     "31": {
       "index": 31,
@@ -430,9 +430,9 @@
       "name": "ノノノノ",
       "friendly_id": "nononono",
       "description": "説明31",
-      "probability": 0.041666666666666664,
-      "p_int": 27,
-      "p_acc": 648
+      "probability": 0.046875,
+      "p_int": 24,
+      "p_acc": 512
     }
   },
   "rarity": {
