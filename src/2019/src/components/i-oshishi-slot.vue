@@ -35,21 +35,22 @@ div
         p.grey--text.description(style="min-height: 3em;")
           | {{ iOshishi.description || "スロットを回そう！" }}
     v-card-actions
-      v-btn(color="#55acee", small, dark)
-        v-icon.mr-2(size="16")
-          | fab fa-twitter
-        span.caption
-          | ツイート
-      v-btn(color="#3B5998", small, dark)
-        v-icon.mr-2(size="20")
-          | fab fa-facebook
-        span.caption
-          | シェア
-      v-btn(color="#00b900", small, dark)
-        v-icon.mr-2(size="20")
-          | fab fa-line
-        span.caption
-          | 送る
+      .share(v-if="iOshishi.friendly_id")
+        v-btn(color="#55acee", small, dark)
+          v-icon.mr-2(size="16")
+            | fab fa-twitter
+          span.caption
+            | ツイート
+        v-btn(color="#3B5998", small, dark)
+          v-icon.mr-2(size="20")
+            | fab fa-facebook
+          span.caption
+            | シェア
+        v-btn(color="#00b900", small, dark)
+          v-icon.mr-2(size="20")
+            | fab fa-line
+          span.caption
+            | 送る
 
   .collection-index.text-xs-left.mb-2(style="margin: 0 auto; max-width: 375px;")
     v-card.collection-item.text-xs-center(v-for="iOshishi in sortedIOshishiArr", :key="iOshishi.no", width="6.25%", :style="{ 'display': 'inline-block', 'vertical-align': 'top', 'background-color': countColor(countArr[iOshishi.index])}")
