@@ -18,7 +18,7 @@ div
         v-layout(fill-height, align-end, justify-space-between)
           v-flex(xs12, text-xs-left, flexbox)
             .rarity
-              v-icon(v-if="iOshishi.star", v-for="val, index in new Array(iOshishi.star).fill(1)", :key="index")
+              v-icon(v-if="iOshishi.star", v-for="i in iOshishi.star", :key="i")
                 | star
           v-flex(xs12, text-xs-right, flexbox)
             span.information
@@ -75,7 +75,7 @@ div
           v-layout(fill-height, align-end, justify-space-between)
             v-flex(xs12, text-xs-left, flexbox)
               .rarity
-                v-icon(v-if="iOshishi.star", v-for="val, index in new Array(iOshishi.star).fill(1)", :key="index")
+                v-icon(v-if="iOshishi.star", v-for="i in iOshishi.star", :key="i")
                   | star
             v-flex(xs12, text-xs-right, flexbox)
               span.information
