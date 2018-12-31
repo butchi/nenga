@@ -52,12 +52,12 @@ div
           span.caption
             | 送る
 
-  .collection-index.text-xs-left.mb-2(style="margin: 0 auto; max-width: 375px;")
-    v-card.collection-item.text-xs-center(v-for="iOshishi in sortedIOshishiArr", :key="iOshishi.no", width="6.25%", :style="{ 'display': 'inline-block', 'vertical-align': 'top', 'background-color': countColor(countArr[iOshishi.index])}")
+  v-layout.collection-index.text-xs-left.mb-2(row wrap, style="margin: 0 auto; max-width: 375px;")
+    v-card.collection-item.text-xs-center(v-for="iOshishi in sortedIOshishiArr", :key="iOshishi.no", width="6.25%", :style="{ 'background-color': countColor(countArr[iOshishi.index])}")
       v-responsive.number(aspect-ratio="1", fill-height)
         .item.text-xs-center(style="margin: 0 auto; width: 18px; height: 18px; font-size: 10px; line-height: 18px;")
           | {{ iOshishi.no }}
-    v-card.collection-item.text-xs-center(width="6.25%", :style="{ 'display': 'inline-block', 'vertical-align': 'top', 'background-color': countColor(completeCount)}")
+    v-card.collection-item.text-xs-center(width="6.25%", :style="{ 'background-color': countColor(completeCount)}")
       v-responsive(aspect-ratio="1")
         .item.text-xs-center(style="margin: 0 auto; width: 18px; height: 18px; font-size: 10px; line-height: 18px;")
           v-icon(size="2")
