@@ -38,21 +38,48 @@ div
       v-btn(color="blue")
         | Share
 
-  .collection-index.text-xs-left.mb-2(style="margin: 0 auto; max-width: 375px")
+  .collection-index.text-xs-left.mb-2(style="margin: 0 auto; max-width: 375px; vertical-align: top;")
     v-card.collection-item.text-xs-center(v-for="iOshishi in sortedIOshishiArr", :key="iOshishi.no", width="6.25%", :style="{ 'display': 'inline-block', 'background-color': countColor(countArr[iOshishi.index])}")
       .box(style="padding-top: 100%;")
-      .center-box(style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 20px; height: 20px; font-size: 10px; line-height: 20px;")
+      .center-box(style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 18px; height: 18px; font-size: 10px; line-height: 18px;")
         .number(style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;")
         | {{ iOshishi.no }}
     v-card.collection-item.text-xs-center(width="6.25%", :style="{ 'display': 'inline-block', 'background-color': countColor(completeCount)}")
       .box(style="padding-top: 100%;")
-      .center-box(style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 20px; height: 20px; font-size: 10px; line-height: 20px;")
+      .center-box(style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 18px; height: 18px; font-size: 10px; line-height: 18px;")
         .number(style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;")
         v-icon(size="2")
           | fas fa-crown
 
   .play-count
     | 遊んだ回数: {{ playCount }}
+
+  v-dialog(v-model="dialog", max-width="320")
+    v-card.sm12(style="margin: 0 auto;")
+      v-img(src="//placehold.it/1200x630")
+        v-container(fill-height, fluid)
+          v-layout(fill-height, align-end, justify-space-between)
+            v-flex(xs12, text-xs-left, flexbox)
+              .rarity
+                v-icon(v-if="iOshishi.star", v-for="val, index in new Array(iOshishi.star).fill(1)", :key="index")
+                  | star
+            v-flex(xs12, text-xs-right, flexbox)
+              span.information
+                | No. {{ iOshishi.no || "?" }}
+                | [{{ iOshishi.rarity_str || "?" }}]
+      v-card-title.text-xs-left(primary-title)
+        .card-content
+          h3.title
+            v-badge
+              span(v-if="countArr[iOshishi.index] > 1" slot="badge")
+                | {{ countArr[iOshishi.index] }}
+              span
+                | {{ iOshishi.name || "？？？？" }}
+          p.grey--text.description(style="min-height: 3em;")
+            | {{ iOshishi.description || "スロットを回そう！" }}
+      v-card-actions
+        v-btn(color="primary", @click="dialog = false")
+          | 閉じる
 </template>
 
 <script>
@@ -67,7 +94,8 @@ export default {
       iOshishi: {},
       isPlaying: false,
       countArr: new Array(32).fill(0),
-      playCount: 0
+      playCount: 0,
+      dialog: false
     };
   },
   computed: {
@@ -104,6 +132,10 @@ export default {
       this.iOshishi = this.iOshishiArr.filter(item => this.kuji < item.p_acc )[0];
 
       this.countArr.splice(this.iOshishi.index, 1, this.countArr[this.iOshishi.index] + 1);
+
+      if (this.countArr[this.iOshishi.index] < 2) {
+        this.dialog = true;
+      }
     },
     defaultIndex() {
       return _.random(30) + 1;
@@ -111,6 +143,9 @@ export default {
     countColor(n) {
       const val = 60 * (1 - Math.pow(0.5, n - 1));
       return n === 0 ? "white" : `hsl(${val}, 100%, 50%)`;
+    },
+    test() {
+      console.log(5);
     }
   }
 };
