@@ -36,7 +36,7 @@ div
       v-btn(color="blue")
         | Share
 
-  .collection-index.text-xs-left.mb-2
+  .collection-index.text-xs-left.mb-2(style="margin: 0 auto; max-width: 375px")
     v-card.collection-item.text-xs-center(v-for="iOshishi in iOshishiArr", :key="iOshishi.index", width="6.25%", :style="{ 'display': 'inline-block', 'background-color': countColor(countArr[iOshishi.index])}")
       .box(style="padding-top: 100%;")
       .center-box(style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 20px; height: 20px; font-size: 10px; line-height: 20px;")
