@@ -26,7 +26,7 @@ div
               | [{{ iOshishi.rarity_str || "?" }}]
     v-card-title.text-xs-left(primary-title)
       .card-content
-        h3.title
+        h3.title.mb-3
           v-badge
             span(v-if="countArr[iOshishi.index] > 1" slot="badge")
               | {{ countArr[iOshishi.index] }}
@@ -81,7 +81,7 @@ div
                 | [{{ iOshishi.rarity_str || "?" }}]
       v-card-title.text-xs-left(primary-title)
         .card-content
-          h3.title
+          h3.title.mb-3
             v-badge
               span(v-if="countArr[iOshishi.index] > 1" slot="badge")
                 | {{ countArr[iOshishi.index] }}
