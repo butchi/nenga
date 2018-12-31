@@ -18,7 +18,7 @@ div
         v-layout(fill-height, align-end, justify-space-between)
           v-flex(xs12, text-xs-left, flexbox)
             .rarity
-              v-icon(v-if="iOshishi.star", v-for="i in new Array(iOshishi.star).fill(1)")
+              v-icon(v-if="iOshishi.star", v-for="i in new Array(iOshishi.star).fill(1)", :key="i")
                 | star
           v-flex(xs12, text-xs-right, flexbox)
             span.information
@@ -39,7 +39,7 @@ div
         | Share
 
   .collection-index.text-xs-left.mb-2(style="margin: 0 auto; max-width: 375px")
-    v-card.collection-item.text-xs-center(v-for="iOshishi in iOshishiArr", :key="iOshishi.index", width="6.25%", :style="{ 'display': 'inline-block', 'background-color': countColor(countArr[iOshishi.index])}")
+    v-card.collection-item.text-xs-center(v-for="iOshishi in sortedIOshishiArr", :key="iOshishi.index", width="6.25%", :style="{ 'display': 'inline-block', 'background-color': countColor(countArr[iOshishi.index])}")
       .box(style="padding-top: 100%;")
       .center-box(style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 20px; height: 20px; font-size: 10px; line-height: 20px;")
         .number(style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;")
@@ -67,6 +67,9 @@ export default {
   computed: {
     pMax() {
       return _.last(this.iOshishiArr).p_acc;
+    },
+    sortedIOshishiArr() {
+      return _.sortBy(this.iOshishiArr, "no");
     }
   },
   methods: {
