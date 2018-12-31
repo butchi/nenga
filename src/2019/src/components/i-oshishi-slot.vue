@@ -90,9 +90,11 @@ div
           p.grey--text.description(style="min-height: 3em;")
             | {{ iOshishi.description || "スロットを回そう！" }}
       v-card-actions
-      v-btn(fab, small, fixed, right, top, color="primary", @click="dialog = false")
-        v-icon
-          | close
+        v-layout(justify-center)
+          v-btn(flat, small, color="primary", @click="dialog = false")
+            v-icon
+              | close
+            | 閉じる
 </template>
 
 <script>
