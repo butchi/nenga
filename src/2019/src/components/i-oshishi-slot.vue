@@ -17,11 +17,13 @@ div
       v-container(fill-height, fluid)
         v-layout(fill-height, align-end, justify-space-between)
           v-flex(xs12, text-xs-left, flexbox)
-            span.rarity
-              | {{ star(iOshishi.rarity) }}
+            .rarity
+              v-icon(v-if="iOshishi.star", v-for="i in new Array(iOshishi.star).fill(1)")
+                | star
           v-flex(xs12, text-xs-right, flexbox)
             span.information
               | No. {{ iOshishi.no || "?" }}
+              | [{{ iOshishi.rarity_str || "?" }}]
     v-card-title.text-xs-left(primary-title)
       .card-content
         h3.title
