@@ -54,16 +54,14 @@ div
 
   .collection-index.text-xs-left.mb-2(style="margin: 0 auto; max-width: 375px;")
     v-card.collection-item.text-xs-center(v-for="iOshishi in sortedIOshishiArr", :key="iOshishi.no", width="6.25%", :style="{ 'display': 'inline-block', 'vertical-align': 'top', 'background-color': countColor(countArr[iOshishi.index])}")
-      .box(style="padding-top: 100%;")
-      .center-box(style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 18px; height: 18px; font-size: 10px; line-height: 18px;")
-        .number(style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;")
-        | {{ iOshishi.no }}
+      v-responsive.number(aspect-ratio="1", fill-height)
+        .item.text-xs-center(style="margin: 0 auto; width: 18px; height: 18px; font-size: 10px; line-height: 18px;")
+          | {{ iOshishi.no }}
     v-card.collection-item.text-xs-center(width="6.25%", :style="{ 'display': 'inline-block', 'vertical-align': 'top', 'background-color': countColor(completeCount)}")
-      .box(style="padding-top: 100%;")
-      .center-box(style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 18px; height: 18px; font-size: 10px; line-height: 18px;")
-        .number(style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;")
-        v-icon(size="2")
-          | fas fa-crown
+      v-responsive(aspect-ratio="1")
+        .item.text-xs-center(style="margin: 0 auto; width: 18px; height: 18px; font-size: 10px; line-height: 18px;")
+          v-icon(size="2")
+            | fas fa-crown
 
   .play-count
     | 遊んだ回数: {{ playCount }}
@@ -92,8 +90,9 @@ div
           p.grey--text.description(style="min-height: 3em;")
             | {{ iOshishi.description || "スロットを回そう！" }}
       v-card-actions
-        v-btn(color="primary", @click="dialog = false")
-          | 閉じる
+      v-btn(fab, small, fixed, right, top, color="primary", @click="dialog = false")
+        v-icon
+          | close
 </template>
 
 <script>
