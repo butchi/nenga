@@ -6,7 +6,7 @@ import "vuetify/src/stylus/app.styl";
 import colors from "vuetify/es5/util/colors";
 
 Vue.use(Vuetify, {
-  iconfont: "md",
+  iconfont: "fa",
   theme: {
     primary: colors.deepOrange.darken4, // #BF360C
     secondary: colors.deepOrange.lighten4, // #FFCCBC

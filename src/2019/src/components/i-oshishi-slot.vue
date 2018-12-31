@@ -39,11 +39,17 @@ div
         | Share
 
   .collection-index.text-xs-left.mb-2(style="margin: 0 auto; max-width: 375px")
-    v-card.collection-item.text-xs-center(v-for="iOshishi in sortedIOshishiArr", :key="iOshishi.index", width="6.25%", :style="{ 'display': 'inline-block', 'background-color': countColor(countArr[iOshishi.index])}")
+    v-card.collection-item.text-xs-center(v-for="iOshishi in sortedIOshishiArr", :key="iOshishi.no", width="6.25%", :style="{ 'display': 'inline-block', 'background-color': countColor(countArr[iOshishi.index])}")
       .box(style="padding-top: 100%;")
       .center-box(style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 20px; height: 20px; font-size: 10px; line-height: 20px;")
         .number(style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;")
         | {{ iOshishi.no }}
+    v-card.collection-item.text-xs-center(width="6.25%", :style="{ 'display': 'inline-block', 'background-color': countColor(completeCount)}")
+      .box(style="padding-top: 100%;")
+      .center-box(style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 20px; height: 20px; font-size: 10px; line-height: 20px;")
+        .number(style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;")
+        v-icon(size="2")
+          | fas fa-crown
 
   .play-count
     | 遊んだ回数: {{ playCount }}
@@ -70,6 +76,9 @@ export default {
     },
     sortedIOshishiArr() {
       return _.sortBy(this.iOshishiArr, "no");
+    },
+    completeCount() {
+      return _.min(_.drop(this.countArr));
     }
   },
   methods: {
@@ -94,7 +103,7 @@ export default {
 
       this.iOshishi = this.iOshishiArr.filter(item => this.kuji < item.p_acc )[0];
 
-      this.countArr[this.iOshishi.index]++;
+      this.countArr.splice(this.iOshishi.index, 1, this.countArr[this.iOshishi.index] + 1);
     },
     defaultIndex() {
       return _.random(30) + 1;
