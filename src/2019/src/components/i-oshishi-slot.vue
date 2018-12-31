@@ -47,7 +47,7 @@ div
           span.caption
             | シェア
         v-btn(color="#00b900", small, dark)
-          v-icon.mr-2(size="20")
+          v-icon.mr-2(size="22")
             | fab fa-line
           span.caption
             | 送る
