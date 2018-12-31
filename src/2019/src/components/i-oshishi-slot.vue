@@ -91,7 +91,7 @@ div
             | {{ iOshishi.description || "スロットを回そう！" }}
       v-card-actions
         v-layout(justify-center)
-          v-btn(flat, small, color="primary", @click="dialog = false")
+          v-btn(flat, small, @click="dialog = false")
             v-icon
               | close
             | 閉じる
