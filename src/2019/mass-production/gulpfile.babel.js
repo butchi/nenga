@@ -7,6 +7,7 @@ import massProduction from 'gulp-mass-production';
 import readConfig from 'read-config';
 import path from "path";
 
+const DIST = '../dist/share';
 
 const { sheet } = readConfig('../src/data/ioshishi-slot.json');
 const constants = readConfig('../src/assets/constants.json');
@@ -30,7 +31,7 @@ gulp.task('html', () => {
     .pipe(pug({
       pretty: true,
     }))
-    .pipe(gulp.dest('share'));
+    .pipe(gulp.dest(DIST));
 });
 
 gulp.task('build', gulp.series('html'));
