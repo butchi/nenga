@@ -42,6 +42,9 @@ export default {
   components: {
     "i-oshishi-card": iOshishiCard
   },
+  mounted() {
+    this.start();
+  },
   data() {
     return {
       iOshishiArr: Object.values(sheet),
