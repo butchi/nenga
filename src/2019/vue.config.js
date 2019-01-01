@@ -9,6 +9,7 @@ const TEMPLATE_PARAMS = {
 };
 
 module.exports = {
+  baseUrl: "./",
   css: {
     loaderOptions: {
       sass: {
