@@ -20,7 +20,7 @@ v-card.sm12(style="margin: 0 auto;")
           span
             | {{ iOshishi.name || "？？？？" }}
       p.grey--text.description(style="min-height: 3em;")
-        | {{ iOshishi.description || "スロットを回そう！" }}
+        | {{ iOshishi.description || "ここに説明が入ります" }}
   v-card-actions.share(v-if="iOshishi.friendly_id")
     v-layout(row, justify-center)
       v-btn(color="#55acee", small, dark)
