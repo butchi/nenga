@@ -1,0 +1,36 @@
+{
+  "name": "i-oshishi-slot-mass-production",
+  "version": "1.0.0",
+  "description": "iOshishi slot mass production.",
+  "main": "gulpfile.babel.js",
+  "engines": {
+    "node": ">=6.9.1"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "keywords": [
+    "starterkit"
+  ],
+  "author": "IWABUCHI Yuki",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.1.18",
+    "gulp": "gulpjs/gulp#v4.0.0",
+    "gulp-babel": "^6.1.0",
+    "gulp-mass-production": "^2.1.0",
+    "gulp-pug": "^3.0.2",
+    "read-config": "^2.0.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  }
+}
