@@ -25,7 +25,7 @@ v-card.sm12(style="margin: 0 auto;")
       | 未開放
     p.grey--text.description(v-else, style="min-height: 3em;")
       | {{ iOshishi.description || "ここに説明が入ります" }}
-  v-card-actions.share(v-if="!isHidden && iOshishi.friendly_id")
+  //- v-card-actions.share(v-if="!isHidden && iOshishi.friendly_id")
     v-layout(row, justify-center)
       v-btn(color="#55acee", small, dark)
         v-icon.mr-2(size="16")
