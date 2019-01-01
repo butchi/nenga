@@ -1,9 +1,9 @@
 <template lang="pug">
-v-card.sm12(style="margin: 0 auto;")
+v-card.sm12(max-width="400", style="margin: 0 auto;")
   v-card-title.text-xs-left(primary-title)
     h3.title.mb-3.red--text
       | あけましておめでとうございます。
-  v-card-text
+  v-card-text.text-xs-left
     .description.mb-3
       p.mb-2
         | 　昨年は皆様に支えられ、恵まれた1年を過ごすことができました。
