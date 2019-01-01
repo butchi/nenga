@@ -5,14 +5,11 @@ import gulp from 'gulp';
 import pug from 'gulp-pug';
 import massProduction from 'gulp-mass-production';
 import readConfig from 'read-config';
-import path from "path";
 
 const DIST = '../dist/share';
 
 const { sheet } = readConfig('../src/data/ioshishi-slot.json');
 const constants = readConfig('../src/assets/constants.json');
-
-constants.BASE_URL = path.join(constants.SITE_ORIGIN, constants.BASE_PATH)
 
 const fileObj = {};
 
