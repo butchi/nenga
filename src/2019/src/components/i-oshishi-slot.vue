@@ -14,7 +14,7 @@ div
 
   i-oshishi-card.mb-3(max-width="375", :iOshishi="iOshishi", :countArr="countArr")
 
-  v-layout.collection-index.text-xs-left.mb-2(row wrap, style="margin: 0 auto; max-width: 375px;")
+  v-layout.collection-index.text-xs-left.mb-2(row wrap, style="margin: 0 auto; max-width: 400px;")
     v-card.collection-item.text-xs-center(v-for="iOshishi in sortedIOshishiArr", :key="iOshishi.no", width="6.25%", :style="{ 'background-color': countColor(countArr[iOshishi.index])}")
       v-responsive.number(aspect-ratio="1", fill-height)
         .item.text-xs-center(style="margin: 0 auto; width: 18px; height: 18px; font-size: 10px; line-height: 18px;")
