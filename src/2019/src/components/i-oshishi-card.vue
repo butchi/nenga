@@ -1,6 +1,6 @@
 <template lang="pug">
 v-card.sm12(style="margin: 0 auto;")
-  v-img(:src="imgSrc")
+  v-img(:src="isHidden ? 'https://placehold.it/8x1' : imgSrc")
     v-container(fill-height, fluid)
       v-layout(fill-height, align-end, justify-space-between)
         v-flex(xs12, text-xs-left, flexbox)
@@ -13,15 +13,19 @@ v-card.sm12(style="margin: 0 auto;")
             | [{{ iOshishi.rarity_str || "?" }}]
   v-card-title.text-xs-left(primary-title)
     .card-content
-      h3.title.mb-3
+      h3.title.mb-3(v-if="isHidden")
+        | ？？？？
+      h3.title.mb-3(v-else)
         v-badge
           span(v-if="countArr[iOshishi.index] > 1" slot="badge")
             | {{ countArr[iOshishi.index] }}
           span
             | {{ iOshishi.name || "？？？？" }}
-      p.grey--text.description(style="min-height: 3em;")
+      p.grey--text.description(v-if="isHidden")
+        | 未開放
+      p.grey--text.description(v-else, style="min-height: 3em;")
         | {{ iOshishi.description || "ここに説明が入ります" }}
-  v-card-actions.share(v-if="iOshishi.friendly_id")
+  v-card-actions.share(v-if="!isHidden && iOshishi.friendly_id")
     v-layout(row, justify-center)
       v-btn(color="#55acee", small, dark)
         v-icon.mr-2(size="16")
@@ -51,6 +55,7 @@ export default {
   props: {
     iOshishi: Object,
     countArr: Array,
+    isHidden: Boolean,
     isDialog: Boolean
   },
   computed: {

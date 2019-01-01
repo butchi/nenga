@@ -33,6 +33,8 @@ div
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
+
 import _ from "lodash";
 import { sheet } from "../data/ioshishi-slot.json";
 
@@ -51,12 +53,12 @@ export default {
       kuji: null,
       iOshishi: {},
       isPlaying: false,
-      countArr: new Array(32).fill(0),
       playCount: 0,
       dialog: false
     };
   },
   computed: {
+    ...mapState(["countArr"]),
     pMax() {
       return _.last(this.iOshishiArr).p_acc;
     },
@@ -68,6 +70,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["setCountArr"]),
     star(rarity) {
       return {
         0: "★★★★★",
@@ -89,7 +92,7 @@ export default {
 
       this.iOshishi = this.iOshishiArr.filter(item => this.kuji < item.p_acc )[0];
 
-      this.countArr.splice(this.iOshishi.index, 1, this.countArr[this.iOshishi.index] + 1);
+      this.setCountArr(this.iOshishi.index);
 
       if (this.countArr[this.iOshishi.index] < 2) {
         this.dialog = true;

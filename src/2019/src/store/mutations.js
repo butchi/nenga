@@ -1,3 +1,3 @@
-export const increment = (state, val) => {
-  state.count += val;
+export const setCountArr = (state, index) => {
+  state.countArr.splice(index, 1, state.countArr[index] + 1);
 };

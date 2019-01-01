@@ -1,3 +1,3 @@
-export const increment = ({ commit }, val = 1) => {
-  commit("increment", val);
+export const setCountArr = ({ commit }, index) => {
+  commit("setCountArr", index);
 };

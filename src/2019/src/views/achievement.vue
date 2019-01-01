@@ -2,26 +2,31 @@
 v-container(fluid, fill-height)
   v-layout(justify-center, align-center)
     v-flex(text-xs-center)
-      v-card.mb-2(v-for="ioshishi, index in ioshishiArr", :key="ioshishi.index", width="320")
-        //- v-img(:src="imageSrc(index)")
-        v-card-title(primary-title)
-          .card-content
-            h3.title
-              | {{ ioshishi.name }}
-            .rarity
-              | {{ star(ioshishi.rarity) }}
-            .description
-              | {{ ioshishi.description }}
+      div(v-for="iOshishi in sortedIOshishiArr")
+        i-oshishi-card.mb-3(max-width="375", :isHidden="countArr[iOshishi.index] < 1", :iOshishi="iOshishi", :countArr="countArr")
 </template>
 
 <script>
+import { mapState } from "vuex";
+
+import iOshishiCard from "../components/i-oshishi-card.vue";
+
 import { sheet } from "../data/ioshishi-slot.json";
 
 export default {
+  components: {
+    "i-oshishi-card": iOshishiCard
+  },
   data() {
     return {
-      ioshishiArr: Object.values(sheet)
+      iOshishiArr: Object.values(sheet)
     };
+  },
+  computed: {
+    ...mapState(["countArr"]),
+    sortedIOshishiArr() {
+      return _.sortBy(this.iOshishiArr, "no");
+    },
   },
   methods: {
     imageSrc(index) {
