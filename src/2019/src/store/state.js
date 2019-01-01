@@ -1,3 +1,3 @@
 export default {
-  countArr: new Array(32).fill(0),
+  countArr: localStorage.countArr ? JSON.parse(localStorage.countArr) : new Array(32).fill(0),
 };

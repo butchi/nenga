@@ -17,14 +17,21 @@ export default {
     "i-oshishi-slot": iOshishiSlot,
     "message-card": messageCard
   },
+  mounted() {
+    if (localStorage.isVirgin !== 'false') {
+      this.messageDialog = true;
+    }
+  },
   data() {
     return {
-      messageDialog: true
+      messageDialog: false
     };
   },
   methods: {
     closeMessage() {
       this.messageDialog = false;
+
+      localStorage.isVirgin = false;
     }
   }
 };
