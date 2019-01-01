@@ -12,19 +12,19 @@ v-card.sm12(style="margin: 0 auto;")
             | No. {{ iOshishi.no || "?" }}
             | [{{ iOshishi.rarity_str || "?" }}]
   v-card-title.text-xs-left(primary-title)
-    .card-content
-      h3.title.mb-3(v-if="isHidden")
-        | ？？？？
-      h3.title.mb-3(v-else)
-        v-badge
-          span(v-if="countArr[iOshishi.index] > 1" slot="badge")
-            | {{ countArr[iOshishi.index] }}
-          span
-            | {{ iOshishi.name || "？？？？" }}
-      p.grey--text.description(v-if="isHidden")
-        | 未開放
-      p.grey--text.description(v-else, style="min-height: 3em;")
-        | {{ iOshishi.description || "ここに説明が入ります" }}
+    h3.title.mb-3(v-if="isHidden")
+      | ？？？？
+    h3.title.mb-3(v-else)
+      v-badge
+        span(v-if="countArr[iOshishi.index] > 1" slot="badge")
+          | {{ countArr[iOshishi.index] }}
+        span
+          | {{ iOshishi.name || "？？？？" }}
+  v-card-text
+    p.grey--text.description(v-if="isHidden")
+      | 未開放
+    p.grey--text.description(v-else, style="min-height: 3em;")
+      | {{ iOshishi.description || "ここに説明が入ります" }}
   v-card-actions.share(v-if="!isHidden && iOshishi.friendly_id")
     v-layout(row, justify-center)
       v-btn(color="#55acee", small, dark)
