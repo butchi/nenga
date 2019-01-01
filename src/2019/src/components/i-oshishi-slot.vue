@@ -14,7 +14,7 @@ div
 
   i-oshishi-card.mb-3(max-width="375", :iOshishi="iOshishi", :countArr="countArr")
 
-  v-layout.collection-index.text-xs-left.mb-2(row wrap, style="margin: 0 auto; max-width: 375px;")
+  v-layout.collection-index.text-xs-left.mb-2(row wrap, style="margin: 0 auto; max-width: 400px;")
     v-card.collection-item.text-xs-center(v-for="iOshishi in sortedIOshishiArr", :key="iOshishi.no", width="6.25%", :style="{ 'background-color': countColor(countArr[iOshishi.index])}")
       v-responsive.number(aspect-ratio="1", fill-height)
         .item.text-xs-center(style="margin: 0 auto; width: 18px; height: 18px; font-size: 10px; line-height: 18px;")
@@ -45,6 +45,8 @@ export default {
     "i-oshishi-card": iOshishiCard
   },
   mounted() {
+    this.playCount = parseInt(localStorage.playCount || 0);
+
     this.start();
   },
   data() {
@@ -53,7 +55,7 @@ export default {
       kuji: null,
       iOshishi: {},
       isPlaying: false,
-      playCount: 0,
+      playCount: null,
       dialog: false
     };
   },
@@ -84,11 +86,13 @@ export default {
       this.isPlaying = true;
 
       this.kuji = _.random(this.pMax - 1);
-
-      this.playCount++;
     },
     stop() {
       this.isPlaying = false;
+
+      this.playCount++;
+
+      localStorage.setItem('playCount', this.playCount);
 
       this.iOshishi = this.iOshishiArr.filter(item => this.kuji < item.p_acc )[0];
 
