@@ -56,9 +56,9 @@ export default {
   computed: {
     imgSrc() {
       if (!this.iOshishi.friendly_id) {
-        return "/ogp.png";
+        return "./ogp.png";
       }
-      return `/i-oshishi/${this.iOshishi.friendly_id}.png`;
+      return `./i-oshishi/${this.iOshishi.friendly_id}.png`;
     }
   }
 };
