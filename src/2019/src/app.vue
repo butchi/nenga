@@ -14,8 +14,7 @@ v-app
           v-icon contact_mail
         v-list-tile-content
           v-list-tile-title
-            router-link(to="/achievement")
-              | 獲得一覧
+            | 獲得一覧
   v-toolbar(color='primary', dark, fixed, app)
     v-toolbar-side-icon(@click.stop="drawer = !drawer")
     v-toolbar-title
