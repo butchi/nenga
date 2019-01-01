@@ -1,5 +1,5 @@
 <template lang="pug">
-v-card.sm12(style="margin: 0 auto;")
+v-card.sm12(max-width="400", style="margin: 0 auto;")
   v-card-title.text-xs-left(primary-title)
     h3.title.mb-3.red--text
       | あけましておめでとうございます。
