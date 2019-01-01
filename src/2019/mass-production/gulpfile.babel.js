@@ -6,7 +6,7 @@ import pug from 'gulp-pug';
 import massProduction from 'gulp-mass-production';
 import readConfig from 'read-config';
 
-const DIST = '../dist/share';
+const DIST = '../../../docs/2019/share';
 
 const { sheet } = readConfig('../src/data/ioshishi-slot.json');
 const constants = readConfig('../src/assets/constants.json');
