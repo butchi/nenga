@@ -121,7 +121,7 @@
       "star": 2,
       "name": "イノシュシュ",
       "friendly_id": "inochouchou",
-      "description": "",
+      "description": "シュシュ洗濯。",
       "probability": 0.0234375,
       "p_int": 12,
       "p_acc": 56
@@ -247,7 +247,7 @@
       "star": 1,
       "name": "猪子寿之",
       "friendly_id": "inoko-toshiyuki",
-      "description": "",
+      "description": "チームラボ社長。電気グルーヴのピエール瀧に似ていると密かに思ってます。",
       "probability": 0.046875,
       "p_int": 24,
       "p_acc": 200
@@ -261,7 +261,7 @@
       "star": 1,
       "name": "ウシシシ",
       "friendly_id": "ushishishi",
-      "description": "",
+      "description": "なにか企んでいるもよう。",
       "probability": 0.046875,
       "p_int": 24,
       "p_acc": 224
@@ -275,7 +275,7 @@
       "star": 1,
       "name": "シシ16",
       "friendly_id": "shishi-16",
-      "description": "",
+      "description": "16ってキリがいいですよね。え？そうでもない？",
       "probability": 0.046875,
       "p_int": 24,
       "p_acc": 248
@@ -289,7 +289,7 @@
       "star": 1,
       "name": "四捨五入",
       "friendly_id": "shishagonyu",
-      "description": "",
+      "description": "今年の誕生日を迎えたら四捨五入で40歳。・・・え？え！？！？",
       "probability": 0.046875,
       "p_int": 24,
       "p_acc": 272
@@ -303,7 +303,7 @@
       "star": 1,
       "name": "猪苗代湖",
       "friendly_id": "inawashiroko",
-      "description": "",
+      "description": "猪苗代湖の由来はアイヌ語説があるらしいですが、イノシシ関係ないみたいです。",
       "probability": 0.046875,
       "p_int": 24,
       "p_acc": 296
@@ -331,7 +331,7 @@
       "star": 1,
       "name": "イノシン",
       "friendly_id": "inosine",
-      "description": "",
+      "description": "イノシン酸は、ヌクレオチド構造を持つ有機化合物の一種のリボヌクレオチドである。",
       "probability": 0.046875,
       "p_int": 24,
       "p_acc": 344
@@ -345,7 +345,7 @@
       "star": 1,
       "name": "シシマイ",
       "friendly_id": "shishimai",
-      "description": "",
+      "description": "イノシシで獅子舞やっても違和感なさそう。",
       "probability": 0.046875,
       "p_int": 24,
       "p_acc": 368
@@ -359,7 +359,7 @@
       "star": 1,
       "name": "イノ頭線",
       "friendly_id": "inokashira-line",
-      "description": "",
+      "description": "下北沢とか吉祥寺とか、けっこう好きです。",
       "probability": 0.046875,
       "p_int": 24,
       "p_acc": 392
@@ -371,9 +371,9 @@
       "rarity": 4,
       "rarity_str": "N",
       "star": 1,
-      "name": "ノシノシ",
+      "name": "ﾉｼﾉｼ",
       "friendly_id": "noshinoshi",
-      "description": "",
+      "description": "ﾉｼ ← この顔文字思いついた人天才ですね。",
       "probability": 0.046875,
       "p_int": 24,
       "p_acc": 416
@@ -387,7 +387,7 @@
       "star": 1,
       "name": "いのしま",
       "friendly_id": "inoshima",
-      "description": "本年は宜しくお願いします。いのしまと申します。犬山さまですね。頂戴いたします。",
+      "description": "本年は宜しくお願いします。イノシシのいのしまと申します。イヌの犬山さまですね。頂戴いたします。",
       "probability": 0.046875,
       "p_int": 24,
       "p_acc": 440
@@ -429,7 +429,7 @@
       "star": 1,
       "name": "ノノノノ",
       "friendly_id": "nononono",
-      "description": "Noと言うときは言うことも大事。",
+      "description": "Noと言えることも大事。",
       "probability": 0.046875,
       "p_int": 24,
       "p_acc": 512
