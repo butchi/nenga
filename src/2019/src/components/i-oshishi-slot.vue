@@ -45,6 +45,8 @@ export default {
     "i-oshishi-card": iOshishiCard
   },
   mounted() {
+    this.playCount = parseInt(localStorage.playCount || 0);
+
     this.start();
   },
   data() {
@@ -53,7 +55,7 @@ export default {
       kuji: null,
       iOshishi: {},
       isPlaying: false,
-      playCount: 0,
+      playCount: null,
       dialog: false
     };
   },
@@ -84,11 +86,13 @@ export default {
       this.isPlaying = true;
 
       this.kuji = _.random(this.pMax - 1);
-
-      this.playCount++;
     },
     stop() {
       this.isPlaying = false;
+
+      this.playCount++;
+
+      localStorage.setItem('playCount', this.playCount);
 
       this.iOshishi = this.iOshishiArr.filter(item => this.kuji < item.p_acc )[0];
 
