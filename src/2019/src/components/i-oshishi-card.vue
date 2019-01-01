@@ -1,6 +1,6 @@
 <template lang="pug">
 v-card.sm12(style="margin: 0 auto;")
-  v-img(src="//placehold.it/1200x630")
+  v-img(:src="imgSrc")
     v-container(fill-height, fluid)
       v-layout(fill-height, align-end, justify-space-between)
         v-flex(xs12, text-xs-left, flexbox)
@@ -52,6 +52,14 @@ export default {
     iOshishi: Object,
     countArr: Array,
     isDialog: Boolean
+  },
+  computed: {
+    imgSrc() {
+      if (!this.iOshishi.friendly_id) {
+        return "/ogp.png";
+      }
+      return `/i-oshishi/${this.iOshishi.friendly_id}.png`;
+    }
   }
 };
 </script>
