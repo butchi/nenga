@@ -1,7 +1,7 @@
 <template lang="pug">
 v-app
   v-navigation-drawer(v-model='drawer', fixed, app)
-    v-list(dense='')
+    v-list(dense)
       v-list-tile(@click="")
         v-list-tile-action
           v-icon home
@@ -29,8 +29,9 @@ v-app
       | イOシシスロット
   v-content
     router-view
-  v-footer(color='primary', app='')
-    span.white--text © IWABUCHI Yu(u)ki 2019
+  v-footer(color="primary", app)
+    v-layout(justify-center)
+      span.white--text © IWABUCHI Yu(u)ki 2019
 </template>
 
 <script>
