@@ -7,7 +7,7 @@ v-container(fluid, fill-height)
 
       v-dialog(v-model="dialogClearHistory")
         v-btn(slot="activator", color="warning")
-          | 獲得履歴削除
+          | プレイ履歴削除
         v-card
           v-card-title(justify-center)
             p
