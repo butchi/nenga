@@ -5,10 +5,10 @@ v-card.sm12(max-width="400", style="margin: 0 auto;")
       v-layout(fill-height, align-end, justify-space-between)
         v-flex(xs12, text-xs-left, flexbox)
           .rarity
-            v-icon(v-if="iOshishi.star", v-for="i in iOshishi.star", :key="i")
+            v-icon.yellow--text.text--darken-3(v-if="iOshishi.star", v-for="i in iOshishi.star", :key="i")
               | star
         v-flex(xs12, text-xs-right, flexbox)
-          span.information
+          span.information.yellow--text.text--darken-3
             | No. {{ iOshishi.no || "?" }}
             | [{{ iOshishi.rarity_str || "?" }}]
   v-card-title.text-xs-left(primary-title)
