@@ -1,6 +1,6 @@
 <template lang="pug">
 v-card.sm12(max-width="400", style="margin: 0 auto;")
-  v-img(:src="isHidden ? 'https://placehold.it/8x1' : imgSrc")
+  v-img(:aspect-ratio="1200/630", :src="isHidden ? 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' : imgSrc", style="background-color: #808080;")
     v-container(fill-height, fluid)
       v-layout(fill-height, align-end, justify-space-between)
         v-flex(xs12, text-xs-left, flexbox)
