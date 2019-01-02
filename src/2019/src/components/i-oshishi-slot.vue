@@ -108,13 +108,6 @@ export default {
       if (this.countArr[this.iOshishi.index] < 2) {
         this.dialog = true;
       }
-
-      if (this.completeCount >= 1) {
-        gtag("event", "complete", {
-          event_category: "Slot",
-          event_label: this.completeCount
-        });
-      }
     },
     defaultIndex() {
       return _.random(30) + 1;
@@ -125,6 +118,14 @@ export default {
     },
     closeDialog() {
       this.dialog = false;
+    }
+  },
+  watch: {
+    completeCount() {
+      gtag("event", "complete", {
+        event_category: "Slot",
+        event_label: this.completeCount
+      });
     }
   }
 };
