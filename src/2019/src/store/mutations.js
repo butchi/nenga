@@ -8,5 +8,6 @@ export const clearHistory = (state) => {
   state.countArr = new Array(32).fill(0);
 
   localStorage.removeItem("countArr");
+  localStorage.removeItem("playCount");
   localStorage.removeItem("isVirgin");
 };
