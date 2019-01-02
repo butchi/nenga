@@ -92,6 +92,13 @@ export default {
 
       this.playCount++;
 
+      if (this.playCount % 100 === 0) {
+        gtag("event", "play", {
+          event_category: "Slot",
+          event_label: this.playCount
+        });
+      }
+
       localStorage.setItem('playCount', this.playCount);
 
       this.iOshishi = this.iOshishiArr.filter(item => this.kuji < item.p_acc )[0];
@@ -111,6 +118,14 @@ export default {
     },
     closeDialog() {
       this.dialog = false;
+    }
+  },
+  watch: {
+    completeCount() {
+      gtag("event", "complete", {
+        event_category: "Slot",
+        event_label: this.completeCount
+      });
     }
   }
 };

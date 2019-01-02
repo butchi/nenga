@@ -19,8 +19,6 @@ v-card.sm12(max-width="400", style="margin: 0 auto;")
         | それはともかく、コンプ目指していっぱい回してくれると嬉しいです！
     p.mb-3
       | 平成31年1月1日  岩淵 勇樹
-    p.notice.body-1.grey--text
-      | すみません、例年ながら年賀コンテンツ着手が遅れたため、イラストが全部出来上がってません。気になる方はまた後でアクセスしてみてください。
   v-card-actions(v-if="isDialog")
     v-layout(justify-center)
       v-btn(color="primary", @click="$emit('start')")

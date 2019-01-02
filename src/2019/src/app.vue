@@ -1,36 +1,40 @@
 <template lang="pug">
 v-app
   v-navigation-drawer(v-model='drawer', fixed, app)
-    v-list(dense='')
+    v-list(dense)
       v-list-tile(@click="")
         v-list-tile-action
-          v-icon home
+          v-icon
+            | fa-coins
         v-list-tile-content
           v-list-tile-title
             router-link(to="/")
-              | ホーム
+              | スロット
       v-list-tile(@click="")
         v-list-tile-action
-          v-icon contact_mail
+          v-icon
+            | fa-envelope
         v-list-tile-content
           v-list-tile-title
             router-link(to="/message")
               | 新年のご挨拶
       v-list-tile(@click="")
         v-list-tile-action
-          v-icon contact_mail
+          v-icon
+            | fa-trophy
         v-list-tile-content
           v-list-tile-title
             router-link(to="/achievement")
-              | 獲得一覧
+              | コレクション
   v-toolbar(color='primary', dark, fixed, app)
     v-toolbar-side-icon(@click.stop="drawer = !drawer")
     v-toolbar-title
       | イOシシスロット
   v-content
     router-view
-  v-footer(color='primary', app='')
-    span.white--text © IWABUCHI Yu(u)ki 2019
+  v-footer(color="primary", app)
+    v-layout(justify-center)
+      span.white--text © IWABUCHI Yu(u)ki 2019
 </template>
 
 <script>
