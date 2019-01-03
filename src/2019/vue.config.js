@@ -5,7 +5,7 @@ const TEMPLATE_PARAMS = {
   SITE_ORIGIN,
   META,
   BASE_PATH,
-  BASE_URL: path.join(SITE_ORIGIN, BASE_PATH)
+  BASE_URL: SITE_ORIGIN + BASE_PATH.slice(1)
 };
 
 module.exports = {
