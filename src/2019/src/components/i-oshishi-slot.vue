@@ -22,7 +22,7 @@ div
     v-card.collection-item.text-xs-center(width="6.25%", :style="{ 'background-color': countColor(completeCount)}")
       v-responsive(aspect-ratio="1")
         .item.text-xs-center(style="margin: 0 auto; width: 18px; height: 18px; font-size: 10px; line-height: 18px;")
-          v-icon(size="2")
+          v-icon(size="10")
             | fas fa-crown
 
   .play-count
