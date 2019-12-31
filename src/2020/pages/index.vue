@@ -3,6 +3,68 @@
     v-container(grid-list-md)
       v-layout(row, wrap, mt-5)
         v-flex
-          div
-            | Thanks, world!
+          v-btn(@click="getGacha")
+            | 引く
+          div(v-if="kotoba")
+            | {{ nekoshiReplace(kataToHira(kotoba.reading)) }} ({{ kotoba.name }})
+            v-btn(v-if="kotoba.source === 2", icon, :href="`https://ja.wikipedia.org/wiki/${kotoba.name}`", target="_blank")
+              v-icon(small)
+                | fab fa-wikipedia-w
+            v-btn(v-else, icon, :href="`https://kotobank.jp/gs/?q=${kotoba.name}`", target="_blank")
+              v-icon(small)
+                | fas fa-book
+          v-timeline(v-if="logArr.length", dense)
+            v-timeline-item(v-for="(kotoba, index) in logArr", :key="index")
+              template(v-slot:icon)
+                | {{ nekoshiCount(kataToHira(kotoba.reading)) }}
+              | {{ nekoshiReplace(kataToHira(kotoba.reading)) }} ({{ kotoba.name }})
+              v-btn(v-if="kotoba.source === 2", icon, :href="`https://ja.wikipedia.org/wiki/${kotoba.name}`", target="_blank")
+                v-icon(small)
+                  | fab fa-wikipedia-w
+              v-btn(v-else, icon, :href="`https://kotobank.jp/gs/?q=${kotoba.name}`", target="_blank")
+                v-icon(small)
+                  | fas fa-book
 </template>
+
+<script>
+import lodash from 'lodash'
+import nekoshiDbJson from '@/assets/nekoshi-database.min.json'
+
+export default {
+  data() {
+    return {
+      kanaOffset: 'ア'.charCodeAt() - 'あ'.charCodeAt(),
+      kotobaArr: [],
+    }
+  },
+  computed: {
+    nekoshiArr() {
+      return nekoshiDbJson.map(item => ({
+        name: item[0],
+        reading: item[1],
+        source: item[2],
+      }))
+    },
+    kotoba() {
+      return lodash.last(this.kotobaArr)
+    },
+    logArr() {
+      return this.kotobaArr.slice(0, -1).reverse().slice(0, 99)
+    },
+  },
+  methods: {
+    kataToHira(str) {
+      return str.split('').map(char => char.match(/^[ァ-ヶ]/) ? String.fromCharCode(char.charCodeAt() - this.kanaOffset) : char).join('')
+    },
+    nekoshiCount(str) {
+      return str.split('').filter(char => char.match(/[ねこしじ]|ちゅう|ちゅー/g)).length
+    },
+    nekoshiReplace(str) {
+      return str.replace(/[ねこしじ]/g, '子').replace(/ちゅう/g, 'チュウ').replace(/ちゅー/g, 'チュー')
+    },
+    getGacha() {
+      this.kotobaArr.push(lodash.sample(this.nekoshiArr))
+    },
+  },
+}
+</script>
