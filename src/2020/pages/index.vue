@@ -5,6 +5,8 @@
         v-flex
           v-btn(@click="getGacha")
             | 引く
+          v-btn(v-if="kotobaArr.length > 99", @click="getGacha100")
+            | 100連
           div(v-if="kotoba")
             | {{ nekoshiReplace(kataToHira(kotoba.reading)) }} ({{ kotoba.name }})
             v-btn(v-if="kotoba.source === 2", icon, :href="`https://ja.wikipedia.org/wiki/${kotoba.name}`", target="_blank")
@@ -64,6 +66,11 @@ export default {
     },
     getGacha() {
       this.kotobaArr.push(lodash.sample(this.nekoshiArr))
+    },
+    getGacha100() {
+      for(let i = 0; i < 100; i++) {
+        this.getGacha()
+      }
     },
   },
 }
