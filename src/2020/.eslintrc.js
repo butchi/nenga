@@ -19,5 +19,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'comma-dangle': ['error', 'always-multiline'],
+    'arrow-parens': ['error', 'as-needed']
   }
 }
