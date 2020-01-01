@@ -59,5 +59,22 @@ export default {
       title: 'Vuetify.js',
     }
   },
+  mounted() {
+    /* ピッチインピッチアウトによる拡大縮小を禁止 */
+    document.documentElement.addEventListener('touchstart', function (e) {
+      if(e.touches.length >= 2) {
+        e.preventDefault()
+      }
+    }, { passive: false })
+    /* ダブルタップによる拡大を禁止 */
+    let t = 0
+    document.documentElement.addEventListener('touchend', function (e) {
+      const now = new Date().getTime()
+      if((now - t) < 350) {
+        e.preventDefault()
+      }
+      t = now
+    }, false)
+  },
 }
 </script>
