@@ -45,12 +45,12 @@ export default {
         {
           icon: 'fa-trophy',
           title: 'コレクション',
-          to: '/achievement',
+          to: '/achievement/',
         },
         {
           icon: 'fa-envelope',
           title: '新年の挨拶',
-          to: '/message',
+          to: '/message/',
         },
       ],
       miniVariant: false,

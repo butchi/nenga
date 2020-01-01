@@ -82,6 +82,7 @@ export default {
     extend(config, ctx) {}
   },
   router: {
-    base: '/nenga/2020/'
+    base: '/nenga/2020/',
+    trailingSlash: true,
   },
 }
