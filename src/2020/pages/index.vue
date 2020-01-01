@@ -33,7 +33,7 @@
               | {{ kotoba.nekoshi }}
               v-layout.ma-1
                 div.mx-1(v-for="(item, index) in kotoba.reading.match(/[ネコシジ]|チュウ|チュー/g) || []", :key="index")
-                  v-chip(v-if="item === 'ネ'", small, color="yellow")
+                  v-chip(v-if="item === 'ネ'", small, color="yellow darken-3")
                     <ruby>子<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>
                   v-chip(v-else-if="item === 'コ'", small, color="red")
                     <ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>
