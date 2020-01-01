@@ -48,7 +48,7 @@
                 :href="kotoba.intentHref", target="_blank"
               )
                 | ツイートする
-          v-card(v-else)
+          v-card.mt-3(v-else)
             v-card-title
               | 「引く」をタップ！
             v-card-text
