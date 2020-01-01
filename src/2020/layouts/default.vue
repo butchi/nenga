@@ -1,9 +1,24 @@
 <template lang="pug">
   v-app
     v-app-bar(app, fixed, dark)
+      v-app-bar-nav-icon(@click.stop="drawer = !drawer")
       v-toolbar-title.ma-0
         nuxt-link(to="/", style="color: white; text-decoration: inherit;")
           | 子ん子ん子とば
+    v-navigation-drawer(v-model="drawer", absolute, temporary)
+      v-list(dense)
+        v-list-item(
+          v-for="item in items"
+          :key="item.title"
+          link
+        )
+          v-list-item-icon
+            v-icon
+              | {{ item.icon }}
+          v-list-item-content
+            v-list-item-title
+              nuxt-link(:to="item.to")
+                | {{ item.title }}
     nuxt
     v-footer
       p.caption.mb-0
@@ -23,14 +38,19 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-home',
+          title: 'Home',
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          icon: 'fa-trophy',
+          title: 'コレクション',
+          to: '/achievement',
+        },
+        {
+          icon: 'fa-envelope',
+          title: '新年の挨拶',
+          to: '/message',
         },
       ],
       miniVariant: false,

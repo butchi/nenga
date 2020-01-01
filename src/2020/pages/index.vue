@@ -58,7 +58,7 @@
                 :href="kotoba.intentHref", target="_blank"
               )
                 | ツイートする
-          v-card.mt-3(v-else)
+          v-card.mt-3(v-else, color="grey lighten-3")
             v-card-title
               | 「引く」をタップ！
             v-card-text
@@ -95,6 +95,9 @@
       //- v-btn(v-if="kotobaArr.length > 99", @click="getGacha100")
       //- v-btn(v-if="kotobaArr.length >= 0", @click="getGacha100")
         | 100連
+
+    v-dialog(v-model="messageDialog", max-width="400")
+      message-card(:isDialog="true", @start="closeMessage")
 </template>
 
 <script>
@@ -103,7 +106,12 @@ import { mapGetters, mapMutations } from 'vuex'
 import lodash from 'lodash'
 import nekoshiDbJson from '@/assets/nekoshi-database.min.json'
 
+import messageCard from "@/components/message-card.vue";
+
 export default {
+  components: {
+    "message-card": messageCard,
+  },
   data() {
     return {
       kanaOffset: 'ア'.charCodeAt() - 'あ'.charCodeAt(),
@@ -111,6 +119,7 @@ export default {
   },
   computed: {
     ...mapGetters({
+      messageDialog: 'kotoba/getMessageDialog',
       kotobaArr: 'kotoba/getArr',
     }),
     nekoshiArr() {
@@ -144,8 +153,12 @@ export default {
   },
   methods: {
     ...mapMutations({
+      hideMessage: 'kotoba/hideMessage',
       addKotoba: 'kotoba/add',
     }),
+    closeMessage() {
+      this.hideMessage(false);
+    },
     kataToHira(str) {
       return str.split('').map(char => char.match(/^[ァ-ヶ]/) ? String.fromCharCode(char.charCodeAt() - this.kanaOffset) : char).join('')
     },
