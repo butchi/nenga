@@ -16,9 +16,12 @@
               v-icon(small)
                 | fas fa-book
           v-timeline(v-if="logArr.length", dense)
-            v-timeline-item(v-for="(kotoba, index) in logArr", :key="index")
+            v-timeline-item(
+              :color="getNekoshiCol(nekoshiCount(kataToHira(kotoba.reading)))"
+              v-for="(kotoba, index) in logArr", :key="index")
               template(v-slot:icon)
-                | {{ nekoshiCount(kataToHira(kotoba.reading)) }}
+                .white--text
+                  | {{ nekoshiCount(kataToHira(kotoba.reading)) }}
               | {{ nekoshiReplace(kataToHira(kotoba.reading)) }} ({{ kotoba.name }})
               v-btn(v-if="kotoba.source === 2", icon, :href="`https://ja.wikipedia.org/wiki/${kotoba.name}`", target="_blank")
                 v-icon(small)
@@ -60,6 +63,20 @@ export default {
     },
     nekoshiCount(str) {
       return str.match(/[ねこしじ]|ちゅう|ちゅー/g).length
+    },
+    getNekoshiCol(n) {
+      if (n <= 0) {
+      } else if (n === 1) {
+        return 'yellow darken-1'
+      } else if (n === 2) {
+        return 'yellow darken-2'
+      } else if (n === 3) {
+        return 'orange'
+      } else if (n === 4) {
+        return 'orange darken-1'
+      } else {
+        return 'red'
+      }
     },
     nekoshiReplace(str) {
       return str.replace(/[ねこしじ]/g, '子').replace(/ちゅう/g, 'チュウ').replace(/ちゅー/g, 'チュー')
