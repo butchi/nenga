@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-app
+  v-app(style="touch-action: manipulation;")
     v-app-bar(app, fixed, dark)
       v-app-bar-nav-icon(@click.stop="drawer = !drawer")
       v-toolbar-title.ma-0
@@ -58,23 +58,6 @@ export default {
       rightDrawer: false,
       title: 'Vuetify.js',
     }
-  },
-  mounted() {
-    /* ピッチインピッチアウトによる拡大縮小を禁止 */
-    document.documentElement.addEventListener('touchstart', function (e) {
-      if(e.touches.length >= 2) {
-        e.preventDefault()
-      }
-    }, { passive: false })
-    /* ダブルタップによる拡大を禁止 */
-    let t = 0
-    document.documentElement.addEventListener('touchend', function (e) {
-      const now = new Date().getTime()
-      if((now - t) < 350) {
-        e.preventDefault()
-      }
-      t = now
-    }, false)
   },
 }
 </script>
