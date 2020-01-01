@@ -19,7 +19,7 @@ v-card.sm12(max-width="400", style="margin: 0 auto;")
       | 令和2年1月1日  岩淵 勇樹
   v-card-actions(v-if="isDialog")
     v-layout(justify-center)
-      v-btn(color="primary", @click="$emit('start')")
+      v-btn(color="grey", @click="$emit('start')")
         | さっそく遊ぶ
 </template>
 
