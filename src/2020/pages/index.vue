@@ -31,6 +31,16 @@
           v-card.mt-3(v-if="kotoba", color="grey lighten-3")
             v-card-title
               | {{ kotoba.nekoshi }}
+              v-layout.ma-1
+                div.mx-1(v-for="(item, index) in kotoba.reading.match(/[ネコシジ]|チュウ|チュー/g) || []", :key="index")
+                  v-chip(v-if="item === 'ネ'", small, color="yellow")
+                    <ruby>子<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>
+                  v-chip(v-else-if="item === 'コ'", small, color="red")
+                    <ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>
+                  v-chip(v-else-if="item === 'シ' || item === 'ジ'", small, color="cyan")
+                    <ruby>子<rp>(</rp><rt>し</rt><rp>)</rp></ruby>
+                  v-chip(v-else-if="item === 'チュウ' || item === 'チュー'", small, color="grey")
+                    | チュウ
             v-card-text
               | {{ kotoba.name }}
             v-card-actions
