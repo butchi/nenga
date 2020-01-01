@@ -7,14 +7,32 @@
             v-card-title
               | {{ name }}ランキング
           v-card-text
-            v-list
-              v-list-item(v-for="(item, index) in getRankingArray(key)", :key="index")
-                | {{ index + 1 }}. {{ item.nekoshi }} ({{ key === 'rate' ? Math.round(item.rate * 100) + '%' : item[key] }})
+            v-card(v-for="(kotoba, index) in getRankingArray(key)", :key="index")
+              v-card-title
+                | {{ index + 1 }}. {{ kotoba.nekoshi }} ({{ key === 'rate' ? Math.round(kotoba.rate * 100) + '%' : kotoba[key] }})
+              v-card-text
+                | {{ kotoba.name }}
+                v-btn(v-if="kotoba.source === 2", icon,
+                  :href="kotoba.href", target="_blank"
+                )
+                  v-icon(small)
+                    | fab fa-wikipedia-w
+                v-btn(v-else, icon,
+                  :href="kotoba.href", target="_blank"
+                )
+                  v-icon(small)
+                    | fas fa-book
+                v-btn(icon,
+                  :href="kotoba.intentHref", target="_blank"
+                )
+                  v-icon(small)
+                    | fab fa-twitter
 
       v-layout(row, wrap, mt-5)
         h2
           | 子ん子ん子とばログ
         v-data-table(
+          v-if="kotobaArr.length"
           :headers="headerArr"
           :items="kotobaArr"
           :custom-sort="customSort"

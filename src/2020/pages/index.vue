@@ -1,6 +1,6 @@
 <template lang="pug">
   v-content
-    v-container(grid-list-md)
+    v-container(grid-list-md, style="padding-bottom: 33px;")
       v-layout(row, wrap)
         v-flex
           v-layout
@@ -63,6 +63,7 @@
               | 「引く」をタップ！
             v-card-text
               | 子子（ここ）に結果が表示されます。
+              v-img.mt-3(:src="logoImg", width="640")
           v-timeline(v-if="logArr.length", dense)
             v-timeline-item(
               :color="getNekoshiCol(getNekoshiCount(kataToHira(kotoba.reading)))"
@@ -86,15 +87,21 @@
               )
                 v-icon(small)
                   | fab fa-twitter
+      v-switch(v-if="kotobaArr.length > 99", v-model="modeGacha100", label="100連モード")
+      span(v-if="modeGacha100")
+        | やりすぎチュウ意！（重くなるので・・・）
+
     v-bottom-navigation(dark, fixed)
-      v-btn(color="red", @click="getGacha")
+      v-btn(v-if="modeGacha100", @click="getGacha100")
+        span
+          | 100連
+        v-icon
+          | fas fa-dice-five
+      v-btn(v-else, color="red", @click="getGacha")
         span
           | 引く
         v-icon
           | fas fa-dice-one
-      //- v-btn(v-if="kotobaArr.length > 99", @click="getGacha100")
-      //- v-btn(v-if="kotobaArr.length >= 0", @click="getGacha100")
-        | 100連
 
     v-dialog(v-model="messageDialog", max-width="400")
       message-card(:isDialog="true", @start="closeMessage")
@@ -107,6 +114,7 @@ import lodash from 'lodash'
 import nekoshiDbJson from '@/assets/nekoshi-database.min.json'
 
 import messageCard from "@/components/message-card.vue";
+import logoImg from "@/assets/logo.png";
 
 export default {
   components: {
@@ -115,6 +123,8 @@ export default {
   data() {
     return {
       kanaOffset: 'ア'.charCodeAt() - 'あ'.charCodeAt(),
+      modeGacha100: false,
+      logoImg,
     }
   },
   computed: {
@@ -199,8 +209,8 @@ export default {
         ko: this.getCount(kotoba, 'コ'),
         shi: this.getCount(kotoba, 'シ'),
         chu: this.getCount(kotoba, 'チュウ|チュー'),
-        total: this.getCount(kotoba, '[ネコシ]|チュウ|チュー'),
-        rate: this.getCount(kotoba, '[ネコシ]|チュウ|チュー') / kotoba.reading.length,
+        total: this.getCount(kotoba, '[ネコシジ]|チュウ|チュー'),
+        rate: this.getCount(kotoba, '[ネコシジ]|チュウ|チュー') / kotoba.reading.length,
       }
 
       Object.assign(item, kotoba)
