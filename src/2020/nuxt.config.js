@@ -9,7 +9,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s | ' + metaTtl,
+    titleTemplate: '%s',
     title: metaTtl,
     meta: [
       { charset: 'utf-8' },
