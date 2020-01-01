@@ -1,8 +1,8 @@
 <template lang="pug">
   v-app
-    v-app-bar(app, fixed)
+    v-app-bar(app, fixed, dark)
       v-toolbar-title.ma-0
-        nuxt-link(to="/", style="text-decoration: inherit;")
+        nuxt-link(to="/", style="color: white; text-decoration: inherit;")
           | 子ん子ん子とば
     nuxt
     v-footer
