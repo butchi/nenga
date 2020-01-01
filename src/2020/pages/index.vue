@@ -91,7 +91,7 @@
       span(v-if="modeGacha100")
         | やりすぎチュウ意！（重くなるので・・・）
 
-    v-bottom-navigation(dark, fixed)
+    v-bottom-navigation(dark, fixed, style="user-select: none; touch-callout: none;")
       v-btn(v-if="modeGacha100", @click="getGacha100")
         span
           | 100連
