@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 const metaTtl = '子ん子ん子とば'
-const metaDesc = '子年らしい言葉を集める年賀コンテンツです。。'
+const metaDesc = '子年らしい言葉を集める年賀コンテンツです。'
 
 export default {
   mode: 'spa',
