@@ -7,14 +7,24 @@
             | 引く
           v-btn(v-if="kotobaArr.length > 99", @click="getGacha100")
             | 100連
-          div(v-if="kotoba")
-            | {{ nekoshiReplace(kataToHira(kotoba.reading)) }} ({{ kotoba.name }})
-            v-btn(v-if="kotoba.source === 2", icon, :href="`https://ja.wikipedia.org/wiki/${kotoba.name}`", target="_blank")
-              v-icon(small)
-                | fab fa-wikipedia-w
-            v-btn(v-else, icon, :href="`https://kotobank.jp/gs/?q=${kotoba.name}`", target="_blank")
-              v-icon(small)
-                | fas fa-book
+          v-card(v-if="kotoba")
+            v-card-title
+              | {{ nekoshiReplace(kataToHira(kotoba.reading)) }} ({{ kotoba.name }})
+            v-card-actions
+              v-btn(v-if="kotoba.source === 2", text,
+                :href="`https://ja.wikipedia.org/wiki/${kotoba.name}`", target="_blank"
+                style="text-transform: none;"
+              )
+                | Wikipediaで調べる
+              v-btn(v-else, text,
+                :href="`https://kotobank.jp/gs/?q=${kotoba.name}`", target="_blank"
+              )
+                | 辞書を調べる
+              v-btn(dark,
+                color="#55acee"
+                :href="`https://twitter.com/intent/tweet?text=${nekoshiReplace(kataToHira(kotoba.reading))} (${kotoba.name})&hashtags=${'子ん子ん子とば'}`", target="_blank"
+              )
+                | ツイートする
           v-timeline(v-if="logArr.length", dense)
             v-timeline-item(
               :color="getNekoshiCol(nekoshiCount(kataToHira(kotoba.reading)))"
@@ -23,12 +33,21 @@
                 .white--text
                   | {{ nekoshiCount(kataToHira(kotoba.reading)) }}
               | {{ nekoshiReplace(kataToHira(kotoba.reading)) }} ({{ kotoba.name }})
-              v-btn(v-if="kotoba.source === 2", icon, :href="`https://ja.wikipedia.org/wiki/${kotoba.name}`", target="_blank")
+              v-btn(v-if="kotoba.source === 2", icon,
+                :href="`https://ja.wikipedia.org/wiki/${kotoba.name}`", target="_blank"
+              )
                 v-icon(small)
                   | fab fa-wikipedia-w
-              v-btn(v-else, icon, :href="`https://kotobank.jp/gs/?q=${kotoba.name}`", target="_blank")
+              v-btn(v-else, icon,
+                :href="`https://kotobank.jp/gs/?q=${kotoba.name}`", target="_blank"
+              )
                 v-icon(small)
                   | fas fa-book
+              v-btn(icon,
+                :href="`https://twitter.com/intent/tweet?text=${nekoshiReplace(kataToHira(kotoba.reading))} (${kotoba.name})&hashtags=${'子ん子ん子とば'}`", target="_blank"
+              )
+                v-icon(small)
+                  | fab fa-twitter
 </template>
 
 <script>
