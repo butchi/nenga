@@ -59,7 +59,7 @@ export default {
       return str.split('').map(char => char.match(/^[ァ-ヶ]/) ? String.fromCharCode(char.charCodeAt() - this.kanaOffset) : char).join('')
     },
     nekoshiCount(str) {
-      return str.split('').filter(char => char.match(/[ねこしじ]|ちゅう|ちゅー/g)).length
+      return str.match(/[ねこしじ]|ちゅう|ちゅー/g).length
     },
     nekoshiReplace(str) {
       return str.replace(/[ねこしじ]/g, '子').replace(/ちゅう/g, 'チュウ').replace(/ちゅー/g, 'チュー')
