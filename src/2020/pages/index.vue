@@ -9,7 +9,9 @@
             | 100連
           v-card(v-if="kotoba")
             v-card-title
-              | {{ nekoshiReplace(kataToHira(kotoba.reading)) }} ({{ kotoba.name }})
+              | {{ nekoshiReplace(kataToHira(kotoba.reading)) }}
+            v-card-text
+              | {{ kotoba.name }}
             v-card-actions
               v-btn(v-if="kotoba.source === 2", text,
                 :href="`https://ja.wikipedia.org/wiki/${kotoba.name}`", target="_blank"
