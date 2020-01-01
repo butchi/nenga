@@ -6,7 +6,8 @@
           v-layout
             v-btn(@click="getGacha")
               | 引く
-            v-btn(v-if="kotobaArr.length > 99", @click="getGacha100")
+            //- v-btn(v-if="kotobaArr.length > 99", @click="getGacha100")
+            //- v-btn(v-if="kotobaArr.length >= 0", @click="getGacha100")
               | 100連
           v-layout
             v-flex
@@ -35,22 +36,22 @@
                   | {{ nekoshiCnt }}
           v-card(v-if="kotoba")
             v-card-title
-              | {{ nekoshiReplace(kataToHira(kotoba.reading)) }}
+              | {{ kotoba.nekoshi }}
             v-card-text
               | {{ kotoba.name }}
             v-card-actions
               v-btn(v-if="kotoba.source === 2", text,
-                :href="`https://ja.wikipedia.org/wiki/${kotoba.name}`", target="_blank"
+                :href="kotoba.href", target="_blank"
                 style="text-transform: none;"
               )
                 | Wikipediaで調べる
               v-btn(v-else, text,
-                :href="`https://kotobank.jp/gs/?q=${kotoba.name}`", target="_blank"
+                :href="kotoba.href", target="_blank"
               )
                 | 辞書を調べる
               v-btn(dark,
                 color="#55acee"
-                :href="`https://twitter.com/intent/tweet?text=${nekoshiReplace(kataToHira(kotoba.reading))} (${kotoba.name})&hashtags=${'子ん子ん子とば'}`", target="_blank"
+                :href="kotoba.intentHref", target="_blank"
               )
                 | ツイートする
           v-card(v-else)
@@ -65,19 +66,19 @@
               template(v-slot:icon)
                 .white--text
                   | {{ getNekoshiCount(kataToHira(kotoba.reading)) }}
-              | {{ nekoshiReplace(kataToHira(kotoba.reading)) }} ({{ kotoba.name }})
+              | {{ kotoba.nekoshi }} ({{ kotoba.name }})
               v-btn(v-if="kotoba.source === 2", icon,
-                :href="`https://ja.wikipedia.org/wiki/${kotoba.name}`", target="_blank"
+                :href="kotoba.href", target="_blank"
               )
                 v-icon(small)
                   | fab fa-wikipedia-w
               v-btn(v-else, icon,
-                :href="`https://kotobank.jp/gs/?q=${kotoba.name}`", target="_blank"
+                :href="kotoba.href", target="_blank"
               )
                 v-icon(small)
                   | fas fa-book
               v-btn(icon,
-                :href="`https://twitter.com/intent/tweet?text=${nekoshiReplace(kataToHira(kotoba.reading))} (${kotoba.name})&hashtags=${'子ん子ん子とば'}`", target="_blank"
+                :href="kotoba.intentHref", target="_blank"
               )
                 v-icon(small)
                   | fab fa-twitter
@@ -138,6 +139,11 @@ export default {
     getNekoshiCount(str) {
       return (str.match(/[ねこしじ]|ちゅう|ちゅー/g) || []).length
     },
+    getCount(item, searchStr) {
+      const regExp = new RegExp(searchStr, 'g')
+
+      return (item.reading.match(regExp) || []).length
+    },
     getNekoshiCol(n) {
       if (n <= 0) {
       } else if (n === 1) {
@@ -156,7 +162,24 @@ export default {
       return str.replace(/[ねこしじ]/g, '子').replace(/ちゅう/g, 'チュウ').replace(/ちゅー/g, 'チュー')
     },
     getGacha() {
-      this.addKotoba(lodash.sample(this.nekoshiArr))
+      const kotoba = lodash.sample(this.nekoshiArr)
+
+      const item = {
+        len: kotoba.reading.length,
+        nekoshi: this.nekoshiReplace(this.kataToHira(kotoba.reading)),
+        href: kotoba.source === 2 ? `https://ja.wikipedia.org/wiki/${kotoba.name}` : `https://kotobank.jp/gs/?q=${kotoba.name}`,
+        intentHref: `https://twitter.com/intent/tweet?text=${this.nekoshiReplace(this.kataToHira(kotoba.reading))} (${kotoba.name})&hashtags=${'子ん子ん子とば'}`,
+        ne: this.getCount(kotoba, 'ネ'),
+        ko: this.getCount(kotoba, 'コ'),
+        shi: this.getCount(kotoba, 'シ'),
+        chu: this.getCount(kotoba, 'チュウ|チュー'),
+        total: this.getCount(kotoba, '[ネコシ]|チュウ|チュー'),
+        rate: this.getCount(kotoba, '[ネコシ]|チュウ|チュー') / kotoba.reading.length,
+      }
+
+      Object.assign(item, kotoba)
+
+      this.addKotoba(item)
     },
     getGacha100() {
       for(let i = 0; i < 100; i++) {
