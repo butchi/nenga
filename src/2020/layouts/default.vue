@@ -5,6 +5,11 @@
         nuxt-link(to="/", style="text-decoration: inherit;")
           | 子ん子ん子とば
     nuxt
+    v-footer
+      p.caption.mb-0
+        | 子とばがすこ子へんですけどゆる子てください。
+      p.caption.mb-0
+        | &copy; IWABUCHI Yu(u)ki butchi
 </template>
 
 <script>
