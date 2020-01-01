@@ -27,6 +27,11 @@
                 :href="`https://twitter.com/intent/tweet?text=${nekoshiReplace(kataToHira(kotoba.reading))} (${kotoba.name})&hashtags=${'子ん子ん子とば'}`", target="_blank"
               )
                 | ツイートする
+          v-card(v-else)
+            v-card-title
+              | 「引く」をタップ！
+            v-card-text
+              | 子子（ここ）に結果が表示されます。
           v-timeline(v-if="logArr.length", dense)
             v-timeline-item(
               :color="getNekoshiCol(nekoshiCount(kataToHira(kotoba.reading)))"
