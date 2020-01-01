@@ -1,7 +1,19 @@
 <template lang="pug">
   v-content
     v-container(grid-list-md)
+      v-layout(v-for="(name, key) in rankingLi", :key="key", row, wrap, mt-5)
+        v-card(v-if="getRankingArray(key).length")
+          v-toolbar(dark)
+            v-card-title
+              | {{ name }}ランキング
+          v-card-text
+            v-list
+              v-list-item(v-for="(item, index) in getRankingArray(key)", :key="index")
+                | {{ index + 1 }}. {{ item.nekoshi }} ({{ key === 'rate' ? Math.round(item.rate * 100) + '%' : item[key] }})
+
       v-layout(row, wrap, mt-5)
+        h2
+          | 子ん子ん子とばログ
         v-data-table(
           :headers="headerArr"
           :items="kotobaArr"
@@ -31,12 +43,21 @@
 <script>
 import { mapGetters } from 'vuex'
 
-// import lodash from 'lodash'
+import lodash from 'lodash'
 
 export default {
   data() {
     return {
       kanaOffset: 'ア'.charCodeAt() - 'あ'.charCodeAt(),
+      rankingLi: {
+        total: '合計',
+        ne: '子（ね）',
+        ko: '子（こ）',
+        shi: '子（し）',
+        chu: 'チュウ',
+        rate: '密度',
+        len: '長さ',
+      },
       headerArr: [
         {
           text: '子とば',
@@ -78,6 +99,9 @@ export default {
     },
     kotobaFilter(char) {
       return this.kotobaArr.filter(kotoba => kotoba.reading[0] === char)
+    },
+    getRankingArray(key) {
+      return lodash(this.kotobaArr).filter(item => item[key] > 0).orderBy(item => item[key], 'desc').take(3).value()
     },
     customSort(arr, index, isDesc) {
       arr.sort((a, b) => {
