@@ -1,40 +1,34 @@
 <template lang="pug">
   v-content
     v-container(grid-list-md)
-      v-layout(row, wrap, mt-5)
+      v-layout(row, wrap)
         v-flex
-          v-layout
-            v-btn(@click="getGacha")
-              | 引く
-            //- v-btn(v-if="kotobaArr.length > 99", @click="getGacha100")
-            //- v-btn(v-if="kotobaArr.length >= 0", @click="getGacha100")
-              | 100連
           v-layout
             v-flex
               v-layout
-                v-chip
+                v-chip.ma-1
                   v-avatar.caption.yellow.darken-3(left)
                     <ruby>子<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>
                   | {{ neCnt }}
-                v-chip
+                v-chip.ma-1
                   v-avatar.caption.red(left)
                     <ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>
                   | {{ koCnt }}
-                v-chip
+                v-chip.ma-1
                   v-avatar.caption.cyan(left)
                     <ruby>子<rp>(</rp><rt>し</rt><rp>)</rp></ruby>
                   | {{ shiCnt }}
               v-layout
-                v-chip
+                v-chip.ma-1
                   v-avatar.grey(left)
                     v-icon(small)
                       | fas fa-mouse
                   | {{ chuCnt }}
-                v-chip
+                v-chip.ma-1
                   v-avatar.green(left)
                     | 計
                   | {{ nekoshiCnt }}
-          v-card(v-if="kotoba")
+          v-card.mt-3(v-if="kotoba", color="grey lighten-3")
             v-card-title
               | {{ kotoba.nekoshi }}
             v-card-text
@@ -82,6 +76,15 @@
               )
                 v-icon(small)
                   | fab fa-twitter
+    v-bottom-navigation(dark, fixed)
+      v-btn(color="red", @click="getGacha")
+        span
+          | 引く
+        v-icon
+          | fas fa-dice-one
+      //- v-btn(v-if="kotobaArr.length > 99", @click="getGacha100")
+      //- v-btn(v-if="kotobaArr.length >= 0", @click="getGacha100")
+        | 100連
 </template>
 
 <script>
