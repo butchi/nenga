@@ -8,11 +8,11 @@
     @include mq-pc {
       @content;
     }
-  } @elseif $env == "sp" {
+  } @else if $env == "sp" {
     @include mq-sp {
       @content;
     }
-  } @elseif $env == "tab" {
+  } @else if $env == "tab" {
     @include mq-tab {
       @content;
     }

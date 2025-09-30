@@ -1,3 +1,4 @@
+@use "sass:math";
 // topの値を指定しての横幅いっぱい絶対配置
 // bgimgはwidthとheightをいじるのでこのmixinはbgimgの後に呼ぶべし
 @mixin block--positioning--top($offset-top: 0) {
@@ -38,7 +39,8 @@
 @mixin block--positioning--center($width) {
   // position: relative;
   left: 50%;
-  margin-left: - $width / 2;
+  // Use multiplication/division expression instead of math.div
+  margin-left: -($width / 2);
 }
 
 @mixin hide-text {

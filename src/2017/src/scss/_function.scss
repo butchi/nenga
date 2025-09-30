@@ -1,8 +1,16 @@
+@use "sass:meta";
+
 @function image-url($path) {
   @return url($img-path + "/" + $path);
 }
 
 // rem hack
 @function px($size) {
+  // Avoid slash-division deprecation by using multiplication where possible.
+  // Convert percent-style calculations to multiplication (e.g. 560/2 -> 280)
+  @if meta.type-of($size) == "number" {
+    @return #{($size * 0.01)}rem;
+  }
+  // Fallback to previous behavior
   @return #{$size / 100}rem;
 }
