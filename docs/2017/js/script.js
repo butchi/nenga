@@ -1,51 +1,39 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict';
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var BtcMessage = function () {
+exports["default"] = void 0;
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var BtcMessage = exports["default"] = /*#__PURE__*/function () {
   function BtcMessage() {
     var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
     _classCallCheck(this, BtcMessage);
-
     this.$elm = opts.$elm || $('.btc-message');
-
     this.initialize();
   }
-
-  _createClass(BtcMessage, [{
-    key: 'initialize',
+  return _createClass(BtcMessage, [{
+    key: "initialize",
     value: function initialize() {
       var _this = this;
-
       this.$to = this.$elm.find('.to');
       this.$body = this.$elm.find('.body');
-
       this.$form = this.$elm.find('.form');
-
       this.$mainMessage = this.$elm.find('.main-message');
-
       this.$beforeLoad = this.$elm.find('.area-before-load');
-
       this.$beforeLoadMessage = this.$beforeLoad.find('.text');
-
       this.$form.on('submit', function (evt) {
         evt.preventDefault();
-
         _this.$beforeLoadMessage.text('読み込み中です。');
-
         var lastname = _this.$form.find('[name="lastname"]').val();
         var code = _this.$form.find('[name="code"]').val();
-
-        ga('send', 'event', 'nenga-2017', 'submit', lastname + '-' + code);
-
+        ga('send', 'event', 'nenga-2017', 'submit', "".concat(lastname, "-").concat(code));
         $.ajax({
           url: 'https://script.google.com/macros/s/AKfycbws1vKfZR6in5KG4OfA1KiPFlcaRwsLtGY5oMtMDWmvdlC_gjbF/exec',
           type: 'GET',
@@ -61,7 +49,6 @@ var BtcMessage = function () {
           if (data && data.to && data.body) {
             _this.$beforeLoad.hide();
             _this.$mainMessage.fadeIn(500);
-
             _this.$to.text(data.to);
             _this.$body.html(data.body);
           } else {
@@ -73,107 +60,75 @@ var BtcMessage = function () {
       });
     }
   }]);
-
-  return BtcMessage;
 }();
 
-exports.default = BtcMessage;
-
 },{}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Router = require('./Router');
-
-var _Router2 = _interopRequireDefault(_Router);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Main = function () {
+exports["default"] = void 0;
+var _Router = _interopRequireDefault(require("./Router"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var Main = exports["default"] = /*#__PURE__*/function () {
   function Main() {
     var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
     _classCallCheck(this, Main);
-
     console.log('Hello, world!');
-
     this.initialize();
-
     console.log('Thanks, world!');
   }
-
-  _createClass(Main, [{
-    key: 'initialize',
+  return _createClass(Main, [{
+    key: "initialize",
     value: function initialize() {
       var _this = this;
-
       $(function () {
-        _this.router = new _Router2.default();
+        _this.router = new _Router["default"]();
       });
     }
   }]);
-
-  return Main;
 }();
 
-exports.default = Main;
-
 },{"./Router":3}],3:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _ns = require('./ns');
-
-var _ns2 = _interopRequireDefault(_ns);
-
-var _Common = require('../page/Common');
-
-var _Common2 = _interopRequireDefault(_Common);
-
-var _Index = require('../page/Index');
-
-var _Index2 = _interopRequireDefault(_Index);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Router = function () {
+exports["default"] = void 0;
+var _ns = _interopRequireDefault(require("./ns"));
+var _Common = _interopRequireDefault(require("../page/Common"));
+var _Index = _interopRequireDefault(require("../page/Index"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var Router = exports["default"] = /*#__PURE__*/function () {
   function Router() {
     _classCallCheck(this, Router);
-
     this.initialize();
   }
-
-  _createClass(Router, [{
-    key: 'initialize',
+  return _createClass(Router, [{
+    key: "initialize",
     value: function initialize() {
       var $body = $('body');
-
-      this.pageCommon = new _Common2.default();
-
+      this.pageCommon = new _Common["default"]();
       if ($body.hasClass('page-index')) {
-        this.pageIndex = new _Index2.default();
+        this.pageIndex = new _Index["default"]();
       }
     }
   }]);
-
-  return Router;
 }();
-
-exports.default = Router;
 
 },{"../page/Common":5,"../page/Index":6,"./ns":4}],4:[function(require,module,exports){
 "use strict";
@@ -181,6 +136,7 @@ exports.default = Router;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports["default"] = void 0;
 /*
  * グローバル直下に変数を置かないよう、ネームスペースを切る。
  * ネームスペース以下の変数にアクセスしたいときは各クラスでこれをimportする
@@ -188,122 +144,92 @@ Object.defineProperty(exports, "__esModule", {
 
 window.App = window.App || {};
 var ns = window.App;
-exports.default = ns;
+var _default = exports["default"] = ns;
 
 },{}],5:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _ns = require('../module/ns');
-
-var _ns2 = _interopRequireDefault(_ns);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Common = function () {
+exports["default"] = void 0;
+var _ns = _interopRequireDefault(require("../module/ns"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var Common = exports["default"] = /*#__PURE__*/function () {
   function Common() {
     var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
     _classCallCheck(this, Common);
-
     this.initialize();
   }
-
-  _createClass(Common, [{
-    key: 'initialize',
+  return _createClass(Common, [{
+    key: "initialize",
     value: function initialize() {
       this.setEnvClass();
     }
   }, {
-    key: 'setEnvClass',
+    key: "setEnvClass",
     value: function setEnvClass() {
       var $html = $('html');
-
-      _ns2.default.isSp = false;
-      _ns2.default.isPc = false;
-      _ns2.default.isTab = false;
-
+      _ns["default"].isSp = false;
+      _ns["default"].isPc = false;
+      _ns["default"].isTab = false;
       if ($html.hasClass('is-sp')) {
-        _ns2.default.isSp = true;
+        _ns["default"].isSp = true;
       }
       if ($html.hasClass('is-pc')) {
-        _ns2.default.isPc = true;
+        _ns["default"].isPc = true;
       }
       if ($html.hasClass('is-tab')) {
-        _ns2.default.isTab = true;
+        _ns["default"].isTab = true;
       }
     }
   }]);
-
-  return Common;
 }();
 
-exports.default = Common;
-
 },{"../module/ns":4}],6:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _ns = require('../module/ns');
-
-var _ns2 = _interopRequireDefault(_ns);
-
-var _BtcMessage = require('../module/BtcMessage');
-
-var _BtcMessage2 = _interopRequireDefault(_BtcMessage);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Index = function () {
+exports["default"] = void 0;
+var _ns = _interopRequireDefault(require("../module/ns"));
+var _BtcMessage = _interopRequireDefault(require("../module/BtcMessage"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var Index = exports["default"] = /*#__PURE__*/function () {
   function Index() {
     var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
     _classCallCheck(this, Index);
-
     this.initialize();
   }
-
-  _createClass(Index, [{
-    key: 'initialize',
+  return _createClass(Index, [{
+    key: "initialize",
     value: function initialize() {
-      this.BtcMessage = new _BtcMessage2.default();
+      this.BtcMessage = new _BtcMessage["default"]();
     }
   }]);
-
-  return Index;
 }();
 
-exports.default = Index;
-
 },{"../module/BtcMessage":1,"../module/ns":4}],7:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _ns = require('./module/ns');
-
-var _ns2 = _interopRequireDefault(_ns);
-
-var _Main = require('./module/Main');
-
-var _Main2 = _interopRequireDefault(_Main);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+var _ns = _interopRequireDefault(require("./module/ns"));
+var _Main = _interopRequireDefault(require("./module/Main"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 // エントリーポイント。indexからはライブラリとこれしか呼ばない
 
-_ns2.default.main = new _Main2.default();
+_ns["default"].main = new _Main["default"]();
 
 },{"./module/Main":2,"./module/ns":4}]},{},[7]);

@@ -1,193 +1,146 @@
 @charset "UTF-8";
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 .btc-list-share {
-  position: static; }
-  .btc-list-share .list {
-    font-size: 0;
-    vertical-align: top; }
-  .btc-list-share .item {
-    display: inline-block; }
-    .btc-list-share .item + .item {
-      margin-left: 5px;
-      margin-left: 0.05rem; }
+  position: static;
+}
+.btc-list-share .list {
+  font-size: 0;
+  vertical-align: top;
+}
+.btc-list-share .item {
+  display: inline-block;
+}
+.btc-list-share .item + .item {
+  margin-left: 0.05rem;
+}
 
 .btc-message {
   position: relative;
-  margin-top: 30px;
-  margin-top: 0.3rem; }
-  .btc-message .block-message {
-    position: relative;
-    box-sizing: border-box;
-    width: 280px;
-    width: 2.8rem;
-    height: 400px;
-    height: 4rem;
-    margin-top: 10px;
-    margin-top: 0.1rem; }
-    .btc-message .block-message .area-before-load {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      background-color: #eee; }
-      .btc-message .block-message .area-before-load .text {
-        position: absolute;
-        left: 0;
-        top: 45%;
-        width: 100%;
-        text-align: center; }
-    .btc-message .block-message .main-message {
-      display: none;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      background-image: url(../img/message-template.png);
-      background-size: 2.8rem; }
-      .btc-message .block-message .main-message .to {
-        vertical-align: bottom;
-        position: absolute;
-        left: 35px;
-        left: 0.35rem;
-        top: 35px;
-        top: 0.35rem;
-        width: 160px;
-        width: 1.6rem;
-        height: 20px;
-        height: 0.2rem; }
-      .btc-message .block-message .main-message .body {
-        box-sizing: border-box;
-        vertical-align: bottom;
-        position: absolute;
-        left: 35px;
-        left: 0.35rem;
-        top: 80px;
-        top: 0.8rem;
-        width: 225px;
-        width: 2.25rem;
-        height: 254.999px;
-        height: 2.55rem;
-        padding: 0 10px;
-        padding: 0 0.1rem;
-        line-height: 42px;
-        line-height: 0.42rem; }
-      .btc-message .block-message .main-message .from {
-        vertical-align: bottom;
-        position: absolute;
-        left: 35px;
-        left: 0.35rem;
-        top: 350px;
-        top: 3.5rem;
-        width: 225px;
-        width: 2.25rem;
-        height: 30px;
-        height: 0.3rem;
-        line-height: 30px;
-        line-height: 0.3rem; }
+  margin-top: 0.3rem;
+}
+.btc-message .block-message {
+  position: relative;
+  box-sizing: border-box;
+  width: 2.8rem;
+  height: 4rem;
+  margin-top: 0.1rem;
+}
+.btc-message .block-message .area-before-load {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #eee;
+}
+.btc-message .block-message .area-before-load .text {
+  position: absolute;
+  left: 0;
+  top: 45%;
+  width: 100%;
+  text-align: center;
+}
+.btc-message .block-message .main-message {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: url(../img/message-template.png);
+  background-size: 2.8rem;
+}
+.btc-message .block-message .main-message .to {
+  vertical-align: bottom;
+  position: absolute;
+  left: 0.35rem;
+  top: 0.35rem;
+  width: 1.6rem;
+  height: 0.2rem;
+}
+.btc-message .block-message .main-message .body {
+  box-sizing: border-box;
+  vertical-align: bottom;
+  position: absolute;
+  left: 0.35rem;
+  top: 0.8rem;
+  width: 2.25rem;
+  height: 2.55rem;
+  padding: 0 0.1rem;
+  line-height: 0.42rem;
+}
+.btc-message .block-message .main-message .from {
+  vertical-align: bottom;
+  position: absolute;
+  left: 0.35rem;
+  top: 3.5rem;
+  width: 2.25rem;
+  height: 0.3rem;
+  line-height: 0.3rem;
+}
 
 .display-none {
-  display: none; }
+  display: none;
+}
 
 html.is-pc .pc-none {
-  display: none; }
+  display: none;
+}
 
 html.is-sp .sp-none {
-  display: none; }
+  display: none;
+}
 
+html.is-sp body {
+  font-size: 0.15rem;
+}
+html.is-pc body {
+  font-size: 0.15rem;
+}
 body {
   font-family: YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Meiryo, "メイリオ", sans-serif;
-  line-height: 1.5; }
-  html.is-sp body {
-    font-size: 15px;
-    font-size: 0.15rem; }
-  html.is-pc body {
-    font-size: 15px;
-    font-size: 0.15rem; }
+  line-height: 1.5;
+}
 
 html {
-  font-size: 100px; }
-  html.is-sp html {
-    font-size: 15px;
-    font-size: 0.15rem; }
-  html.is-pc html {
-    font-size: 15px;
-    font-size: 0.15rem; }
-  html.is-tab html {
-    font-size: 15px;
-    font-size: 0.15rem; }
+  font-size: 100px;
+}
+html.is-sp html {
+  font-size: 0.15rem;
+}
+html.is-pc html {
+  font-size: 0.15rem;
+}
+html.is-tab html {
+  font-size: 0.15rem;
+}
 
+html.is-sp body {
+  font-size: 0.15rem;
+  line-height: 1.5;
+}
+html.is-pc body {
+  font-size: 0.15rem;
+  line-height: 1.5;
+}
 body {
-  font-family: YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Meiryo, "メイリオ", sans-serif; }
-  html.is-sp body {
-    font-size: 15px;
-    font-size: 0.15rem;
-    line-height: 1.5; }
-  html.is-pc body {
-    font-size: 15px;
-    font-size: 0.15rem;
-    line-height: 1.5; }
+  font-family: YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Meiryo, "メイリオ", sans-serif;
+}
 
 main {
-  display: block; }
+  display: block;
+}
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 a {
   color: inherit;
-  text-decoration: underline; }
-  a.hover, a:hover {
-    text-decoration: none; }
-
+  text-decoration: underline;
+}
+a.hover, a:hover {
+  text-decoration: none;
+}
 .hide-display {
   display: inline-block;
   position: absolute;
@@ -196,81 +149,72 @@ a {
   left: 0;
   top: 0;
   transform: scale(0);
-  -webkit-transform: scale(0); }
+  -webkit-transform: scale(0);
+}
 
 sup {
   vertical-align: super;
-  font-size: smaller; }
+  font-size: smaller;
+}
 
 i {
-  font-style: italic; }
+  font-style: italic;
+}
 
 .heading {
-  font-size: 30px;
   font-size: 0.3rem;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .wrapper {
-  margin-bottom: 30px;
-  margin-bottom: 0.3rem; }
-  html.is-sp .wrapper {
-    overflow: hidden; }
-  html.is-pc .wrapper {
-    overflow: hidden; }
+  margin-bottom: 0.3rem;
+}
+html.is-sp .wrapper {
+  overflow: hidden;
+}
+html.is-pc .wrapper {
+  overflow: hidden;
+}
 
 .page-index .inner-block {
-  width: 512px;
   width: 5.12rem;
-  margin: 0 auto; }
-
+  margin: 0 auto;
+}
 .page-index .page-title {
-  font-size: 50px;
   font-size: 0.5rem;
-  text-align: center; }
-
+  text-align: center;
+}
 .page-index .card {
   position: relative;
-  width: 512px;
   width: 5.12rem;
-  height: 512px;
-  height: 5.12rem; }
-  .page-index .card .image svg {
-    width: 100%;
-    height: 100%; }
-
+  height: 5.12rem;
+}
+.page-index .card .image svg {
+  width: 100%;
+  height: 100%;
+}
 .page-index .sec-message {
-  margin-top: 130px;
   margin-top: 1.3rem;
-  padding: 0 20px;
-  padding: 0 0.2rem; }
-
+  padding: 0 0.2rem;
+}
 .page-index .sec-special-message {
-  margin-top: 20px;
   margin-top: 0.2rem;
-  padding: 0 20px;
-  padding: 0 0.2rem; }
-
+  padding: 0 0.2rem;
+}
 .page-index .sec-info {
-  margin-top: 30px;
   margin-top: 0.3rem;
-  padding: 0 20px;
-  padding: 0 0.2rem; }
-
+  padding: 0 0.2rem;
+}
 .page-index .message {
   position: relative;
-  margin-top: 100px;
   margin-top: 1rem;
-  padding: 0 20px;
-  padding: 0 0.2rem; }
-
+  padding: 0 0.2rem;
+}
 .page-index .author {
-  margin-top: 30px;
   margin-top: 0.3rem;
-  padding: 0 20px;
-  padding: 0 0.2rem; }
-
+  padding: 0 0.2rem;
+}
 .page-index .btc-list-share {
-  margin-top: 30px;
   margin-top: 0.3rem;
-  padding: 0 20px;
-  padding: 0 0.2rem; }
+  padding: 0 0.2rem;
+}
