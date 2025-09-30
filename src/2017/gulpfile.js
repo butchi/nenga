@@ -5,7 +5,7 @@ import sassGlob from "gulp-sass-glob"
 import pug from "gulp-pug"
 import rename from "gulp-rename"
 import browserSync from "browser-sync"
-import readConfig from "read-config"
+import yaml from "js-yaml"
 import source from "vinyl-source-stream"
 import browserify from "browserify"
 import babelify from "babelify"
@@ -64,9 +64,19 @@ export const js = series(browserifyTask)
 export const compilePug = () => {
   let locals = {}
   try {
-    locals = readConfig(`${CONFIG}/meta.yml`) || {}
+    const yamlPath = path.join(CONFIG, "meta.yml")
+    if (fs.existsSync(yamlPath)) {
+      const raw = fs.readFileSync(yamlPath, "utf8")
+      // js-yaml.load will parse the YAML into a JS object. Keep a safe
+      // fallback to an empty object so templates don't break when file
+      // is missing or empty.
+      const parsed = yaml.load(raw)
+      locals = parsed && typeof parsed === "object" ? parsed : {}
+    } else {
+      locals = {}
+    }
   } catch (e) {
-    console.warn("Could not read meta.yml config, using empty locals")
+    console.warn("Could not read meta.yml config, using empty locals", e)
   }
 
   return src([
