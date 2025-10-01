@@ -64,9 +64,7 @@ html(lang="ja")
 
     // stylesheet
     block stylesheet-block
-      //- link(rel="stylesheet", href=`${rootPath}css/lib/material.min.css`)
-      //- link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
-      link(rel="stylesheet", href=`${rootPath}css/style.css?v=${versions["style.css"]}`)
+      link(rel="stylesheet", href=`${rootPath}css/style.css`)
 
   body(data-page-id= pageId)
     //- appId指定を忘れないように
@@ -79,10 +77,7 @@ html(lang="ja")
     block javascript-block
       script(src=`${rootPath}js/lib/jquery.min.js`)
       script(src=`${rootPath}js/lib/lodash.min.js`)
-      //- script(src=`${rootPath}js/lib/material.min.js`)
-      script(src=`${rootPath}js/script.deco.js?v=${versions["script.deco.js"]}`)
-
-    //- include ../_partial/gplus-platform.html
+      script(src=`${rootPath}js/script.js`)
 
     //- トラッキングID指定を忘れないように
     include ../_partial/ga.html
