@@ -1,13 +1,15 @@
-web-starter
-====
+# web-starter
 
 ## はじめに
+
 本スターターキットは kayac-html5-starter から派生しています。
 
 ## 事前に用意するもの
-- node.js (version 6.9.1以上)
+
+- node.js (version 6.9.1 以上)
 
 ## 環境構築
+
 ```
 # 開発に使うnpmパッケージをインストール
 yarn
@@ -21,18 +23,18 @@ npm install
 - `README.md`
   - このファイルです。
 - `package.json`
-  - 依存するnpmパッケージに関する設定ファイルです。
+  - 依存する npm パッケージに関する設定ファイルです。
 - `gulpfile.babel.js`
-  - gulpタスクに関する設定ファイルです。（`.babel.js`となっているのは、es2015で書くための印です）
+  - gulp タスクに関する設定ファイルです。（`.babel.js`となっているのは、es2015 で書くための印です）
 - `docs`
-  - Web公開されるファイルの置き場所です。
+  - Web 公開されるファイルの置き場所です。
 - `src/scss`, `src/js`, `src/pug`, `src/config`
   - ビルドに必要な各種ソースコードです。
 
 ## 開発手順
 
-開発時に必要なタスクは、npm scriptおよびgulp.jsで管理されています。
-shellから以下のコマンドを実行することで、各種ビルド・タスク実行が可能です。
+開発時に必要なタスクは、npm script および gulp.js で管理されています。
+shell から以下のコマンドを実行することで、各種ビルド・タスク実行が可能です。
 
 - `npm start`
   - すべてのソースコードをビルドし、開発用ブラウザを立ち上げ、その後ソースコードに修正があれば自動ビルド・自動ブラウザ更新します
@@ -40,14 +42,15 @@ shellから以下のコマンドを実行することで、各種ビルド・タ
 
 ## 使用言語
 
-- HTMLテンプレート: [pug](http://jade-lang.com/)
-- CSSメタ言語: [Sass(scss)](http://sass-lang.com/)
+- HTML テンプレート: [pug](http://jade-lang.com/)
+- CSS メタ言語: [Sass(scss)](http://sass-lang.com/)
 - Javascript: [ES2015(ECMAScript 6)](https://babeljs.io/docs/learn-es2015/)
 
 ## 対応ブラウザ
-- 各種モダンブラウザ最新バージョン・IE10以上
-  - 対応ブラウザを変更する場合、`src/config/pleeease.json`の`autoprefixer.browsers`を修正することをお忘れなく
-  - またIE8に対応する場合は、jQueryを1系にすることもお忘れなく
+
+- 各種モダンブラウザ最新バージョン・IE10 以上
+  - 対応ブラウザを変更する場合は `package.json` の `browserslist` を編集してください。PostCSS（`postcss-preset-env` / `autoprefixer`）がこの設定を参照して自動でプレフィックスを付与します。
+  - また IE8 に対応する場合は、jQuery を 1 系にすることもお忘れなく
 
 ## 依存ライブラリ
 
@@ -57,7 +60,17 @@ shellから以下のコマンドを実行することで、各種ビルド・タ
 - [gulp.js](http://gulpjs.com/)
 - [Babel](https://babeljs.io/)
 - [browserify](http://browserify.org/)
-- [pleeease](http://pleeease.io/)
+- PostCSS / autoprefixer (browserslist を利用)
 - [browser-sync](https://www.browsersync.io/)
 - [jQuery](https://jquery.com/)
 - [Reset CSS](http://meyerweb.com/eric/tools/css/reset/)
+
+## ビルド
+
+このディレクトリでは gulp ベースのビルドをサポートしています。セットアップと基本コマンド:
+
+```
+npm install
+npm run build
+npm start
+```
