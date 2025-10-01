@@ -1,17 +1,17 @@
-import Router from './Router';
+import Router from "./Router"
 
 export default class Main {
   constructor(opts = {}) {
-    console.log('Hello, world!');
+    console.log("Hello, world!")
 
-    this.initialize();
+    this.initialize()
 
-    console.log('Thanks, world!');
+    console.log("Thanks, world!")
   }
 
   initialize() {
     $(() => {
-      this.router = new Router();
-    });
+      this.router = new Router()
+    })
   }
 }

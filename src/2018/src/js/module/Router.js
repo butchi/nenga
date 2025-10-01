@@ -1,25 +1,23 @@
-import ns from './ns';
-import pageCommon from '../page/common';
-import pageIndex from '../page/index';
-import pageSub from '../page/sub';
+import ns from "./ns"
+import pageCommon from "../page/Common"
+import pageIndex from "../page/Index"
 
 function page(pageId, callback) {
-  if(document.querySelector(`body[data-page-id="${pageId}"]`)) {
-    callback();
+  if (document.querySelector(`body[data-page-id="${pageId}"]`)) {
+    callback()
   }
-};
+}
 
 export default class Router {
   constructor() {
-    this.initialize();
+    this.initialize()
   }
 
   initialize() {
-    ns.page = ns.page || {};
+    ns.page = ns.page || {}
 
-    pageCommon();
+    pageCommon()
 
-    page('index', pageIndex);
-    page('sub', pageSub);
+    page("index", pageIndex)
   }
 }
