@@ -3,19 +3,21 @@
 // import
 import gulp from "gulp"
 import source from "vinyl-source-stream"
-import sass from "gulp-sass"
+import gulpSass from "gulp-sass"
+import * as dartSass from "sass"
 import sassGlob from "gulp-sass-glob"
-import pleeease from "gulp-pleeease"
+import postcss from "gulp-postcss"
+import postcssPresetEnv from "postcss-preset-env"
 import browserify from "browserify"
 import babelify from "babelify"
 import pug from "gulp-pug"
-import rename from "gulp-rename"
-import uglify from "gulp-uglify"
-import decodecode from "gulp-decodecode"
+import yaml from "js-yaml"
 import browserSync from "browser-sync"
-import readConfig from "read-config"
+import fs from "fs"
+import path from "path"
+import { createRequire } from "module"
+const requireC = createRequire(import.meta.url)
 import watch from "gulp-watch"
-import RevLogger from "rev-logger"
 
 // const
 const SRC = "./src"
@@ -24,46 +26,47 @@ const HTDOCS = "../../docs/2018"
 const BASE_PATH = ""
 const DEST = `${HTDOCS}${BASE_PATH}`
 
-const revLogger = new RevLogger({
-  "style.css": `${DEST}/css/style.css`,
-  "script.deco.js": `${DEST}/js/script.deco.js`,
-})
-
 // css
 gulp.task("copy-bower-css", () => {
-  return gulp
-    .src(
-      [
-        "material-design-lite/material.min.css",
-        "material-design-lite/material.min.css.map",
-      ],
-      {
-        cwd: "node_modules",
-      }
-    )
-    .pipe(gulp.dest(`${DEST}/css/lib`))
+  return Promise.resolve()
 })
 
+gulp.task("copy-reset-css", () => {
+  return gulp
+    .src(["reset.css/reset.css"], { cwd: "node_modules", allowEmpty: true })
+    .pipe(gulp.dest(`${DEST}/css/node_modules/reset.css`))
+})
+
+const sassCompiler = gulpSass(dartSass)
+
 gulp.task("sass", () => {
-  const config = readConfig(`${CONFIG}/pleeease.json`)
+  let config = {}
+  // use postcss-preset-env with default config (it reads browserslist from package.json)
+  const processors = [postcssPresetEnv()]
+
   return gulp
     .src(`${SRC}/scss/style.scss`)
     .pipe(sassGlob())
-    .pipe(sass())
-    .pipe(pleeease(config))
+    .pipe(
+      sassCompiler({
+        quietDeps: true,
+      }).on("error", sassCompiler.logError)
+    )
+    .pipe(postcss(processors))
     .pipe(gulp.dest(`${DEST}/css`))
 })
 
-// gulp.task('css', gulp.series(gulp.parallel('sass', 'copy-bower-css')));
-gulp.task("css", gulp.series("sass"))
+// css task: build sass and copy dependent css files
+gulp.task(
+  "css",
+  gulp.series("sass", gulp.parallel("copy-bower-css", "copy-reset-css"))
+)
 
 // js
 gulp.task("copy-bower-js", () => {
   return gulp
     .src(
       [
-        // 'material-design-lite/material.min.js',
-        // 'material-design-lite/material.min.js.map',
         "jquery/dist/jquery.min.js",
         "jquery/dist/jquery.min.map",
         "lodash/lodash.min.js",
@@ -74,58 +77,84 @@ gulp.task("copy-bower-js", () => {
     )
     .pipe(gulp.dest(`${DEST}/js/lib`))
 })
+// also copy our local vendor scripts (ga, fb-sdk, gplus loader)
+gulp.task("copy-local-vendor-js", () => {
+  return gulp
+    .src([`${SRC}/js/vendor/**/*.js`])
+    .pipe(gulp.dest(`${DEST}/js/vendor`))
+})
 
 gulp.task("browserify", () => {
-  return browserify(`${SRC}/js/script.js`)
-    .transform(babelify)
+  return browserify(`${SRC}/js/script.js`, { debug: true })
+    .transform(babelify, {
+      presets: [requireC.resolve("@babel/preset-env")],
+      plugins: [requireC.resolve("@babel/plugin-transform-modules-commonjs")],
+      sourceMaps: true,
+      global: true,
+    })
     .bundle()
     .pipe(source("script.js"))
     .pipe(gulp.dest(`${DEST}/js`))
 })
 
-gulp.task("minify", () => {
-  return gulp
-    .src(`${DEST}/js/script.js`)
-    .pipe(
-      uglify({
-        preserveComments: "license",
-      })
-    )
-    .pipe(rename("script.min.js"))
-    .pipe(gulp.dest(`${DEST}/js`))
-})
+// gulp.task("minify", () => {
+//   return gulp
+//     .src(`${DEST}/js/script.js`)
+//     .pipe(
+//       uglify({
+//         preserveComments: "license",
+//       })
+//     )
+//     .pipe(rename("script.min.js"))
+//     .pipe(gulp.dest(`${DEST}/js`))
+// })
 
-gulp.task("deco", () => {
-  return gulp
-    .src(`${DEST}/js/script.js`)
-    .pipe(
-      decodecode({
-        preserveComments: "license",
-        decoArr: ["恵", "大", "毘", "弁", "布", "福", "寿"],
-      })
-    )
-    .pipe(rename("script.deco.js"))
-    .pipe(gulp.dest(`${DEST}/js`))
-})
+// gulp.task("deco", () => {
+//   return gulp
+//     .src(`${DEST}/js/script.js`)
+//     .pipe(
+//       decodecode({
+//         preserveComments: "license",
+//         decoArr: ["恵", "大", "毘", "弁", "布", "福", "寿"],
+//       })
+//     )
+//     .pipe(rename("script.deco.js"))
+//     .pipe(gulp.dest(`${DEST}/js`))
+// })
 
 // gulp.task 'js', gulp.parallel('browserify', 'copy-bower-js')
 gulp.task(
   "js",
   gulp.series(
-    gulp.parallel("browserify", "copy-bower-js"),
-    gulp.parallel("minify", "deco")
+    gulp.parallel("browserify", "copy-bower-js", "copy-local-vendor-js")
+    // gulp.parallel("minify", "deco")
   )
 )
 
 // html
 gulp.task("pug", () => {
-  const locals = {
-    meta: readConfig(`${CONFIG}/meta.yml`),
-    versions: revLogger.versions(),
+  let meta = {}
+  try {
+    const metaPath = path.join(CONFIG, "meta.yml")
+    if (fs.existsSync(metaPath)) {
+      const raw = fs.readFileSync(metaPath, "utf8")
+      const parsed = yaml.load(raw)
+      meta = parsed && typeof parsed === "object" ? parsed : {}
+    }
+  } catch (e) {
+    console.warn("Could not read meta.yml, using empty meta", e)
+    meta = {}
   }
 
+  const locals = {
+    meta: meta,
+    versions: {},
+  }
+
+  // match all pug files but exclude partials/underscored files. Using two patterns
+  // avoids issues with character classes being interpreted differently by shells
   return gulp
-    .src([`${SRC}/pug/**/[!_]*.pug`, `!${SRC}/pug/**/_*/**/*`])
+    .src([`${SRC}/pug/**/*.pug`, `!${SRC}/pug/**/_*.pug`])
     .pipe(
       pug({
         locals: locals,
@@ -154,9 +183,14 @@ gulp.task("browser-sync", () => {
     gulp.series("pug", browserSync.reload)
   )
 
-  revLogger.watch(changed => {
-    gulp.series("pug", browserSync.reload)()
-  })
+  // always watch built assets and trigger pug rebuild + reload
+  gulp.watch(
+    [`${DEST}/css/**`, `${DEST}/js/**`],
+    gulp.series("pug", bs => {
+      browserSync.reload()
+      return Promise.resolve()
+    })
+  )
 })
 
 gulp.task("serve", gulp.series("browser-sync"))
