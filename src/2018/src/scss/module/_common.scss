@@ -1,3 +1,6 @@
+@use "../variable" as *;
+@use "../mixin/media-queries" as *;
+
 .display-none {
   display: none;
 }
@@ -25,7 +28,6 @@ body {
   font-family: $sans-serif;
   line-height: 1.5;
 }
-
 
 html {
   font-size: #{$px-per-rem}px;
@@ -66,3 +68,7 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
+/* test watch */
+
+/* test watch */

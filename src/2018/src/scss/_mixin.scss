@@ -1,4 +1,4 @@
-@import "mixin/clearfix";
-@import "mixin/bgimg";
-@import "mixin/layout";
-@import "mixin/media-queries";
+@use "mixin/clearfix" as *;
+@use "mixin/bgimg" as *;
+@use "mixin/layout" as *;
+@use "mixin/media-queries" as *;

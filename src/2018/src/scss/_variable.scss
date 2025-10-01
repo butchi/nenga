@@ -1,4 +1,6 @@
-$img_path: '../img';
+@use "function" as *;
+
+$img_path: "../img";
 
 // ==========================================================================
 // Global config file
@@ -28,11 +30,12 @@ $border-color: $accent-color !default;
 $black: #000000;
 $white: #ffffff;
 
-
 // Fonts
 // ==========================================================================
-$sans-serif: YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Meiryo, "メイリオ", sans-serif;
-$serif:      YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+$sans-serif: YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Meiryo,
+  "メイリオ", sans-serif;
+$serif: YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E",
+  "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
 $base-font-size--sp: px(15);
 $base-font-size--pc: px(15);
 $line-height--sp: 1.5;

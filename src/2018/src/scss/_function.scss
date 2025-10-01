@@ -1,8 +1,10 @@
+@use "sass:math";
+
 @function image-url($path) {
   @return url($img-path + "/" + $path);
 }
 
 // rem hack
 @function px($size) {
-  @return #{$size / 100}rem;
+  @return math.div($size, 100) * 1rem;
 }
