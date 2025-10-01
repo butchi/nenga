@@ -17,7 +17,6 @@ import fs from "fs"
 import path from "path"
 import { createRequire } from "module"
 const requireC = createRequire(import.meta.url)
-import watch from "gulp-watch"
 
 // const
 const SRC = "./src"
@@ -176,9 +175,9 @@ gulp.task("browser-sync", () => {
     ghostMode: false,
   })
 
-  watch([`${SRC}/scss/**/*.scss`], gulp.series("sass", browserSync.reload))
-  watch([`${SRC}/js/**/*.js`], gulp.series("js", browserSync.reload))
-  watch(
+  gulp.watch([`${SRC}/scss/**/*.scss`], gulp.series("sass", browserSync.reload))
+  gulp.watch([`${SRC}/js/**/*.js`], gulp.series("js", browserSync.reload))
+  gulp.watch(
     [`${SRC}/pug/**/*.pug`, `${SRC}/config/meta.yml`],
     gulp.series("pug", browserSync.reload)
   )
