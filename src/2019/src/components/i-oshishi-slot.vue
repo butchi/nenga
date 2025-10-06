@@ -33,6 +33,7 @@ div
 </template>
 
 <script>
+/* global gtag */
 import { mapState, mapActions } from "vuex";
 
 import _ from "lodash";

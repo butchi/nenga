@@ -26,6 +26,7 @@ import { mapState, mapActions } from "vuex";
 import iOshishiCard from "../components/i-oshishi-card.vue";
 
 import { sheet } from "../data/ioshishi-slot.json";
+import _ from 'lodash';
 
 export default {
   components: {
