@@ -8,9 +8,7 @@ const TEMPLATE_PARAMS = {
 }
 
 module.exports = {
-  // Temporarily disable lint-on-save to avoid build-time ESLint errors
-  // while we apply dependency compatibility fixes.
-  lintOnSave: false,
+  // lintOnSave is enabled (was temporarily disabled during dependency fixes)
   // Use `publicPath` so built assets reference the repo subpath on production
   // (BASE_PATH comes from src/assets/constants.json and is like '/nenga/2019/')
   publicPath: BASE_PATH,
