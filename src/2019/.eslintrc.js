@@ -12,4 +12,12 @@ module.exports = {
     parser: "@babel/eslint-parser",
     requireConfigFile: false,
   },
+  overrides: [
+    {
+      files: ["src/views/**/*.vue"],
+      rules: {
+        "vue/multi-word-component-names": "off",
+      },
+    },
+  ],
 };
