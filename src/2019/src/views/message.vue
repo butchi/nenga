@@ -10,7 +10,7 @@ import messageCard from "../components/message-card.vue";
 
 export default {
   components: {
-    "message-card": messageCard
+    "message-card": messageCard,
   },
 };
 </script>

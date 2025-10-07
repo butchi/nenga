@@ -58,12 +58,12 @@ export default {
     iOshishi: Object,
     countArr: Array,
     isHidden: Boolean,
-    isDialog: Boolean
+    isDialog: Boolean,
   },
   data() {
     return {
-      baseUrl: constants.SITE_ORIGIN + constants.BASE_PATH.slice(1)
-    }
+      baseUrl: constants.SITE_ORIGIN + constants.BASE_PATH.slice(1),
+    };
   },
   computed: {
     imgSrc() {
@@ -79,34 +79,50 @@ export default {
       return `${this.baseUrl}share/${this.iOshishi.friendly_id}/`;
     },
     tweetText() {
-      return `「${this.iOshishi.name}」${this.count < 2 ? '' : this.count + '回目'}ゲット！`;
+      return `「${this.iOshishi.name}」${
+        this.count < 2 ? "" : this.count + "回目"
+      }ゲット！`;
     },
     hashtagStr() {
-      return 'イOシシスロット';
+      return "イOシシスロット";
     },
     twitterLink() {
-      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.tweetText)}&url=${this.url}&hashtags=${encodeURIComponent(this.hashtagStr)}`;
+      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+        this.tweetText
+      )}&url=${this.url}&hashtags=${encodeURIComponent(this.hashtagStr)}`;
     },
     facebookLink() {
       return `http://www.facebook.com/share.php?u=${this.url}`;
     },
     lineLink() {
       return `https://social-plugins.line.me/lineit/share?url=${this.url}`;
-    }
+    },
   },
   methods: {
     tweet() {
-      window.open(encodeURI(decodeURI(this.twitterLink)), "tweetWindow", "width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1");
+      window.open(
+        encodeURI(decodeURI(this.twitterLink)),
+        "tweetWindow",
+        "width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1"
+      );
       return false;
     },
     shareFacebook() {
-      window.open(encodeURI(decodeURI(this.facebookLink)), 'FBwindow', 'width=554, height=470, menubar=no, toolbar=no, scrollbars=yes');
+      window.open(
+        encodeURI(decodeURI(this.facebookLink)),
+        "FBwindow",
+        "width=554, height=470, menubar=no, toolbar=no, scrollbars=yes"
+      );
       return false;
     },
     sendLine() {
-      window.open(encodeURI(decodeURI(this.lineLink)), "lineWindow", "width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1");
+      window.open(
+        encodeURI(decodeURI(this.lineLink)),
+        "lineWindow",
+        "width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1"
+      );
       return false;
-    }
-  }
+    },
+  },
 };
 </script>

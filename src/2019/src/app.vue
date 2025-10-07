@@ -41,19 +41,21 @@ v-app
 export default {
   data() {
     return {
-      drawer: null
-    };
+      drawer: null,
+    }
   },
   props: {
-    source: String
-  }
-};
+    source: String,
+  },
+}
 </script>
 
-<style lang="sass">
-html
-  font-size: 100px
+<style lang="scss">
+html {
+  font-size: 100px;
+}
 
-body
-  font-size: 0.1rem
+body {
+  font-size: 0.1rem;
+}
 </style>

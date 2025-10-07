@@ -15,16 +15,16 @@ import messageCard from "../components/message-card.vue";
 export default {
   components: {
     "i-oshishi-slot": iOshishiSlot,
-    "message-card": messageCard
+    "message-card": messageCard,
   },
   mounted() {
-    if (localStorage.isVirgin !== 'false') {
+    if (localStorage.isVirgin !== "false") {
       this.messageDialog = true;
     }
   },
   data() {
     return {
-      messageDialog: false
+      messageDialog: false,
     };
   },
   methods: {
@@ -32,7 +32,7 @@ export default {
       this.messageDialog = false;
 
       localStorage.isVirgin = false;
-    }
-  }
+    },
+  },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <v-container>
-<!--
+    <!--
     <v-layout
       text-xs-center
       wrap
@@ -146,5 +146,4 @@
 */
 </script>
 
-<style>
-</style>
+<style></style>

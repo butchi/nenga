@@ -28,7 +28,7 @@ v-card.sm12(max-width="400", style="margin: 0 auto;")
 <script>
 export default {
   props: {
-    isDialog: Boolean
-  }
+    isDialog: Boolean,
+  },
 };
 </script>

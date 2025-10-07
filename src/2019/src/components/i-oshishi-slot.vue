@@ -34,21 +34,21 @@ div
 
 <script>
 /* global gtag */
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions } from "vuex"
 
-import _ from "lodash";
-import { sheet } from "../data/ioshishi-slot.json";
+import _ from "lodash"
+import { sheet } from "../data/ioshishi-slot.json"
 
-import iOshishiCard from "./i-oshishi-card.vue";
+import iOshishiCard from "./i-oshishi-card.vue"
 
 export default {
   components: {
-    "i-oshishi-card": iOshishiCard
+    "i-oshishi-card": iOshishiCard,
   },
   mounted() {
-    this.playCount = parseInt(localStorage.playCount || 0);
+    this.playCount = parseInt(localStorage.playCount || 0)
 
-    this.start();
+    this.start()
   },
   data() {
     return {
@@ -57,20 +57,20 @@ export default {
       iOshishi: {},
       isPlaying: false,
       playCount: null,
-      dialog: false
-    };
+      dialog: false,
+    }
   },
   computed: {
     ...mapState(["countArr"]),
     pMax() {
-      return _.last(this.iOshishiArr).p_acc;
+      return _.last(this.iOshishiArr).p_acc
     },
     sortedIOshishiArr() {
-      return _.sortBy(this.iOshishiArr, "no");
+      return _.sortBy(this.iOshishiArr, "no")
     },
     completeCount() {
-      return _.min(_.drop(this.countArr));
-    }
+      return _.min(_.drop(this.countArr))
+    },
   },
   methods: {
     ...mapActions(["setCountArr"]),
@@ -80,88 +80,93 @@ export default {
         1: "★★★★",
         2: "★★★",
         3: "★★",
-        4: "★"
-      }[rarity];
+        4: "★",
+      }[rarity]
     },
     start() {
-      this.isPlaying = true;
+      this.isPlaying = true
 
-      this.kuji = _.random(this.pMax - 1);
+      this.kuji = _.random(this.pMax - 1)
     },
     stop() {
-      this.isPlaying = false;
+      this.isPlaying = false
 
-      this.playCount++;
+      this.playCount++
 
       if (this.playCount % 100 === 0) {
         gtag("event", "play", {
           event_category: "Slot",
-          event_label: this.playCount
-        });
+          event_label: this.playCount,
+        })
       }
 
-      localStorage.setItem('playCount', this.playCount);
+      localStorage.setItem("playCount", this.playCount)
 
-      this.iOshishi = this.iOshishiArr.filter(item => this.kuji < item.p_acc )[0];
+      this.iOshishi = this.iOshishiArr.filter(item => this.kuji < item.p_acc)[0]
 
-      this.setCountArr(this.iOshishi.index);
+      this.setCountArr(this.iOshishi.index)
 
       if (this.countArr[this.iOshishi.index] < 2) {
-        this.dialog = true;
+        this.dialog = true
       }
     },
     defaultIndex() {
-      return _.random(30) + 1;
+      return _.random(30) + 1
     },
     countColor(n) {
-      const val = 60 * (1 - Math.pow(0.5, n - 1));
-      return n === 0 ? "white" : `hsl(${val}, 100%, 50%)`;
+      const val = 60 * (1 - Math.pow(0.5, n - 1))
+      return n === 0 ? "white" : `hsl(${val}, 100%, 50%)`
     },
     closeDialog() {
-      this.dialog = false;
-    }
+      this.dialog = false
+    },
   },
   watch: {
     completeCount() {
       gtag("event", "complete", {
         event_category: "Slot",
-        event_label: this.completeCount
-      });
-    }
-  }
-};
+        event_label: this.completeCount,
+      })
+    },
+  },
+}
 </script>
 
-<style lang="sass">
-@for $i from 1 through 4
-  @keyframes rotate-reel-#{$i}
-    0%
-      background-position: ($i * 64px) 0px
+<style lang="scss">
+@for $i from 1 through 4 {
+  @keyframes rotate-reel-#{$i} {
+    0% {
+      background-position: ($i * 64px) 0px;
+    }
 
-    100%
-      background-position: ($i * 64px) 2048px
+    100% {
+      background-position: ($i * 64px) 2048px;
+    }
+  }
+}
 
-.reel
-  display: inline-block
+.reel {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background-image: url("../assets/reel.png");
+  background-repeat: repeat;
+  border-left: 1px solid #ccc;
+}
 
-  position: relative
+.reel:first-child {
+  border: none;
+}
 
-  width: 64px
-  height: 64px
+.slot[data-is-playing="true"] .reel {
+  background-image: url("../assets/reel-blur.png");
+}
 
-  background-image: url("../assets/reel.png")
-  background-repeat: repeat
-
-  border-left: 1px solid #ccc
-
-  &:first-child
-    border: none
-
-.slot[data-is-playing="true"] .reel
-  background-image: url("../assets/reel-blur.png")
-
-@for $i from 1 through 4
-  .slot[data-is-playing="true"] .reel:nth-of-type(#{$i})
-    animation: rotate-reel-#{$i} 1s linear 0s infinite
-    animation-delay: -0.1s * $i
+@for $i from 1 through 4 {
+  .slot[data-is-playing="true"] .reel:nth-of-type(#{$i}) {
+    animation: rotate-reel-#{$i} 1s linear 0s infinite;
+    animation-delay: -0.1s * $i;
+  }
+}
 </style>

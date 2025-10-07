@@ -10,6 +10,6 @@ Vue.use(Vuetify, {
   theme: {
     primary: colors.deepOrange.darken4, // #BF360C
     secondary: colors.deepOrange.lighten4, // #FFCCBC
-    accent: colors.orange.base // #FF9800
-  }
+    accent: colors.orange.base, // #FF9800
+  },
 });

@@ -9,22 +9,22 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: Home,
     },
     {
       path: "/achievement",
       name: "achievement",
-      component: () => import("./views/achievement.vue")
+      component: () => import("./views/achievement.vue"),
     },
     {
       path: "/message",
       name: "message",
-      component: () => import("./views/message.vue")
+      component: () => import("./views/message.vue"),
     },
     {
       path: "/sample",
       name: "sample",
-      component: () => import("./views/sample.vue")
-    }
-  ]
+      component: () => import("./views/sample.vue"),
+    },
+  ],
 });

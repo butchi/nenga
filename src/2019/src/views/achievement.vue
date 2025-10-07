@@ -26,16 +26,16 @@ import { mapState, mapActions } from "vuex";
 import iOshishiCard from "../components/i-oshishi-card.vue";
 
 import { sheet } from "../data/ioshishi-slot.json";
-import _ from 'lodash';
+import _ from "lodash";
 
 export default {
   components: {
-    "i-oshishi-card": iOshishiCard
+    "i-oshishi-card": iOshishiCard,
   },
   data() {
     return {
       iOshishiArr: Object.values(sheet),
-      dialogClearHistory: false
+      dialogClearHistory: false,
     };
   },
   computed: {
@@ -55,14 +55,14 @@ export default {
         1: "★★★★",
         2: "★★★",
         3: "★★",
-        4: "★"
+        4: "★",
       }[rarity];
     },
     dialogOk() {
       this.clearHistory();
 
       this.dialogClearHistory = false;
-    }
-  }
+    },
+  },
 };
 </script>

@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": ["layouts/error.vue"],
+      "rules": {
+        "vue/comment-directive": "off"
+      }
+    }
+  ]
+}

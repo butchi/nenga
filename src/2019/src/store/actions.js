@@ -4,4 +4,4 @@ export const setCountArr = ({ commit }, index) => {
 
 export const clearHistory = ({ commit }) => {
   commit("clearHistory");
-}
+};
