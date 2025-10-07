@@ -5,9 +5,10 @@ module.exports = {
     node: true,
   },
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
+    requireConfigFile: false,
   },
-  extends: ['@nuxtjs', 'prettier', 'prettier/vue', 'plugin:nuxt/recommended'],
+  extends: ['@nuxtjs', 'prettier', 'plugin:nuxt/recommended'],
   plugins: ['prettier'],
   overrides: [
     {
