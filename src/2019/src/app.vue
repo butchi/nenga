@@ -42,12 +42,12 @@ export default {
   data() {
     return {
       drawer: null,
-    }
+    };
   },
   props: {
     source: String,
   },
-}
+};
 </script>
 
 <style lang="scss">
