@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.28.4",
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "@nuxtjs/eslint-config": "^1.1.2",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/google-analytics": "^2.4.0",
