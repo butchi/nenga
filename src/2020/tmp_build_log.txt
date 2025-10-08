@@ -1,0 +1,25 @@
+
+> shi-n-ne-n-ko-to-ba@1.0.0 build
+> nuxt build
+
+
+ WARN  mode option is deprecated. Please use ssr: true for universal mode or ssr: false for spa mode and remove mode from nuxt.config
+
+
+ FATAL  Cannot read properties of undefined (reading 'enforceModuleCompatibility')
+
+    at ModuleContainer.normalizedModule (node_modules/@nuxt/kit/dist/index.mjs:2161:39)
+    at async ModuleContainer.addModule (node_modules/@nuxt/core/dist/core.js:170:20)
+    at async ModuleContainer.ready (node_modules/@nuxt/core/dist/core.js:34:7)
+    at async Nuxt._init (node_modules/@nuxt/core/dist/core.js:347:5)
+
+
+   ╭─────────────────────────────────────────────────────────────╮
+   │                                                             │
+   │   ✖ Nuxt Fatal Error                                        │
+   │                                                             │
+   │   TypeError: Cannot read properties of undefined (reading   │
+   │   'enforceModuleCompatibility')                             │
+   │                                                             │
+   ╰─────────────────────────────────────────────────────────────╯
+

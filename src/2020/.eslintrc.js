@@ -17,6 +17,13 @@ module.exports = {
         'vue/comment-directive': 'off',
       },
     },
+    // Disable multi-word requirement for Nuxt pages/layouts (single-word names are common)
+    {
+      files: ['layouts/*.vue', 'pages/*.vue'],
+      rules: {
+        'vue/multi-word-component-names': 'off',
+      },
+    },
   ],
   // add your custom rules here
   rules: {

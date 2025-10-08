@@ -44,7 +44,8 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
+    // temporarily disabled to isolate enforceModuleCompatibility fatal error
+    // '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
     ['@nuxtjs/google-analytics', {
       id: 'UA-2779957-9',
