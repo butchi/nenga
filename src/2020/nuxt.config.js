@@ -15,15 +15,35 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: metaDesc },
-      { hid: 'og:site_name', property: 'og:site_name', content: '子ん子ん子とば' },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: '子ん子ん子とば',
+      },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:url', property: 'og:url', content: `https://butchi.github.io/nenga/2020/` },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: `https://butchi.github.io/nenga/2020/`,
+      },
       { hid: 'og:title', property: 'og:title', content: metaTtl },
       { hid: 'og:description', property: 'og:description', content: metaDesc },
-      { hid: 'og:image', property: 'og:image', content: `https://butchi.github.io/nenga/2020/ogp.png` },
-      { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: `https://butchi.github.io/nenga/2020/ogp.png`,
+      },
+      {
+        hid: 'twitter:card',
+        property: 'twitter:card',
+        content: 'summary_large_image',
+      },
       { hid: 'twitter:title', property: 'twitter:title', content: metaTtl },
-      { hid: 'twitter:description', property: 'twitter:description', content: metaDesc },
+      {
+        hid: 'twitter:description',
+        property: 'twitter:description',
+        content: metaDesc,
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -47,9 +67,12 @@ export default {
     // temporarily disabled to isolate enforceModuleCompatibility fatal error
     // '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-2779957-9',
-    }],
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-2779957-9',
+      },
+    ],
   ],
   /*
    ** Nuxt.js modules
